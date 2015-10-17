@@ -186,7 +186,7 @@ dd {
                         @else
                             <dd>No tiene patrocinadores</dd>
                         @endif
-                        
+
                     @endif
                 </dl>
     </td>
