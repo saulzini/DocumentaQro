@@ -16,10 +16,10 @@ class FuncionPelicula extends Migration
 
             $table->increments('id');
             $table->integer('id_funcion')->unsigned()->index();
-            $table->foreign('id_funcion')->references('id')->on('funciones')->onDelete('cascade');
+          //  $table->foreign('id_funcion')->references('id')->on('funciones')->onDelete('cascade');
 
             $table->integer('id_pelicula')->unsigned()->index();
-            $table->foreign('id_pelicula')->references('id')->on('peliculas')->onDelete('cascade');
+          //  $table->foreign('id_pelicula')->references('id')->on('peliculas')->onDelete('cascade');
 
             $table->timestamps();
         });
