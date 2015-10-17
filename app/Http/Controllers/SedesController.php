@@ -12,6 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use PDOException;
 
 class SedesController extends Controller
 {
@@ -170,17 +171,26 @@ class SedesController extends Controller
     }
 
     public function eliminarSedes(Eliminar $request){
-
+        $error=false;
         $sede=Sede::findOrFail($request->sedeID);
+            try
+            {
+                $sede->delete();
+            }
+            catch(PDOException  $e)
+            {
+                Session::flash('error', $sede->descripcion. ' no pudo ser eliminada, integridad de la base de datos');
+                return redirect('sedes');
+            }
 
-        DB::transaction(function() use ($sede)
-        {
-            $sede->delete();
-            Funcion::where('id_sede',$sede->id)->update(['id_sede'=>""]);
+            //Funcion::where('id_sede',$sede->id)->update(['id_sede'=>""]);
 
-        });
+
+
+            Session::flash('message', $sede->descripcion. ' ha sido eliminado');
+
         //El registro se ha eliminado
-        Session::flash('message', $sede->descripcion. ' ha sido eliminado');
+
         return redirect('sedes');
     }
 
