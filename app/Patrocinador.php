@@ -38,4 +38,18 @@ class Patrocinador extends Model
         //$this->belongsToMany('App\Role', 'user_roles', 'user_id', 'role_id');
         return $this->belongsToMany('App\Funcion', 'funcion_patrocinador','id_patrocinador','id_funcion');
     }
+    public function scopeNombre($query ,$nombre)
+    {//
+        //
+        if(trim($nombre) != ""){
+            $query->where('nombre',"LIKE","%$nombre%");
+        }
+    }
+
+    public  function paquetes()
+    {
+        return $this->belongsTo('App\Paquete','id_paquete');
+    }
+
+
 }
