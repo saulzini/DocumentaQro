@@ -23,6 +23,7 @@ class Patrocinadores extends Migration
             $table->string('puesto');
             $table->string('email');
             $table->string('telefono');
+            $table->text('notas');
             $table->enum('tipo',['Apoyo','Paquete']);
 
             $table->integer('id_paquete');

@@ -115,6 +115,20 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="Titulo" class="col-lg-2 control-label">Notas</label>
+            <div class="col-lg-10">
+
+                @if( isset($patrocinadoresItem))
+
+                    {!!Form::textArea('Notas' ,$patrocinadoresItem->notas,['class'=>'form-control','id'=>'Notas','placeholder'=>'Aquí puede añadir sus notas'])!!}
+                @else
+                    {!!Form::textArea('Notas' ,null,['class'=>'form-control','id'=>'Notas','placeholder'=>'Aquí puede añadir sus notas'])!!}
+                @endif
+            </div>
+        </div>
+
+
 
 
 
