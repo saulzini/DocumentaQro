@@ -332,6 +332,11 @@ Route::post('sedes/modificar/sedes','SedesController@modificarSedes',array('befo
     // dd("modificar");
 }));
 
+Route::get('sedesExport/item/{id?}',[
+        'uses' =>'SedesController@exportar',
+        'as' =>'sedesExport/item/']
+
+);
 
 
 Route::resource('excel','ExcelController');

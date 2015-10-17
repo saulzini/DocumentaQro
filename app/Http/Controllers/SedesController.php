@@ -179,7 +179,7 @@ class SedesController extends Controller
             }
             catch(PDOException  $e)
             {
-                Session::flash('error', $sede->descripcion. ' no pudo ser eliminada, integridad de la base de datos');
+                Session::flash('error', $sede->descripcion. ' no pudo ser eliminado, integridad de la base de datos');
                 return redirect('sedes');
             }
 
@@ -235,6 +235,21 @@ class SedesController extends Controller
 
 
         ]);
+    }
+
+    public function exportar($id){
+        $sedeItem = Sede::findOrFail($id);
+        $funciones=$sedeItem->funciones;
+        $this->castFunctionsDate($funciones);
+        if($funciones->isEmpty())
+            $funciones=null;
+
+        $view =  \View::make('Sedes/Reporte',compact('sedeItem','funciones'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('Sede '.$sedeItem->descripcion.'.pdf');
+
+
     }
 
 
