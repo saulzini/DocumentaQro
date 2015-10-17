@@ -34,6 +34,13 @@ class Realizador extends Model
     //N to 1
 
     public function traficos(){
-        return $this->hasMany('App\Integrante', 'id_integrante', 'id');
+        return $this->hasMany('App\Trafico', 'id_realizador', 'id');
+    }
+    public function scopeNombre($query ,$nombre)
+    {//
+        //
+        if(trim($nombre) != ""){
+            $query->where('nombre',"LIKE","%$nombre%");
+        }
     }
 }
