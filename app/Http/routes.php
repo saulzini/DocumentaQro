@@ -342,3 +342,186 @@ Event::listen('illuminate.query', function($query)
     var_dump($query);
 });
 */
+
+
+/*
+ *
+ * Rutas para realizadores
+ *
+ * */
+
+
+Route::get('realizadores',[
+    'uses' => 'RealizadoresController@index',
+    'as' =>'realizadores'
+
+]);
+
+
+
+Route::get('realizadoresLista',[
+        'uses' =>'RealizadoresController@buscador',
+        'as' =>'realizadoresLista']
+
+);
+
+
+
+Route::get('realizadoresLista/item/{id?}',[
+        'uses' =>'RealizadoresController@seleccion',
+        'as' =>'realizadoresLista/item']
+
+);
+
+
+
+Route::post('realizadores/eliminar','RealizadoresController@eliminarRealizadores',array('before' => 'csrf', function()
+{
+    //  dd("hghgh");
+}));
+
+Route::get('realizadores/agregar',[
+    'uses' => 'RealizadoresController@pagAgregar',
+    'as' =>'realizadoresAgregar'
+
+]);
+
+
+Route::post('realizadores/agregar/crear','RealizadoresController@agregarRealizadores',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('realizadores/modificar/item/{id}',[
+    'uses' => 'RealizadoresController@pagModificar',
+    'as' =>'realizadores/modificar/item'
+
+]);
+
+
+Route::post('realizadores/modificar/realizadores','RealizadoresController@modificarRealizadores',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
+
+/*
+ *
+ * Rutas para patrocinadores
+ *
+ * */
+
+
+Route::get('patrocinadores',[
+    'uses' => 'PatrocinadoresController@index',
+    'as' =>'patrocinadores'
+
+]);
+
+
+
+Route::get('patrocinadoresLista',[
+        'uses' =>'PatrocinadoresController@buscador',
+        'as' =>'patrocinadoresLista']
+
+);
+
+
+
+Route::get('patrocinadoresLista/item/{id?}',[
+        'uses' =>'PatrocinadoresController@seleccion',
+        'as' =>'patrocinadoresLista/item']
+
+);
+
+
+
+Route::post('patrocinadores/eliminar','PatrocinadoresController@eliminarPatrocinadores',array('before' => 'csrf', function()
+{
+    //  dd("hghgh");
+}));
+
+Route::get('patrocinadores/agregar',[
+    'uses' => 'PatrocinadoresController@pagAgregar',
+    'as' =>'patrocinadoresAgregar'
+
+]);
+
+
+Route::post('patrocinadores/agregar/crear','PatrocinadoresController@agregarPatrocinadores',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('patrocinadores/modificar/item/{id}',[
+    'uses' => 'PatrocinadoresController@pagModificar',
+    'as' =>'patrocinadores/modificar/item'
+
+]);
+
+
+Route::post('patrocinadores/modificar/patrocinadores','PatrocinadoresController@modificarPatrocinadores',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
+
+
+
+/*
+ *
+ * Rutas de inicio de sesion
+ *
+ *
+ * */
+
+// Authentication routes...
+Route::get('iniciarSesion',[
+    'uses' => 'Auth\AuthController@getLogin',
+    'as' => 'iniciarSesion'
+
+]);
+
+
+Route::post('iniciarSesion','Auth\AuthController@postLogin',array('before' => 'csrf', function()
+{
+
+}));
+
+
+
+Route::get('cerrarSesion', [
+
+    'uses'=>'Auth\AuthController@getLogout',
+    'as'=>'cerrarSesion'
+]);
+
+
+
+
+// Registration routes...
+Route::get('register',[
+    'uses'=>'Auth\AuthController@getRegister',
+    'as' => 'register'
+]);
+Route::post('register', 'Auth\AuthController@postRegister');
+
+
+
+
+
+// Password reset link request routes...
+Route::get('password/email',[
+    'uses' => 'Auth\PasswordController@getEmail',
+    'as' => 'password/email'
+
+]);
+
+
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
