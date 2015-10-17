@@ -36,6 +36,7 @@ class PeliculasRequest extends Request
             'Sinopsis'=>'max:65535',
             'Notas'=>'max:65535',
             'material' =>'mimes:zip',
+            'Tipo'=>'required|in:Cortometraje,Largometraje'
         ];
     }
 }

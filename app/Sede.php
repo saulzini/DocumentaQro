@@ -31,6 +31,14 @@ class Sede extends Model
     protected $hidden = ['remember_token'];
 
     public function funciones(){
-        return $this->hasMany('App\Sede', 'id_funcion', 'id');
+        return $this->hasMany('App\Funcion', 'id_sede', 'id')->orderBy('fecha','asc');;
+    }
+
+    public function scopeTitulo($query ,$titulo)
+    {//
+        //
+        if(trim($titulo) != ""){
+            $query->where('descripcion',"LIKE","%$titulo%");
+        }
     }
 }
