@@ -245,6 +245,10 @@
                                                   </div>
                                               </div>
 
+                                              <div class="form-group" align="center">
+                                                  <a href="{{ route('festivalesExport/item/',$festivalItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                              </div>
+
                                           </dl>
 
 

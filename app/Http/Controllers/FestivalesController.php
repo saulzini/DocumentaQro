@@ -294,5 +294,29 @@ class FestivalesController extends Controller
         ]);
     }
 
+    public function exportar($id){
+        $festivalItem = Festival::findOrFail($id);
+
+        $funciones=$festivalItem->funciones;
+        $this->castFunctionsDate($funciones);
+        $programas=$festivalItem->programas;
+        $patrocinadores=$festivalItem->patrocinadores;
+
+        if($funciones->isEmpty())
+            $funciones=null;
+
+        if($programas->isEmpty())
+            $programas=null;
+        if($patrocinadores->isEmpty())
+            $patrocinadores=null;
+
+        $view =  \View::make('Festivales/Reporte',compact('festivalItem','funciones','programas','patrocinadores'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('Festival '.$festivalItem->titulo.'.pdf');
+
+
+    }
+
 
 }
