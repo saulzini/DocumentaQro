@@ -131,30 +131,30 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('peliculas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de películas</button></a></h3>
+                  <h3><a href="{{route('festivales')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de festivales</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
                               @include('Partials.Mensajes.mensajes')
-                              <h4><i class="fa fa-angle-right"></i>Modificar pelicula</h4>
-                               @if( isset($peliculasItem))
+                              <h4><i class="fa fa-angle-right"></i>Modificar festival</h4>
+                               @if( isset($festivalesItem))
 
 
                             <table align="right">
                                 <tr>
                                   <td>
-                                      <a href="{{ route('peliculasLista/item',$peliculasItem->id) }}">
+                                      <a href="{{ route('festivalesLista/item',$festivalesItem->id) }}">
                                           <button class="btn btn-success btn-xs">
                                               <i class="fa fa-eye"></i></button>
                                       </a> &nbsp
                                    </td>
 
                                     <td>
-                                      {!! Form::open(['action'=>['PeliculasController@eliminarPeliculas'],'role'=>'form'] )  !!}
-                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la pelicula?")'><i class="fa fa-trash-o "></i></button>
-                                      <input type="hidden" name="peliculasID" value={{$peliculasItem->id}}>
+                                      {!! Form::open(['action'=>['FestivalesController@eliminarFestivales'],'role'=>'form'] )  !!}
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el festival?")'><i class="fa fa-trash-o "></i></button>
+                                      <input type="hidden" name="festivalId" value={{$festivalesItem->id}}>
                                       {!! Form::close() !!}
 
                                     </td>
@@ -164,11 +164,11 @@
 
                               @endif
 
-                              {!! Form::open(['action'=>['PeliculasController@modificarPeliculas'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formModificarPelicula'] )  !!}
+                              {!! Form::open(['action'=>['FestivalesController@modificarFestivales'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formModificarFestival'] )  !!}
 
                                   <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
 
-                                  @include('Partials.Peliculas.Peliculas')
+                                  @include('Partials.Festivales.Festivales')
 
                                   {!! Form::close() !!}
 
@@ -207,7 +207,7 @@
               removeTitle: 'Cancel or reset changes',
               elErrorContainer: '#kv-avatar-errors',
               msgErrorClass: 'alert alert-block alert-danger',
-              defaultPreviewContent: '<img src="{{ asset($peliculasItem->poster) }}"  style="height:400px" alt="Imagen de pelicula" class="img-thumbnail"/>',
+              defaultPreviewContent: '<img src="{{ asset($festivalesItem->poster) }}"  style="height:400px" alt="Imagen de pelicula" class="img-thumbnail"/>',
               layoutTemplates: {main2: '{preview} {remove} {browse}'},
               allowedFileExtensions: ["jpg", "png", "gif"]
           });
@@ -218,7 +218,7 @@
 
           $(document).ready(function() {
 
-              $('#formModificarPelicula').bootstrapValidator({
+              $('#formModificarFestival').bootstrapValidator({
                   message: 'Los valores no son válidos',
                   feedbackIcons: {
                       invalid: 'glyphicon glyphicon-remove',
@@ -235,109 +235,8 @@
                                   message: 'El titúto debe tener como máximo 255 caracteres'
                               }
                           }
-                      },
-
-                      Director: {
-                          validators: {
-                              notEmpty: {
-                                  message: 'El director es requerido'
-                              },
-                              stringLength: {
-                                  max: 255,
-                                  message: 'El nombre debe tener como máximo 255 caracteres'
-                              }
-                          }
-                      },
-
-                      Pais:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'Debe elegir un país'
-                              }
-                          }
-                      },
-
-                      Anio:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'El año es requerido'
-                              },
-                              stringLength: {
-                                  max: 4,
-                                  min: 4,
-                                  message: 'El año debe tener 4 dígitos'
-                              },
-
-                              integer:{
-                                  message: 'Ingresa un número'
-                              }
-                          }
-                      },
-                      Duracion:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'La duración es requerida'
-                              },
-                              stringLength: {
-                                  max: 3,
-                                  message: 'La duración puede tener como máximo 3 digitos'
-                              },
-                              integer:{
-                                  message: 'Ingresa un número'
-                              }
-                          }
-                      },
-
-                      Subtitulos:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'Debe elegir una opción'
-                              }
-                          }
-                      },
-                      Trailer: {
-                          validators: {
-                              stringLength: {
-                                  max: 255,
-                                  message: 'La URL debe tener como máximo 255 caracteres'
-                              },
-                              uri:{
-                                  message:'Ingrese URL válida, ejemplo: http://a.com'
-                              }
-                          }
-                      },
-                      Sinopsis: {
-                          validators: {
-                              stringLength: {
-                                  max: 65535,
-                                  message: 'La sinopsis debe tener como máximo 65535 caracteres'
-                              }
-                          }
-                      },
-                      Notas: {
-                          validators: {
-                              stringLength: {
-                                  max: 65535,
-                                  message: 'Las notas deben tener como máximo 65535 caracteres'
-                              }
-                          }
-                      },
-                      material:{
-                          validators:{
-                              file: {
-                                  extension: 'zip',
-                                  type: 'application/zip',
-                                  message: 'Debes seleccionar un archivo .zip'
-                              }
-                          }
-                      },
-                      Tipo:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'Debe elegir una opción'
-                              }
-                          }
                       }
+
 
 
                   }

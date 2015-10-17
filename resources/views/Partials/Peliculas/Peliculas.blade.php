@@ -119,6 +119,31 @@
         </div>
 
         <div class="form-group">
+            <label for="Subtitulos" class="col-lg-2 control-label">Tipo</label>
+            <div class="col-lg-10">
+
+                <select  class="form-control" id="Tipo" name="Tipo">
+                    <option value="">Selecciona</option>
+
+                    @if( isset($peliculasItem))
+
+                        @foreach($Tipos as $tipo)
+                            @if($peliculasItem->tipo == $tipo)
+                                <option value="{{  $tipo }}" selected > {{ $tipo}}  </option>
+                            @else
+                                <option value="{{  $tipo  }}" > {{ $tipo}}  </option>
+                            @endif
+                        @endforeach
+                    @else
+                        @foreach($Tipos as $tipo)
+                            <option value="{{  $tipo }}" > {{ $tipo}}  </option>
+                        @endforeach
+                    @endif
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="Titulo" class="col-lg-2 control-label">Trailer</label>
             <div class="col-lg-10">
 
@@ -135,7 +160,7 @@
                 <label for="Titulo" class="col-lg-2 control-label">Material actual</label>
                 <div class="col-lg-10">
 
-                    <a class='form-control' href="{{asset($peliculasItem->material)}}">Enlace de descarga</a>
+                        <a class='form-control' href="{{asset($peliculasItem->material)}}">Click aquí para descargar</a>
 
                 </div>
             </div>

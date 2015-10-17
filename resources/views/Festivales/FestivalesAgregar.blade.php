@@ -1,5 +1,19 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
 <body>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+
+        $('#Patrocinador').multiselect({
+            enableFiltering: true,
+            buttonWidth: '100%',
+        });
+
+
+
+    });
+</script>
 
 <section id="container" >
     <!-- **********************************************************************************************************************************************************
@@ -115,7 +129,7 @@
 
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('peliculas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de películas</button></a></h3>
+                <h3><a href="{{route('festivales')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de festivales</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR FUNCIONES -->
@@ -125,11 +139,11 @@
                             @include('Partials.Mensajes.mensajes')
 
 
-                            {!! Form::open(['action'=>['PeliculasController@agregarPeliculas'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarPelicula'])!!}
+                            {!! Form::open(['action'=>['FestivalesController@agregarFestivales'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarFestival'])!!}
 
-                                <h4><i class="fa fa-angle-right"></i>Agregar pelicula</h4>
+                                <h4><i class="fa fa-angle-right"></i>Agregar festival</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
-                                @include('Partials.Peliculas.Peliculas')
+                                @include('Partials.Festivales.Festivales')
 
                             {!! Form::close() !!}
                         </div>
@@ -164,7 +178,7 @@
             removeTitle: 'Cancel or reset changes',
             elErrorContainer: '#kv-avatar-errors',
             msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="Imagen de pelicula" style="height:400px" class="img-thumbnail"/>',
+            defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="Imagen de festival" style="height:400px" class="img-thumbnail"/>',
             layoutTemplates: {main2: '{preview} {remove} {browse}'},
             allowedFileExtensions: ["jpg","png","bmp","jpeg"]
         });
@@ -175,7 +189,7 @@
 
         $(document).ready(function() {
 
-            $('#formAgregarPelicula').bootstrapValidator({
+            $('#formAgregarFestival').bootstrapValidator({
                 message: 'Los valores no son válidos',
                 feedbackIcons: {
                     invalid: 'glyphicon glyphicon-remove',
@@ -192,108 +206,6 @@
                                 message: 'El titúto debe tener como máximo 255 caracteres'
                             }
                         }
-                    },
-
-                    Director: {
-                        validators: {
-                            notEmpty: {
-                                message: 'El director es requerido'
-                            },
-                            stringLength: {
-                                max: 255,
-                                message: 'El nombre debe tener como máximo 255 caracteres'
-                            }
-                        }
-                    },
-
-                    Pais:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Debe elegir un país'
-                            }
-                        }
-                    },
-
-                    Anio:{
-                        validators: {
-                            notEmpty: {
-                                message: 'El año es requerido'
-                            },
-                            stringLength: {
-                                max: 4,
-                                min: 4,
-                                message: 'El año debe tener 4 dígitos'
-                            },
-
-                            integer:{
-                                message: 'Ingresa un número'
-                            }
-                        }
-                    },
-                    Duracion:{
-                        validators: {
-                            notEmpty: {
-                                message: 'La duración es requerida'
-                            },
-                            stringLength: {
-                                max: 3,
-                                message: 'La duración puede tener como máximo 3 digitos'
-                            },
-                            integer:{
-                                message: 'Ingresa un número'
-                            }
-                        }
-                    },
-
-                    Subtitulos:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Debe elegir una opción'
-                            }
-                        }
-                    },
-                    Trailer: {
-                        validators: {
-                            stringLength: {
-                                max: 255,
-                                message: 'La URL debe tener como máximo 255 caracteres'
-                            },
-                            uri:{
-                                message:'Ingrese URL válida, ejemplo: http://a.com'
-                            }
-                        }
-                    },
-                    Sinopsis: {
-                        validators: {
-                            stringLength: {
-                                max: 65535,
-                                message: 'La sinopsis debe tener como máximo 65535 caracteres'
-                            }
-                        }
-                    },
-                    Notas: {
-                        validators: {
-                            stringLength: {
-                                max: 65535,
-                                message: 'Las notas deben tener como máximo 65535 caracteres'
-                            }
-                        }
-                    },
-                    material:{
-                        validators:{
-                            file: {
-                                extension: 'zip',
-                                type: 'application/zip',
-                                message: 'Debes seleccionar un archivo .zip'
-                            }
-                        }
-                    },
-                    Tipo:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Debe elegir una opción'
-                            }
-                        }
                     }
 
 
@@ -301,17 +213,17 @@
             });
 
             $('#fechaDP')
-                    .on('dp.change dp.show', function(e) {
-                        $('#formAgregarFuncion').data('bootstrapValidator').revalidateField('Fecha');
-                    });
+                .on('dp.change dp.show', function(e) {
+                    $('#formAgregarFuncion').data('bootstrapValidator').revalidateField('Fecha');
+                });
 
-            /*   $('#formAgregarFuncion')
-             .find('[name="Sede"]')
-             .selectpicker()
-             .change(function(e) {
-             $('#formAgregarFuncion').bootstrapValidator('revalidateField', 'Sede');
-             })
-             .end()*/
+         /*   $('#formAgregarFuncion')
+                .find('[name="Sede"]')
+                .selectpicker()
+                .change(function(e) {
+                    $('#formAgregarFuncion').bootstrapValidator('revalidateField', 'Sede');
+                })
+                .end()*/
 
         });
     </script>

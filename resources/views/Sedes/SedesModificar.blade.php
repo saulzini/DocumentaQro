@@ -1,7 +1,6 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
 
 
-
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -115,83 +114,47 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('peliculas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de películas</button></a></h3>
+                  <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de sedes</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
+                              @include('Partials.Mensajes.mensajes')
+                              <h4><i class="fa fa-angle-right"></i>Modificar sede</h4>
+                               @if( isset($sedesItem))
 
 
+                            <table align="right">
+                                <tr>
+                                  <td>
+                                      <a href="{{ route('sedesLista/item',$sedesItem->id) }}">
+                                          <button class="btn btn-success btn-xs">
+                                              <i class="fa fa-eye"></i></button>
+                                      </a> &nbsp
+                                   </td>
 
-                                  <h4><i class="fa fa-angle-right"></i>Consultar pelicula</h4>
+                                    <td>
+                                      {!! Form::open(['action'=>['SedesController@eliminarSedes'],'role'=>'form'] )  !!}
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la sede")'><i class="fa fa-trash-o "></i></button>
+                                      <input type="hidden" name="sedeID" value={{$sedesItem->id}}>
+                                      {!! Form::close() !!}
 
-
-
-
-                              @if( isset($peliculaItem))
-
-
-                                  <table align="right">
-                                      <tr>
-                                          <td>
-                                              <a href="{{ route('peliculas/modificar/item',$peliculaItem->id) }}">
-                                                  <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                              </a> &nbsp
-                                          </td>
-
-                                          <td>
-                                              {!! Form::open(['action'=>['PeliculasController@eliminarPeliculas'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la función?")'><i class="fa fa-trash-o "></i></button>
-                                              <input type="hidden" name="peliculasID" value={{$peliculaItem->id}}>
-                                              {!! Form::close() !!}
-
-                                          </td>
-                                      </tr>
-                                  </table>
-                                  <br><br>
+                                    </td>
+                                  </tr>
+                             </table>
+                              <br><br>
 
                               @endif
 
-                                  <div class="row">
-                                      <div class="col-md-4">
-                                          <div class="form-group">
-                                              <div class="col-lg-12">
-                                                  <img src="{{asset($poster)}}" class="img-thumbnail img-responsive">
-                                              </div>
-                                          </div>
+                              {!! Form::open(['action'=>['SedesController@modificarSedes'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formModificarSede'] )  !!}
 
-                                      </div>
-                                      <br>
+                                  <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
 
-                                      <div class="col-md-7">
-                                          <dl class="dl-horizontal">
+                                  @include('Partials.Sedes.Sedes')
 
+                                  {!! Form::close() !!}
 
-                                              <dt>Título</dt><dd>{{ $titulo }}</dd>
-                                              <dt>Director</dt><dd>{{ $director }}</dd>
-                                              <dt>Pais</dt><dd>{{ $pais}}</dd>
-
-                                              <dt>Año</dt><dd>{{ $anio}}</dd>
-
-                                              <dt>Duracion</dt><dd>{{ $duracion }}</dd>
-
-                                              <dt>Tipo</dt><dd>{{ $tipo}}</dd>
-                                              <dt>Subtitulos</dt><dd>{{ $subtitulos }}</dd>
-                                              <dt>Trailer</dt><dd>{{ $trailer}}</dd>
-                                              <dt>Material</dt><dd><a href="{{ asset($material)}}">Click para descargar</a></dd>
-                                              <br>
-                                              <dt>Sinopsis</dt><dd>{{ $sinopsis}}</dd>
-                                              <br>
-                                              <dt>Notas</dt><dd>{{ $notas}}</dd>
-
-                                          </dl>
-
-
-                                      </div>
-
-                                  </div>
-                                  <br>
 
                           </div>
                       </div>
@@ -202,6 +165,32 @@
       </section>
 
 
+      <script type="text/javascript">
 
+          $(document).ready(function() {
+
+              $('#formModificarSede').bootstrapValidator({
+                  message: 'Los valores no son válidos',
+                  feedbackIcons: {
+                      invalid: 'glyphicon glyphicon-remove',
+                      validating: 'glyphicon glyphicon-refresh'
+                  },
+                  fields: {
+                      Descripcion: {
+                          validators: {
+                              notEmpty: {
+                                  message: 'El nombre de la sede es requerido'
+                              },
+                              stringLength: {
+                                  max: 255,
+                                  message: 'El nombre debe tener como máximo 255 caracteres'
+                              }
+                          }
+                      }
+                  }
+              });
+
+          });
+      </script>
 
 @include('Partials.ScriptsGenerales.scriptsPartialsAbajo')

@@ -32,10 +32,10 @@ class Funciones extends Migration
             $table->dateTime('fecha');
 
             $table->integer('id_programa')->unsigned();
-            //$table->foreign('id_programa')->references('id')->on('programas');
+            $table->foreign('id_programa')->references('id')->on('programas');
 
             $table->integer('id_festival')->unsigned();
-            //$table->foreign('id_festival')->references('id')->on('festivales');
+            $table->foreign('id_festival')->references('id')->on('festivales');
 
 
 

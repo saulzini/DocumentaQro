@@ -115,7 +115,7 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('peliculas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de películas</button></a></h3>
+                  <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de sedes</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
@@ -124,26 +124,26 @@
 
 
 
-                                  <h4><i class="fa fa-angle-right"></i>Consultar pelicula</h4>
+                                  <h4><i class="fa fa-angle-right"></i>Consultar sede</h4>
 
 
 
 
-                              @if( isset($peliculaItem))
+                              @if( isset($sedeItem))
 
 
                                   <table align="right">
                                       <tr>
                                           <td>
-                                              <a href="{{ route('peliculas/modificar/item',$peliculaItem->id) }}">
+                                              <a href="{{ route('sedes/modificar/item',$sedeItem->id) }}">
                                                   <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                               </a> &nbsp
                                           </td>
 
                                           <td>
-                                              {!! Form::open(['action'=>['PeliculasController@eliminarPeliculas'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la función?")'><i class="fa fa-trash-o "></i></button>
-                                              <input type="hidden" name="peliculasID" value={{$peliculaItem->id}}>
+                                              {!! Form::open(['action'=>['SedesController@eliminarSedes'],'role'=>'form'] )  !!}
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la sede?")'><i class="fa fa-trash-o "></i></button>
+                                              <input type="hidden" name="sedeID" value={{$sedeItem->id}}>
                                               {!! Form::close() !!}
 
                                           </td>
@@ -154,37 +154,39 @@
                               @endif
 
                                   <div class="row">
-                                      <div class="col-md-4">
-                                          <div class="form-group">
-                                              <div class="col-lg-12">
-                                                  <img src="{{asset($poster)}}" class="img-thumbnail img-responsive">
-                                              </div>
+
+                                      <div class="col-md-3" >
                                           </div>
-
-                                      </div>
-                                      <br>
-
-                                      <div class="col-md-7">
+                                      <div class="col-md-5" >
                                           <dl class="dl-horizontal">
 
 
-                                              <dt>Título</dt><dd>{{ $titulo }}</dd>
-                                              <dt>Director</dt><dd>{{ $director }}</dd>
-                                              <dt>Pais</dt><dd>{{ $pais}}</dd>
+                                              <dt>Nombre</dt><dd>{{ $sedeItem->descripcion}}</dd>
 
-                                              <dt>Año</dt><dd>{{ $anio}}</dd>
+                                              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                                  <div class="panel panel-default">
+                                                      <div class="panel-heading" role="tab" id="headingOne">
+                                                          <h4 class="panel-title">
+                                                              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                                  Funciones <i class="fa fa-angle-down"></i>
+                                                              </a>
+                                                          </h4>
+                                                      </div>
+                                                      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 
-                                              <dt>Duracion</dt><dd>{{ $duracion }}</dd>
+                                                          @if ( isset( $funciones) )
 
-                                              <dt>Tipo</dt><dd>{{ $tipo}}</dd>
-                                              <dt>Subtitulos</dt><dd>{{ $subtitulos }}</dd>
-                                              <dt>Trailer</dt><dd>{{ $trailer}}</dd>
-                                              <dt>Material</dt><dd><a href="{{ asset($material)}}">Click para descargar</a></dd>
-                                              <br>
-                                              <dt>Sinopsis</dt><dd>{{ $sinopsis}}</dd>
-                                              <br>
-                                              <dt>Notas</dt><dd>{{ $notas}}</dd>
+                                                              @foreach( $funciones as $funcion)
 
+                                                                  <li class="list-group-item"><strong>Titulo:</strong>{{$funcion->titulo}}&nbsp;<strong>Fecha:</strong>{{$funcion->fecha}}</li>
+
+                                                              @endforeach
+                                                          @else
+                                                              <li class="list-group-item">No tiene funciones</li>
+                                                          @endif
+                                                      </div>
+                                                  </div>
+                                              </div>
                                           </dl>
 
 

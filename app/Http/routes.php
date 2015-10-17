@@ -209,6 +209,130 @@ Route::post('traficos/modificar/traficos','TraficosController@modificarTraficos'
     // dd("modificar");
 }));
 
+//Para festivales
+
+
+Route::get('festivales',[
+    'uses' => 'FestivalesController@index',
+    'as' =>'festivales'
+
+]);
+
+
+
+Route::get('festivalesLista',[
+        'uses' =>'FestivalesController@buscador',
+        'as' =>'festivalesLista']
+
+);
+
+
+
+Route::get('festivalesLista/item/{id?}',[
+        'uses' =>'FestivalesController@seleccion',
+        'as' =>'festivalesLista/item']
+
+);
+
+
+
+Route::post('Festivales/eliminar','FestivalesController@eliminarFestivales',array('before' => 'csrf', function()
+{
+
+}));
+
+
+
+
+
+
+Route::get('festivales/agregar',[
+    'uses' => 'FestivalesController@pagAgregar',
+    'as' =>'festivalesAgregar'
+
+]);
+
+
+Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('festivales/modificar/item/{id}',[
+    'uses' => 'FestivalesController@pagModificar',
+    'as' =>'festivales/modificar/item'
+
+]);
+
+
+Route::post('festivales/modificar/festivales','FestivalesController@modificarFestivales',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
+//PARA SEDES
+
+
+Route::get('sedes',[
+    'uses' => 'SedesController@index',
+    'as' =>'sedes'
+
+]);
+
+
+
+Route::get('sedesLista',[
+        'uses' =>'SedesController@buscador',
+        'as' =>'sedesLista']
+
+);
+
+
+
+Route::get('sedesLista/item/{id?}',[
+        'uses' =>'SedesController@seleccion',
+        'as' =>'sedesLista/item']
+
+);
+
+
+
+Route::post('Sedes/eliminar','SedesController@eliminarSedes',array('before' => 'csrf', function()
+{
+    dd("asdf");
+}));
+
+
+
+
+
+
+Route::get('sedes/agregar',[
+    'uses' => 'SedesController@pagAgregar',
+    'as' =>'sedesAgregar'
+
+]);
+
+
+Route::post('sedes/agregar/crear','SedesController@agregarSedes',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('sedes/modificar/item/{id}',[
+    'uses' => 'SedesController@pagModificar',
+    'as' =>'sedes/modificar/item'
+
+]);
+
+
+Route::post('sedes/modificar/sedes','SedesController@modificarSedes',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
 
 Route::resource('excel','ExcelController');
 
