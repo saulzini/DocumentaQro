@@ -176,15 +176,15 @@
                                             <td><a href="{{ route('sedesLista/item',$sede->id) }}">{{ $sede->descripcion }}</a></td>
 
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('sedesLista/item',$sede->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('sedes/modificar/item',$sede->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 {!! Form::open(['action'=>['SedesController@eliminarSedes'],'role'=>'form'] )  !!}
                                                 <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar la sede?")'><i class="fa fa-trash-o "></i></button>
 
@@ -212,56 +212,6 @@
             </section>
         </section>
       </section>>
-
-
-
-
-
-
-
-      <script type="text/javascript">
-
-          $(document).ready(function() {
-
-              $('#defaultForm').bootstrapValidator({
-                  message: 'Los valores no son válidos',
-                  feedbackIcons: {
-                      invalid: 'glyphicon glyphicon-remove',
-                      validating: 'glyphicon glyphicon-refresh'
-                  },
-                  fields: {
-
-                      FechaInicio: {
-                          validators: {
-                              date: {
-                                  format: 'DD/MM/YYYY',
-                                  message: 'El formato debe ser DD/MM/YYYY'
-                              }
-                          }
-                      },
-                      FechaFinal: {
-                          validators: {
-                              date: {
-                                  format: 'DD/MM/YYYY',
-                                  message: 'El formato debe ser DD/MM/YYYY'
-                              }
-                          }
-                      }
-                  }
-              });
-
-              $('#fechaInicioDP')
-                      .on('dp.change dp.show', function(e) {
-                          $('#defaultForm').data('bootstrapValidator').revalidateField('FechaInicio');
-                      });
-
-              $('#fechaFinDP')
-                      .on('dp.change dp.show', function(e) {
-                          $('#defaultForm').data('bootstrapValidator').revalidateField('FechaFinal');
-                      });
-          });
-      </script>
-
 
 
 @include('Partials.ScriptsGenerales.scriptsPartialsAbajo')
