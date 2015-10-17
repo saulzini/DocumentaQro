@@ -23,6 +23,7 @@ $factory->define(App\Patrocinador::class, function (Faker\Generator $faker) {
         'puesto' => $faker->name,
         'email' => $faker->email,
         'telefono' => $faker->phoneNumber,
+        'notas' => $faker->text,
 
         'tipo' => $faker->randomElement(['Apoyo','Paquete']),
         'id_paquete' => $faker->randomDigit,

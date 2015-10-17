@@ -230,5 +230,27 @@ class PatrocinadoresController extends Controller
         return redirect('patrocinadores');
     }
 
+    public function modificarPatrocinadores(PatrocinadoresRequest $request)
+    {
+
+        //Llamar adaptarFuncion para pasar los valores correctos
+        $patrocinador= $this->adaptarPatrocinador($request);
+
+
+        //dd($request);
+        //transaccion
+        DB::transaction(function() use ($patrocinador,$request)
+        {
+
+            //Guardar Registro
+            $patrocinador->save();
+
+        });
+
+        //El registro se ha agregado
+        Session::flash('message', $patrocinador->nombre. ' ha sido modificado');
+
+        return redirect('patrocinadores/modificar/item/'.$patrocinador->id);
+    }
 
 }
