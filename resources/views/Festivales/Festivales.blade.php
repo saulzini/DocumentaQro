@@ -1,37 +1,5 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
   <body>
-  <script type="text/javascript">
-
-      $(function () {
-
-          //previene lo del input
-          $('#fechaFinDP').keypress(function(event) {event.preventDefault();});
-          //previene lo del input
-          $('#fechaInicioDP').keypress(function(event) {event.preventDefault();});
-
-
-          //VALIDAR FECHAS EN BUSQUEDA
-
-          $('#fechaFinDP').datetimepicker({
-              format: 'DD/MM/YYYY'
-          });
-
-          $('#fechaInicioDP').datetimepicker({
-              format: 'DD/MM/YYYY'
-          });
-
-          $('#fechaInicioDP').datetimepicker();
-          $('#fechaFinDP').datetimepicker({
-              useCurrent: false //Important! See issue  #1075
-          });
-          $("#fechaInicioDP").on("dp.change", function (e) {
-              $('#fechaFinDP').data("DateTimePicker").minDate(e.date);
-          });
-          $("#fechaFinDP").on("dp.change", function (e) {
-              $('#fechaInicioDP').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
 
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
@@ -209,15 +177,15 @@
 
 
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('festivalesLista/item',$festival->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('festivales/modificar/item',$festival->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 {!! Form::open(['action'=>['FestivalesController@eliminarFestivales'],'role'=>'form'] )  !!}
                                                 <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar el festival?")'><i class="fa fa-trash-o "></i></button>
 
@@ -246,54 +214,6 @@
         </section>
       </section>>
 
-
-
-
-
-
-
-      <script type="text/javascript">
-
-          $(document).ready(function() {
-
-              $('#defaultForm').bootstrapValidator({
-                  message: 'Los valores no son válidos',
-                  feedbackIcons: {
-                      invalid: 'glyphicon glyphicon-remove',
-                      validating: 'glyphicon glyphicon-refresh'
-                  },
-                  fields: {
-
-                      FechaInicio: {
-                          validators: {
-                              date: {
-                                  format: 'DD/MM/YYYY',
-                                  message: 'El formato debe ser DD/MM/YYYY'
-                              }
-                          }
-                      },
-                      FechaFinal: {
-                          validators: {
-                              date: {
-                                  format: 'DD/MM/YYYY',
-                                  message: 'El formato debe ser DD/MM/YYYY'
-                              }
-                          }
-                      }
-                  }
-              });
-
-              $('#fechaInicioDP')
-                      .on('dp.change dp.show', function(e) {
-                          $('#defaultForm').data('bootstrapValidator').revalidateField('FechaInicio');
-                      });
-
-              $('#fechaFinDP')
-                      .on('dp.change dp.show', function(e) {
-                          $('#defaultForm').data('bootstrapValidator').revalidateField('FechaFinal');
-                      });
-          });
-      </script>
 
 
 

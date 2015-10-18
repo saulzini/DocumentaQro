@@ -270,6 +270,12 @@ Route::post('festivales/modificar/festivales','FestivalesController@modificarFes
     // dd("modificar");
 }));
 
+Route::get('festivalesExport/item/{id?}',[
+        'uses' =>'FestivalesController@exportar',
+        'as' =>'festivalesExport/item/']
+
+);
+
 
 //PARA SEDES
 

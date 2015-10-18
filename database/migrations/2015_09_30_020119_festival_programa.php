@@ -15,10 +15,10 @@ class FestivalPrograma extends Migration
         Schema::create('festival_programa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_festival')->unsigned()->index();
-            $table->foreign('id_festival')->references('id')->on('festivales')->onDelete('cascade');
+            $table->foreign('id_festival')->references('id')->on('festivales');
 
             $table->integer('id_programa')->unsigned()->index();
-            $table->foreign('id_programa')->references('id')->on('programas')->onDelete('cascade');
+            $table->foreign('id_programa')->references('id')->on('programas');
 
             $table->timestamps();
         });
