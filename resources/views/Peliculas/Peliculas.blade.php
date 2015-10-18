@@ -210,15 +210,15 @@
 
                                             <td><span>{{ $pelicula->anio}}</span></td>
                                             <td><span>{{ $pelicula->pais }}</span></td>
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('peliculasLista/item',$pelicula->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('peliculas/modificar/item',$pelicula->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 {!! Form::open(['action'=>['PeliculasController@eliminarPeliculas'],'role'=>'form'] )  !!}
                                                 <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar la pelicula?")'><i class="fa fa-trash-o "></i></button>
 

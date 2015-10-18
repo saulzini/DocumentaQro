@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeliculasController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PeliculasController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PeliculasController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76404494" vertical-offset="4029" max-vertical-offset="5321">
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="4029" max-vertical-offset="5321">
               <caret line="267" column="38" selection-start-line="267" selection-start-column="38" selection-end-line="267" selection-end-column="38" />
               <folding />
             </state>
@@ -98,19 +98,23 @@
       <file leaf-file-name="Festivales.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Festivales/Festivales.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2853" max-vertical-offset="3825">
-              <caret line="187" column="67" selection-start-line="187" selection-start-column="67" selection-end-line="187" selection-end-column="67" />
+            <state vertical-scroll-proportion="-8.615385" vertical-offset="2819" max-vertical-offset="3825">
+              <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sedes.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Sedes/Sedes.blade.php">
+      <file leaf-file-name="Peliculas.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Peliculas/Peliculas.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2802" max-vertical-offset="3774">
-              <caret line="182" column="44" selection-start-line="182" selection-start-column="44" selection-end-line="182" selection-end-column="67" />
-              <folding />
+            <state vertical-scroll-proportion="0.6494382" vertical-offset="3451" max-vertical-offset="5202">
+              <caret line="220" column="67" selection-start-line="220" selection-start-column="67" selection-end-line="220" selection-end-column="67" />
+              <folding>
+                <element signature="e#8072#8090#0#HTML" expanded="true" />
+                <element signature="e#8438#8456#0#HTML" expanded="true" />
+                <element signature="e#8812#8830#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,12 +146,13 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/Festivales/FestivalesConsultar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Festivales/Reporte.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Festivales/Festivales.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_09_30_020119_festival_programa.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FestivalesController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_09_30_015538_funcion_pelicula.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_09_30_021419_pelicula_trafico.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PeliculasController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Festivales/Festivales.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Peliculas/Peliculas.blade.php" />
       </list>
     </option>
   </component>
@@ -321,6 +326,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Sedes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="documentaQro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Docu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Peliculas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,13 +629,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Campus.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -907,14 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Festivales/Festivales.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2853" max-vertical-offset="3825">
-          <caret line="187" column="67" selection-start-line="187" selection-start-column="67" selection-end-line="187" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Sedes/Reporte.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2364" max-vertical-offset="3094">
@@ -973,9 +985,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PeliculasController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76404494" vertical-offset="4029" max-vertical-offset="5321">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="4029" max-vertical-offset="5321">
           <caret line="267" column="38" selection-start-line="267" selection-start-column="38" selection-end-line="267" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Festivales/Festivales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.615385" vertical-offset="2819" max-vertical-offset="3825">
+          <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Peliculas/Peliculas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6494382" vertical-offset="3451" max-vertical-offset="5202">
+          <caret line="220" column="67" selection-start-line="220" selection-start-column="67" selection-end-line="220" selection-end-column="67" />
+          <folding>
+            <element signature="e#8072#8090#0#HTML" expanded="true" />
+            <element signature="e#8438#8456#0#HTML" expanded="true" />
+            <element signature="e#8812#8830#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
