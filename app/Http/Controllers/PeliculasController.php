@@ -12,6 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use PDOException;
 
 class PeliculasController extends Controller
 {
@@ -257,11 +258,15 @@ class PeliculasController extends Controller
 
         $peliculas= Pelicula::findOrFail($request->peliculasID);
 
-        DB::transaction(function() use ($peliculas)
+        try
         {
             $peliculas->delete();
-
-        });
+        }
+        catch(PDOException  $e)
+        {
+            Session::flash('error', $peliculas->titulo. ' no pudo ser eliminado, una función o tráfico está relacionado a él');
+            return redirect('peliculas');
+        }
         //El registro se ha eliminado
         Session::flash('message', $peliculas->titulo. ' ha sido eliminado');
         return redirect('peliculas');

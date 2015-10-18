@@ -15,7 +15,7 @@ class PeliculaTrafico extends Migration
         Schema::create('pelicula_trafico', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_pelicula')->unsigned()->index();
-            $table->foreign('id_pelicula')->references('id')->on('peliculas')->onDelete('cascade');
+            $table->foreign('id_pelicula')->references('id')->on('peliculas');
 
             $table->integer('id_trafico')->unsigned()->index();
             $table->foreign('id_trafico')->references('id')->on('traficos')->onDelete('cascade');
