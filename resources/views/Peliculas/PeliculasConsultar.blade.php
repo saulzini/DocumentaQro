@@ -178,12 +178,16 @@
 
                                               <dt>Tipo</dt><dd>{{ $tipo}}</dd>
                                               <dt>Subtitulos</dt><dd>{{ $subtitulos }}</dd>
-                                              <dt>Trailer</dt><dd>{{ $trailer}}</dd>
-                                              <dt>Material</dt><dd><a href="{{ asset($material)}}">Click para descargar</a></dd>
+                                              <dt>Trailer</dt><dd>@if($trailer!=""){{ $trailer}}@else No tiene @endif</dd>
+                                              <dt>Material</dt><dd>@if($material!="")<a href="{{ asset($material)}}">Click para descargar</a>@else No tiene @endif</dd>
                                               <br>
-                                              <dt>Sinopsis</dt><dd>{{ $sinopsis}}</dd>
+                                              <dt>Sinopsis</dt><dd>@if($sinopsis!=""){{ $sinopsis}}@else No tiene @endif</dd>
                                               <br>
-                                              <dt>Notas</dt><dd>{{ $notas}}</dd>
+                                              <dt>Notas</dt><dd>@if($notas!=""){{ $notas}}@else No tiene @endif</dd>
+
+                                              <div class="form-group" align="center">
+                                                  <a href="{{ route('peliculasExport/item/',$peliculaItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                              </div>
 
                                           </dl>
 

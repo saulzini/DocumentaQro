@@ -277,7 +277,7 @@ class PeliculasController extends Controller
         //obtener funcion
 
 
-        $peliculaItem = Pelicula::find($id);
+        $peliculaItem = Pelicula::findOrFail($id);
 
         $titulo = $peliculaItem->titulo;
 
@@ -312,6 +312,18 @@ class PeliculasController extends Controller
 
 
         ]);
+    }
+
+
+    public function exportar($id){
+        $peliculaItem = Pelicula::findOrFail($id);
+
+        $view =  \View::make('Peliculas/Reporte',compact('peliculaItem'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('pelicula.pdf');
+
+
     }
 
 }

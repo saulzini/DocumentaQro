@@ -146,6 +146,12 @@ Route::post('peliculas/modificar/peliculas','PeliculasController@modificarPelicu
     // dd("modificar");
 }));
 
+Route::get('peliculasExport/item/{id?}',[
+        'uses' =>'PeliculasController@exportar',
+        'as' =>'peliculasExport/item/']
+
+);
+
 
 
 //RUTAS Para trafico
