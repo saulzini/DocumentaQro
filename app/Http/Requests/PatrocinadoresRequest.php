@@ -28,7 +28,8 @@ class PatrocinadoresRequest extends Request
             'Nombre'=> 'required',
             'Email' => 'email',
             'Tipo' => 'in:Apoyo,Paquete',
-            'Paquete'=> 'exists:paquetes,id'
+            'Paquete'=> 'exists:paquetes,id',
+            'Telefono' => 'numeric'
         ];
     }
 }

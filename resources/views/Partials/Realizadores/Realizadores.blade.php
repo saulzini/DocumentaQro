@@ -7,8 +7,9 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
+        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="Realizador" class="col-lg-2 control-label">Nombre del realizador</label>
+            <label for="Realizador" class="col-lg-2 control-label"><strong>*</strong>Nombre del realizador</label>
             <div class="col-lg-10">
 
                 @if( isset($realizadoresItem))

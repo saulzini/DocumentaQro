@@ -26,7 +26,7 @@ $factory->define(App\Patrocinador::class, function (Faker\Generator $faker) {
         'notas' => $faker->text,
 
         'tipo' => $faker->randomElement(['Apoyo','Paquete']),
-        'id_paquete' => $faker->randomDigit,
+        'id_paquete' => 1,
 
 
 

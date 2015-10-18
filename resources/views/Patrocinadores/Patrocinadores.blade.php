@@ -115,7 +115,7 @@
                           <span>Paquetes</span>
                           </a></li>
                           
-                          <li><a href="javascript:;" >
+                          <li><a href="" >
                           <i class="fa fa-thumbs-o-up"></i>
                           <span>Patrocinadores</span>
                           </a></li>

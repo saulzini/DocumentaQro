@@ -28,7 +28,7 @@ class RealizadoresRequest extends Request
             'Nombre' => 'required',
             'Email' => 'email',
             //'Vinculo' => 'required',
-            //'Telefono' => 'requited|numeric'
+            'Telefono' => 'numeric'
         ];
     }
 }

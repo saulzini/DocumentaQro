@@ -35,6 +35,6 @@ class Paquete extends Model
     //N to 1
 
     public function patrocinadores(){
-        return $this->hasMany('App\Patrocinador', 'id_patrocinador','id');
+        return $this->hasMany('App\Patrocinador', 'id_paquete','id');
     }
 }
