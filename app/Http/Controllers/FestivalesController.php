@@ -13,6 +13,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use PDOException;
 
 class FestivalesController extends Controller
 {
@@ -227,12 +228,15 @@ class FestivalesController extends Controller
 
         $festival= Festival::findOrFail($request->festivalId);
 
-        DB::transaction(function() use ($festival)
+        try
         {
             $festival->delete();
-            Funcion::where('id_festival',$festival->id)->update(['id_festival'=>""]);
-
-        });
+        }
+        catch(PDOException  $e)
+        {
+            Session::flash('error', $festival->titulo. ' no pudo ser eliminado, una función o programa está relacionado a él');
+            return redirect('festivales');
+        }
         //El registro se ha eliminado
 
         Session::flash('message', $festival->titulo. ' ha sido eliminado');
