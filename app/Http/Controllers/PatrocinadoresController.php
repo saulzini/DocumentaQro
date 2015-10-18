@@ -179,8 +179,9 @@ class PatrocinadoresController extends Controller
 
         $patrocinadoresItem = Patrocinador::findOrFail($id);
         $tipos = ['Apoyo','Paquete'];
+        $paqueteSeleccion=$patrocinadoresItem->paquetes->id;
         $Paquetes= Paquete::get();
-
+      //  dd($Paquetes);
 
    // dd($patrocinadoresItem->paquetes->descripcion);
 
@@ -189,6 +190,7 @@ class PatrocinadoresController extends Controller
             'patrocinadoresItem'=>$patrocinadoresItem ,
             'Tipos' => $tipos,
             'Paquetes' => $Paquetes,
+            'paqueteSeleccion' =>$paqueteSeleccion,
 
 
 

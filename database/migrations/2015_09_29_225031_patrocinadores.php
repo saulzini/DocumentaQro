@@ -17,7 +17,7 @@ class Patrocinadores extends Migration
             $table->string('nombre');
 
             //
-            $table->enum('StatusApoyo',['FALTA']);
+          //  $table->enum('StatusApoyo',['FALTA']);
 
 
             $table->string('puesto');

@@ -171,6 +171,9 @@
                                               @else
                                                   <dt>Paquete</dt><dd>No tiene paquete</dd>
                                               @endif
+
+                                              <dt>Notas</dt><dd>{{ $patrocinadoresItem->notas}}</dd>
+
                                           </dl>
 
 
