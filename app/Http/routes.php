@@ -146,6 +146,12 @@ Route::post('peliculas/modificar/peliculas','PeliculasController@modificarPelicu
     // dd("modificar");
 }));
 
+Route::get('peliculasExport/item/{id?}',[
+        'uses' =>'PeliculasController@exportar',
+        'as' =>'peliculasExport/item/']
+
+);
+
 
 
 //RUTAS Para trafico
@@ -209,130 +215,135 @@ Route::post('traficos/modificar/traficos','TraficosController@modificarTraficos'
     // dd("modificar");
 }));
 
+//Para festivales
 
-Route::resource('excel','ExcelController');
 
-/* PARA DEBUGEAR QUERIES
-Event::listen('illuminate.query', function($query)
-{
-    var_dump($query);
-});
-*/
-
-// RUTAS PARA INTEGRANTES
-
-Route::get('integrantes',[
-    'uses' => 'IntegrantesController@index',
-    'as' =>'integrantes'
+Route::get('festivales',[
+    'uses' => 'FestivalesController@index',
+    'as' =>'festivales'
 
 ]);
 
 
 
-Route::get('integrantesLista',[
-        'uses' =>'IntegrantesController@buscador',
-        'as' =>'integrantesLista']
+Route::get('festivalesLista',[
+        'uses' =>'FestivalesController@buscador',
+        'as' =>'festivalesLista']
 
 );
 
 
 
-Route::get('integrantesLista/item/{id?}',[
-        'uses' =>'IntegrantesController@seleccion',
-        'as' =>'integrantesLista/item']
+Route::get('festivalesLista/item/{id?}',[
+        'uses' =>'FestivalesController@seleccion',
+        'as' =>'festivalesLista/item']
 
 );
 
 
 
-Route::post('integrantes/eliminar','IntegrantesController@eliminarIntegrantes',array('before' => 'csrf', function()
-{
-    //  dd("hghgh");
-}));
-
-
-Route::get('integrantes/agregar',[
-    'uses' => 'IntegrantesController@pagAgregar',
-    'as' =>'integrantesAgregar'
-
-]);
-
-
-Route::post('integrantes/agregar/crear','IntegrantesController@agregarIntegrantes',array('before' => 'csrf', function()
+Route::post('Festivales/eliminar','FestivalesController@eliminarFestivales',array('before' => 'csrf', function()
 {
 
 }));
 
-Route::get('integrantes/modificar/item/{id}',[
-    'uses' => 'IntegrantesController@pagModificar',
-    'as' =>'integrantes/modificar/item'
+
+
+
+
+
+Route::get('festivales/agregar',[
+    'uses' => 'FestivalesController@pagAgregar',
+    'as' =>'festivalesAgregar'
 
 ]);
 
 
-Route::post('integrantes/modificar/integrantes','IntegrantesController@modificarIntegrantes',array('before' => 'csrf', function()
+Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('festivales/modificar/item/{id}',[
+    'uses' => 'FestivalesController@pagModificar',
+    'as' =>'festivales/modificar/item'
+
+]);
+
+
+Route::post('festivales/modificar/festivales','FestivalesController@modificarFestivales',array('before' => 'csrf', function()
 {
     // dd("modificar");
 }));
 
-// RUTAS PARA CARACTERISTICAS
+Route::get('festivalesExport/item/{id?}',[
+        'uses' =>'FestivalesController@exportar',
+        'as' =>'festivalesExport/item/']
 
-Route::get('caracteristicas',[
-    'uses' => 'CaracteristicasController@index',
-    'as' =>'caracteristicas'
+);
+
+
+//PARA SEDES
+
+
+Route::get('sedes',[
+    'uses' => 'SedesController@index',
+    'as' =>'sedes'
 
 ]);
 
 
 
-Route::get('caracteristicasLista',[
-        'uses' =>'CaracteristicasController@buscador',
-        'as' =>'caracteristicasLista']
+Route::get('sedesLista',[
+        'uses' =>'SedesController@buscador',
+        'as' =>'sedesLista']
 
 );
 
 
 
-Route::get('caracteristicasLista/item/{id?}',[
-        'uses' =>'CaracteristicasController@seleccion',
-        'as' =>'caracteristicasLista/item']
+Route::get('sedesLista/item/{id?}',[
+        'uses' =>'SedesController@seleccion',
+        'as' =>'sedesLista/item']
 
 );
 
 
 
-Route::post('caracteristicas/eliminar','CaracteristicasController@eliminarCaracteristicas',array('before' => 'csrf', function()
+Route::post('Sedes/eliminar','SedesController@eliminarSedes',array('before' => 'csrf', function()
 {
-    //  dd("hghgh");
+    dd("asdf");
 }));
 
 
-Route::get('caracteristicas/agregar',[
-    'uses' => 'CaracteristicasController@pagAgregar',
-    'as' =>'caracteristicasAgregar'
+
+
+
+
+Route::get('sedes/agregar',[
+    'uses' => 'SedesController@pagAgregar',
+    'as' =>'sedesAgregar'
 
 ]);
 
 
-Route::post('caracteristicas/agregar/crear','CaracteristicasController@agregarCaracteristicas',array('before' => 'csrf', function()
+Route::post('sedes/agregar/crear','SedesController@agregarSedes',array('before' => 'csrf', function()
 {
 
 }));
 
-Route::get('caracteristicas/modificar/item/{id}',[
-    'uses' => 'CaracteristicasController@pagModificar',
-    'as' =>'caracteristicas/modificar/item'
+Route::get('sedes/modificar/item/{id}',[
+    'uses' => 'SedesController@pagModificar',
+    'as' =>'sedes/modificar/item'
 
 ]);
 
 
-Route::post('caracteristicas/modificar/caracteristicas','CaracteristicasController@modificarCaracteristicas',array('before' => 'csrf', function()
+Route::post('sedes/modificar/sedes','SedesController@modificarSedes',array('before' => 'csrf', function()
 {
     // dd("modificar");
 }));
 
-<<<<<<< HEAD
-=======
 Route::get('sedesExport/item/{id?}',[
         'uses' =>'SedesController@exportar',
         'as' =>'sedesExport/item/']
@@ -350,72 +361,128 @@ Event::listen('illuminate.query', function($query)
 */
 
 
->>>>>>> reportesFunciones
 /*
  *
- *  Rutas para paquetes
+ * Rutas para realizadores
  *
  * */
 
-Route::get('paquetes',[
-    'uses' => 'PaquetesController@index',
-    'as' =>'paquetes'
 
-]);
-
-Route::get('paquetes/agregar',[
-    'uses' => 'PaquetesController@pagAgregar',
-    'as' =>'paquetesAgregar'
+Route::get('realizadores',[
+    'uses' => 'RealizadoresController@index',
+    'as' =>'realizadores'
 
 ]);
 
 
-Route::post('paquetes/agregar/crear','PaquetesController@agregarPaquetes',array('before' => 'csrf', function()
+
+Route::get('realizadoresLista',[
+        'uses' =>'RealizadoresController@buscador',
+        'as' =>'realizadoresLista']
+
+);
+
+
+
+Route::get('realizadoresLista/item/{id?}',[
+        'uses' =>'RealizadoresController@seleccion',
+        'as' =>'realizadoresLista/item']
+
+);
+
+
+
+Route::post('realizadores/eliminar','RealizadoresController@eliminarRealizadores',array('before' => 'csrf', function()
 {
-    //
+    //  dd("hghgh");
 }));
 
-
-Route::get('paquetesLista',[
-        'uses' =>'PaquetesController@buscador',
-        'as' =>'paquetesLista']
-
-);
-
-
-
-Route::get('paquetesLista/item/{id?}',[
-        'uses' =>'PaquetesController@seleccion',
-        'as' =>'paquetesLista/item']
-
-);
-
-Route::get('paquetesExport/item/{id?}',[
-        'uses' =>'PdfController@exportar',
-        'as' =>'paquetesExport/item/']
-
-);
-
-Route::get('paquetes/modificar/item/{id}',[
-    'uses' => 'PaquetesController@pagModificar',
-    'as' =>'paquetes/modificar/item'
+Route::get('realizadores/agregar',[
+    'uses' => 'RealizadoresController@pagAgregar',
+    'as' =>'realizadoresAgregar'
 
 ]);
 
 
-Route::post('paquetes/modificar/paquetes','PaquetesController@modificarPaquetes',array('before' => 'csrf', function()
+Route::post('realizadores/agregar/crear','RealizadoresController@agregarRealizadores',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('realizadores/modificar/item/{id}',[
+    'uses' => 'RealizadoresController@pagModificar',
+    'as' =>'realizadores/modificar/item'
+
+]);
+
+
+Route::post('realizadores/modificar/realizadores','RealizadoresController@modificarRealizadores',array('before' => 'csrf', function()
 {
     // dd("modificar");
 }));
 
 
 
-Route::post('paquetes/eliminar','PaquetesController@eliminarPaquetes',array('before' => 'csrf', function()
+/*
+ *
+ * Rutas para patrocinadores
+ *
+ * */
+
+
+Route::get('patrocinadores',[
+    'uses' => 'PatrocinadoresController@index',
+    'as' =>'patrocinadores'
+
+]);
+
+
+
+Route::get('patrocinadoresLista',[
+        'uses' =>'PatrocinadoresController@buscador',
+        'as' =>'patrocinadoresLista']
+
+);
+
+
+
+Route::get('patrocinadoresLista/item/{id?}',[
+        'uses' =>'PatrocinadoresController@seleccion',
+        'as' =>'patrocinadoresLista/item']
+
+);
+
+
+
+Route::post('patrocinadores/eliminar','PatrocinadoresController@eliminarPatrocinadores',array('before' => 'csrf', function()
+{
+    //  dd("hghgh");
+}));
+
+Route::get('patrocinadores/agregar',[
+    'uses' => 'PatrocinadoresController@pagAgregar',
+    'as' =>'patrocinadoresAgregar'
+
+]);
+
+
+Route::post('patrocinadores/agregar/crear','PatrocinadoresController@agregarPatrocinadores',array('before' => 'csrf', function()
 {
 
-<<<<<<< HEAD
 }));
-=======
+
+Route::get('patrocinadores/modificar/item/{id}',[
+    'uses' => 'PatrocinadoresController@pagModificar',
+    'as' =>'patrocinadores/modificar/item'
+
+]);
+
+
+Route::post('patrocinadores/modificar/patrocinadores','PatrocinadoresController@modificarPatrocinadores',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
 // RUTAS PARA INTEGRANTES
 
 Route::get('integrantes',[
@@ -552,7 +619,6 @@ Route::post('paquetes/agregar/crear','PaquetesController@agregarPaquetes',array(
     //
 }));
 
->>>>>>> reportesFunciones
 
 Route::get('paquetesLista',[
         'uses' =>'PaquetesController@buscador',
@@ -651,8 +717,6 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
-<<<<<<< HEAD
-=======
 //RUTAS DE REPORTES
 Route::get('reportes/funciones',[
     'uses' => 'ReportesController@index',
@@ -671,4 +735,3 @@ Route::post('reportes/funciones/consultar','ReportesController@consultarFuncione
 {
 
 }));
->>>>>>> reportesFunciones
