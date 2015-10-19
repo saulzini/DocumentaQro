@@ -179,7 +179,7 @@ class SedesController extends Controller
             }
             catch(PDOException  $e)
             {
-                Session::flash('error', $sede->descripcion. ' no pudo ser eliminado, integridad de la base de datos');
+                Session::flash('error', $sede->descripcion. ' no pudo ser eliminado, está relacionado a una función');
                 return redirect('sedes');
             }
 
