@@ -16,6 +16,7 @@ class FestivalTest extends TestCase
     {
         $this->visit('festivales/agregar')
         ->type("Alex 1000","Titulo")
+         
             ->press('Agregar')
         ->see("Alex 1000 ha sido agregado");
     }
