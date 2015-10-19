@@ -55,7 +55,7 @@
       <file leaf-file-name="FestivalesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FestivalesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4880" max-vertical-offset="5457">
+            <state vertical-scroll-proportion="-61.423077" vertical-offset="3571" max-vertical-offset="5457">
               <caret line="315" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
 >>>>>>> festival
               <folding />
@@ -63,6 +63,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="Festivales.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Festivales/Festivales.blade.php">
@@ -77,8 +78,22 @@
 =======
       <file leaf-file-name="TestCase.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
+=======
+      <file leaf-file-name="FestivalTest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/FestivalTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+            <state vertical-scroll-proportion="0.33406115" vertical-offset="0" max-vertical-offset="1326">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RealizadoresModificar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Realizadores/RealizadoresModificar.blade.php">
+>>>>>>> festival
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4216">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> festival
               <folding />
@@ -86,6 +101,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="Peliculas.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Peliculas/Peliculas.blade.php">
@@ -100,8 +116,12 @@
 =======
       <file leaf-file-name="phpunit.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phpunit.xml">
+=======
+      <file leaf-file-name="RealizadoresConsultar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Realizadores/RealizadoresConsultar.blade.php">
+>>>>>>> festival
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3264">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> festival
               <folding />
@@ -109,6 +129,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="Reporte.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Peliculas/Reporte.blade.php">
@@ -129,12 +150,20 @@
             <state vertical-scroll-proportion="0.59388644" vertical-offset="0" max-vertical-offset="1173">
               <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
 >>>>>>> festival
+=======
+      <file leaf-file-name="RealizadoresAgregar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Realizadores/RealizadoresAgregar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3502">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> festival
               <folding />
 >>>>>>> sedes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="58ef6bd043a707e2396b55fb07da4ef5" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/framework/views/58ef6bd043a707e2396b55fb07da4ef5">
@@ -153,11 +182,19 @@
             <state vertical-scroll-proportion="-11.769231" vertical-offset="2380" max-vertical-offset="4539">
               <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
 >>>>>>> festival
+=======
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6538463" vertical-offset="3720" max-vertical-offset="9095">
+              <caret line="238" column="13" selection-start-line="238" selection-start-column="13" selection-end-line="238" selection-end-column="32" />
+>>>>>>> festival
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
@@ -176,11 +213,19 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="2955" max-vertical-offset="4029">
               <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
 >>>>>>> festival
+=======
+      <file leaf-file-name="RealizadoresController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RealizadoresController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="79.76923" vertical-offset="2074" max-vertical-offset="3995">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> festival
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="PeliculasConsultar.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Peliculas/PeliculasConsultar.blade.php">
@@ -198,6 +243,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="4162" max-vertical-offset="9095">
               <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+>>>>>>> festival
+=======
+      <file leaf-file-name="FestivalesModificar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Festivales/FestivalesModificar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="4539">
+              <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
 >>>>>>> festival
               <folding />
             </state>
@@ -407,6 +459,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="documentaQro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Docu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Realizadores" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -686,6 +760,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -693,9 +770,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -790,27 +864,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_29_223210_realizadores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_29_220338_peliculas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory_Funciones.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/FuncionesSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1153,8 +1206,11 @@
 =======
         <state vertical-scroll-proportion="0.0" vertical-offset="18850" max-vertical-offset="20026">
           <caret line="1117" column="67" selection-start-line="1117" selection-start-column="67" selection-end-line="1117" selection-end-column="67" />
+<<<<<<< HEAD
 >>>>>>> festival
           <folding />
+=======
+>>>>>>> festival
         </state>
       </provider>
     </entry>
@@ -1211,14 +1267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4162" max-vertical-offset="9095">
-          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
@@ -1228,6 +1276,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PeliculasController.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1297,6 +1346,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> festival
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/FestivalesRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="629">
@@ -1315,16 +1366,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Festivales/FestivalesModificar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="2380" max-vertical-offset="4539">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="4539">
           <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Realizadores/RealizadoresModificar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4216">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Realizadores/RealizadoresConsultar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Realizadores/RealizadoresAgregar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3502">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RealizadoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="79.76923" vertical-offset="2074" max-vertical-offset="3995">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FestivalesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-61.423077" vertical-offset="3571" max-vertical-offset="5457">
+          <caret line="315" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6538463" vertical-offset="3720" max-vertical-offset="9095">
+          <caret line="238" column="13" selection-start-line="238" selection-start-column="13" selection-end-line="238" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/FestivalTest.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.59388644" vertical-offset="0" max-vertical-offset="1173">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+>>>>>>> festival
+=======
+        <state vertical-scroll-proportion="0.33406115" vertical-offset="0" max-vertical-offset="1326">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
 >>>>>>> festival
           <folding />
 >>>>>>> sedes
