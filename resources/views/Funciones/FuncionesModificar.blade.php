@@ -1,22 +1,57 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
 
   <body>
-    <script type="text/javascript">
+<script type="text/javascript">
 
     $(document).ready(function() {
         $('#Pelicula').multiselect({
-            enableFiltering: true,
-            buttonWidth: '100%',
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
         });
 
         $('#Patrocinador').multiselect({
-            enableFiltering: true,
-            buttonWidth: '100%',
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#Sede').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#Programa').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#Festival').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#ProgramadoPor').change(function() {
+           //Para obtener de que grupo es
+            var selected = $(':selected', this);
+           // alert(selected.parent().attr('label'));
+            $('#Tipo').val(selected.parent().attr('label'));
+         //   alert($('#Tipo').val());
+         //   alert(selected.closest('optgroup').attr('label'));
         });
 
 
     });
-   </script>
+</script>
+
 
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
@@ -61,7 +96,7 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="#" >
+                      <a href="#" class="active">
                           <i class="fa fa-video-camera"></i>
                           <span>Función</span>
                       </a>

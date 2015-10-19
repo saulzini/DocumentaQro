@@ -139,7 +139,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label"><strong>*</strong>Programas</label>
+            <label class="col-lg-2 control-label">Programa</label>
             <div class="col-lg-10">
 
 
@@ -189,7 +189,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label"><strong>*</strong>Patrocinadores</label>
+            <label class="col-lg-2 control-label">Patrocinadores</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Patrocinador" name="Patrocinadores[]" multiple="multiple">
                     @if(isset($funcionesPatrocinadores) && !$funcionesPatrocinadores->isEmpty())
@@ -216,7 +216,7 @@
 
 
         <div class="form-group">
-            <label class="col-lg-2 control-label"><strong>*</strong>Programado por</label>
+            <label class="col-lg-2 control-label">Programado por</label>
             <div class="col-lg-10">
                 @if (isset($funcionesItem))
                  {!!Form::text('Programado' ,$funcionesItem->programadopor,['class'=>'form-control','placeholder'=>'Programado por'])!!}
