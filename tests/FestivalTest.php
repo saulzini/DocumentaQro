@@ -55,6 +55,15 @@ class FestivalTest extends TestCase
             ->see("10 ha sido modificado");
 
     }
+*/
+    public function testPrueba()
+    {
+        $this->withoutMiddleware();
+        $response = $this->call('POST', 'festivales/agregar/crear', ['Titulo' => 'SaulP','Patrocinadores'=>['1','2']]);
+        $this->seeInDatabase('festivales', ['titulo' => 'Saul']);
+
+
+    }
 
 
 
