@@ -351,7 +351,7 @@ Route::get('sedesExport/item/{id?}',[
 );
 
 
-Route::resource('excel','ExcelController');
+
 
 /* PARA DEBUGEAR QUERIES
 Event::listen('illuminate.query', function($query)
@@ -542,3 +542,22 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+//RUTAS DE REPORTES
+Route::get('reportes/funciones',[
+    'uses' => 'ReportesController@index',
+    'as' =>'reportes'
+]);
+
+
+Route::get('reporteExcel/{reporte}',[
+    'uses' => 'ExcelController@export',
+    'as' =>'reporteFuncion'
+]);
+
+
+
+Route::post('reportes/funciones/consultar','ReportesController@consultarFunciones',array('before' => 'csrf', function()
+{
+
+}));

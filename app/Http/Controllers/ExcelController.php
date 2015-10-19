@@ -15,15 +15,18 @@ class ExcelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function export($report)
     {
+        if($report=='1')
+            dd("hola");
+
         Excel::create('Laravel Excel', function($excel) {
 
             $excel->sheet('Productos', function($sheet) {
 
-                $peliculas = Pelicula::all();
-                $funciones=Funcion::all();
+                $funciones=session()->get('funciones');
                 $sheet->fromArray($funciones);
+
 
             });
         })->export('xls');
