@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class ReportesController extends Controller
 {
@@ -45,10 +46,10 @@ class ReportesController extends Controller
             $resultado[0]['Asistencia']=0;
             $resultado[0]['Duracion']=0;
             $resultado[0]["      "]="";
-            $resultado[0]['Funciones']=0;
-            $resultado[0]['Cortometrajes']=0;
+            $resultado[0]['Peliculas']=0;
             $resultado[0]['Largometrajes']=0;
-            $resultado[0]['Total peliculas']=0;
+            $resultado[0]['Cortometrajes']=0;
+            $resultado[0]['Funciones']=0;
             $resultado[0]['Total espectadores']=0;
             $resultado[0]['Total minutos']=0;
 
@@ -64,7 +65,7 @@ class ReportesController extends Controller
                 $peliculas=$funcion->peliculas;
                foreach ($peliculas as $pelicula)
                {
-                   $resultado[0]['Total peliculas']++;
+                   $resultado[0]['Peliculas']++;
                    if($pelicula->tipo=="Cortometraje")
                        $resultado[0]['Cortometrajes']++;
                    if($pelicula->tipo=="Largometraje")
@@ -83,8 +84,20 @@ class ReportesController extends Controller
 
 
         }
-        return view('Reportes/ReporteFuncion')->with([
-        ]);
+        if($resultado[0]['Funciones']>0) {
+            return view('Reportes/ReporteFuncion')->with([
+                'resultados'=>$resultado,
+                'FechaIni'=>$request->FechaInicio,
+                'FechaFin'=>$request->FechaFinal
+            ]);
+        }
+        else
+        {
+            Session::flash('error', 'No se encontraron resultados');
+            return redirect('reportes/funciones');
+        }
+
+
     }
 
     /**

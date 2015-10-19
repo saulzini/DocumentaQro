@@ -146,14 +146,15 @@
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><i class="fa fa-angle-right"></i>Búsqueda</h3>
+                <h3><i class="fa fa-angle-right"></i>Reportes</h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Reportes</h4>
+                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Funciones</h4>
+                            @include('Partials.Mensajes.mensajes')
                             <br>
                             <div class="row">
                                 <div class="col-xs-12">
@@ -166,8 +167,12 @@
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                         </span>
 
+                                                    @if(isset($FechaIni))
+                                                    {!!Form::text('FechaInicio' ,$FechaIni,['class'=>'form-control','placeholder'=>'Fecha Inicio'])!!}
+                                                    @else
+                                                        {!!Form::text('FechaInicio' ,null,['class'=>'form-control','placeholder'=>'Fecha Inicio'])!!}
 
-                                                    {!!Form::text('FechaInicio' ,null,['class'=>'form-control','placeholder'=>'Fecha Inicio'])!!}
+                                                    @endif
 
                                                 </div>
                                             </div>
@@ -179,8 +184,11 @@
                                                           <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                           </span>
-                                                    {!!Form::text('FechaFinal' ,null,['class'=>'form-control','placeholder'=>'Fecha Final'])!!}
-
+                                                    @if(isset($FechaFin))
+                                                    {!!Form::text('FechaFinal' ,$FechaFin,['class'=>'form-control','placeholder'=>'Fecha Final'])!!}
+                                                   @else
+                                                        {!!Form::text('FechaFinal' ,null,['class'=>'form-control','placeholder'=>'Fecha Final'])!!}
+                                                   @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -196,10 +204,11 @@
                                     </div>
                             </div>
                             <hr>
+                    @if(isset($resultados))
 
                             <h5><i class="fa fa-angle-right"></i>Historial</h5>
-
-                            <table  class="table table-striped table-advance table-hover" id="sample_1">
+                           <div align="center">
+                            <table  class="table table-striped table-advance table-hover" id="sample_1" >
                                 <thead >
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> Función </th>
@@ -209,16 +218,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach ($resultados as $resultado)
 
                                         <tr>
-                                            <td><a href="#">Funcion</a></td>
-                                            <td class="#">Asistentes</td>
-                                            <td class="#">Minutos</td>
-
+                                            <td style="width: 50%">{{$resultado['Funcion']}}</td>
+                                            <td style="width: 25%">{{$resultado['Asistencia']}}</td>
+                                            <td style="width: 25%">{{$resultado['Duracion']}}</td>
                                        </tr>
-
+                                @endforeach
                                 </tbody>
                             </table>
+                               </div>
 
 
                         <br><br>
@@ -229,26 +239,26 @@
                             <div class="row">
                                 <div class="col-xs-12" align="center">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                     <div class="form-group">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-2">
                                    <dl class="dl-horizontal">
-                                        <dt>Funciones</dt><dd>llaalala</dd><br>
-                                        <dt>Largometrajes</dt><dd>llaalala</dd><br>
-                                        <dt>Cortometrajes</dt><dd>llaalala</dd><br>
+                                        <dt>Peliculas</dt><dd>{{$resultados[0]['Peliculas']}}</dd><br>
+                                        <dt>Largometrajes</dt><dd>{{$resultados[0]['Largometrajes']}}</dd><br>
+                                        <dt>Cortometrajes</dt><dd>{{$resultados[0]['Cortometrajes']}}</dd><br>
                                     </dl>
                                          </div>
                                      </div>
                                 </div>
 
 
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <div class="form-group">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-2">
                                             <dl class="dl-horizontal">
-                                                <dt>Total peliculas</dt><dd>llaalala</dd><br>
-                                                <dt>Total espectadores</dt><dd>llaalala</dd><br>
-                                                <dt>Total minutos</dt><dd>llaalala</dd><br>
+                                                <dt>Funciones</dt><dd>{{$resultados[0]['Funciones']}}</dd><br>
+                                                <dt>Total espectadores</dt><dd>{{$resultados[0]['Total espectadores']}}</dd><br>
+                                                <dt>Total minutos</dt><dd>{{$resultados[0]['Total minutos']}}</dd><br>
                                             </dl>
                                         </div>
                                     </div>
@@ -256,11 +266,14 @@
                                    </div>
                              </div>
                         <div clas="row">
+
                         <div class="col-xs-12" align="center">
                             <a href="{{route('reporteFuncion',"1")}}">
                             <button class="btn btn-success">Exportar a excel</button>
                             </a>
                         </div>
+
+                    @endif
                     </div>
 
 

@@ -17,15 +17,17 @@ class ExcelController extends Controller
      */
     public function export($report)
     {
+        $data=null;
         if($report=='1')
-            dd("hola");
+        {
+            $data=session()->get('funciones');
+        }
 
-        Excel::create('Laravel Excel', function($excel) {
+        Excel::create('Laravel Excel', function($excel) use($data) {
 
-            $excel->sheet('Productos', function($sheet) {
+            $excel->sheet('Export', function($sheet) use($data) {
 
-                $funciones=session()->get('funciones');
-                $sheet->fromArray($funciones);
+                $sheet->fromArray($data);
 
 
             });
