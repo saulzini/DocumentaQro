@@ -170,6 +170,7 @@ class PatrocinadoresController extends Controller
         $patrocinador ->telefono=$request->Telefono;
         $patrocinador ->tipo=$request->Tipo;
         $patrocinador ->id_paquete=$request->Paquete;
+        $patrocinador ->notas=$request->Notas;
 
         return $patrocinador;
 
@@ -183,6 +184,7 @@ class PatrocinadoresController extends Controller
         $Paquetes= Paquete::get();
       //  dd($Paquetes);
 
+      //  dd($patrocinadoresItem->notas);
    // dd($patrocinadoresItem->paquetes->descripcion);
 
         return view('Patrocinadores/PatrocinadoresModificar')->with([

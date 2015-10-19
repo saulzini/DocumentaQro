@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Carlos
@@ -9,7 +10,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 
 class Caracteristica extends Model
 {
@@ -31,8 +31,6 @@ class Caracteristica extends Model
      * @var array
      */
     protected $fillable = ['nombre'];
-
-
     /**
      * The attributes excluded from the model's JSON form.
      *
@@ -52,4 +50,15 @@ class Caracteristica extends Model
             $query->where('nombre',"LIKE","%$nombre%");
         }
     }
+
+
+    protected $hidden = ['remember_token'];
+
+    //N TO N
+
+    public function paquetes(){
+        return $this->belongsToMany('App\Paquete', 'caracteristica_paquete','id_caracteristica','id_paquete');
+    }
+
 }
+

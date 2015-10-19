@@ -331,3 +331,126 @@ Route::post('caracteristicas/modificar/caracteristicas','CaracteristicasControll
     // dd("modificar");
 }));
 
+/*
+ *
+ *  Rutas para paquetes
+ *
+ * */
+
+Route::get('paquetes',[
+    'uses' => 'PaquetesController@index',
+    'as' =>'paquetes'
+
+]);
+
+Route::get('paquetes/agregar',[
+    'uses' => 'PaquetesController@pagAgregar',
+    'as' =>'paquetesAgregar'
+
+]);
+
+
+Route::post('paquetes/agregar/crear','PaquetesController@agregarPaquetes',array('before' => 'csrf', function()
+{
+    //
+}));
+
+
+Route::get('paquetesLista',[
+        'uses' =>'PaquetesController@buscador',
+        'as' =>'paquetesLista']
+
+);
+
+
+
+Route::get('paquetesLista/item/{id?}',[
+        'uses' =>'PaquetesController@seleccion',
+        'as' =>'paquetesLista/item']
+
+);
+
+Route::get('paquetesExport/item/{id?}',[
+        'uses' =>'PdfController@exportar',
+        'as' =>'paquetesExport/item/']
+
+);
+
+Route::get('paquetes/modificar/item/{id}',[
+    'uses' => 'PaquetesController@pagModificar',
+    'as' =>'paquetes/modificar/item'
+
+]);
+
+
+Route::post('paquetes/modificar/paquetes','PaquetesController@modificarPaquetes',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
+
+Route::post('paquetes/eliminar','PaquetesController@eliminarPaquetes',array('before' => 'csrf', function()
+{
+
+}));
+
+
+
+
+/*
+ *
+ * Rutas de inicio de sesion
+ *
+ *
+ * */
+
+// Authentication routes...
+Route::get('iniciarSesion',[
+    'uses' => 'Auth\AuthController@getLogin',
+    'as' => 'iniciarSesion'
+
+]);
+
+
+Route::post('iniciarSesion','Auth\AuthController@postLogin',array('before' => 'csrf', function()
+{
+
+}));
+
+
+
+Route::get('cerrarSesion', [
+
+    'uses'=>'Auth\AuthController@getLogout',
+    'as'=>'cerrarSesion'
+]);
+
+
+
+
+// Registration routes...
+Route::get('register',[
+    'uses'=>'Auth\AuthController@getRegister',
+    'as' => 'register'
+]);
+Route::post('register', 'Auth\AuthController@postRegister');
+
+
+
+
+
+// Password reset link request routes...
+Route::get('password/email',[
+    'uses' => 'Auth\PasswordController@getEmail',
+    'as' => 'password/email'
+
+]);
+
+
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+

@@ -4,13 +4,38 @@
 
     $(document).ready(function() {
         $('#Pelicula').multiselect({
-            enableFiltering: true,
-            buttonWidth: '100%'
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
         });
 
         $('#Patrocinador').multiselect({
-            enableFiltering: true,
-            buttonWidth: '100%'
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#Sede').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#Programa').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+        });
+
+        $('#Festival').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
         });
 
         $('#ProgramadoPor').change(function() {
@@ -69,7 +94,7 @@
                 </li>
 
                 <li class="sub-menu">
-                    <a href="#" >
+                    <a href="#"  class="active" >
                         <i class="fa fa-video-camera"></i>
                         <span>Función</span>
                     </a>
@@ -148,7 +173,6 @@
                         <div class="form-panel">
 
                             @include('Partials.Mensajes.mensajes')
-
 
                             {!! Form::open(['action'=>['FuncionesController@agregarFunciones'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarFuncion'])!!}
 
@@ -270,8 +294,6 @@
 
                         }
                     }
-
-
                 }
             });
 
@@ -279,15 +301,6 @@
                 .on('dp.change dp.show', function(e) {
                     $('#formAgregarFuncion').data('bootstrapValidator').revalidateField('Fecha');
                 });
-
-         /*   $('#formAgregarFuncion')
-                .find('[name="Sede"]')
-                .selectpicker()
-                .change(function(e) {
-                    $('#formAgregarFuncion').bootstrapValidator('revalidateField', 'Sede');
-                })
-                .end()*/
-
         });
     </script>
 
