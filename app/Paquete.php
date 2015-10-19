@@ -32,9 +32,17 @@ class Paquete extends Model
      */
     protected $hidden = ['remember_token'];
 
-    //N to 1
+    //N TO N
 
-    public function patrocinadores(){
-        return $this->hasMany('App\Patrocinador', 'id_paquete','id');
+    public function caracteristicas(){
+        return $this->belongsToMany('App\Caracteristica', 'caracteristica_paquete','id_paquete','id_caracteristica');
+    }
+
+    public function scopeDescripcion($query ,$descripcion)
+    {//
+        //
+        if(trim($descripcion) != ""){
+            $query->where('Descripcion',"LIKE","%$descripcion%");
+        }
     }
 }
