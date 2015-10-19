@@ -483,7 +483,181 @@ Route::post('patrocinadores/modificar/patrocinadores','PatrocinadoresController@
     // dd("modificar");
 }));
 
+// RUTAS PARA INTEGRANTES
 
+Route::get('integrantes',[
+    'uses' => 'IntegrantesController@index',
+    'as' =>'integrantes'
+
+]);
+
+
+
+Route::get('integrantesLista',[
+        'uses' =>'IntegrantesController@buscador',
+        'as' =>'integrantesLista']
+
+);
+
+
+
+Route::get('integrantesLista/item/{id?}',[
+        'uses' =>'IntegrantesController@seleccion',
+        'as' =>'integrantesLista/item']
+
+);
+
+
+
+Route::post('integrantes/eliminar','IntegrantesController@eliminarIntegrantes',array('before' => 'csrf', function()
+{
+    //  dd("hghgh");
+}));
+
+
+Route::get('integrantes/agregar',[
+    'uses' => 'IntegrantesController@pagAgregar',
+    'as' =>'integrantesAgregar'
+
+]);
+
+
+Route::post('integrantes/agregar/crear','IntegrantesController@agregarIntegrantes',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('integrantes/modificar/item/{id}',[
+    'uses' => 'IntegrantesController@pagModificar',
+    'as' =>'integrantes/modificar/item'
+
+]);
+
+
+Route::post('integrantes/modificar/integrantes','IntegrantesController@modificarIntegrantes',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+// RUTAS PARA CARACTERISTICAS
+
+Route::get('caracteristicas',[
+    'uses' => 'CaracteristicasController@index',
+    'as' =>'caracteristicas'
+
+]);
+
+
+
+Route::get('caracteristicasLista',[
+        'uses' =>'CaracteristicasController@buscador',
+        'as' =>'caracteristicasLista']
+
+);
+
+
+
+Route::get('caracteristicasLista/item/{id?}',[
+        'uses' =>'CaracteristicasController@seleccion',
+        'as' =>'caracteristicasLista/item']
+
+);
+
+
+
+Route::post('caracteristicas/eliminar','CaracteristicasController@eliminarCaracteristicas',array('before' => 'csrf', function()
+{
+    //  dd("hghgh");
+}));
+
+
+Route::get('caracteristicas/agregar',[
+    'uses' => 'CaracteristicasController@pagAgregar',
+    'as' =>'caracteristicasAgregar'
+
+]);
+
+
+Route::post('caracteristicas/agregar/crear','CaracteristicasController@agregarCaracteristicas',array('before' => 'csrf', function()
+{
+
+}));
+
+Route::get('caracteristicas/modificar/item/{id}',[
+    'uses' => 'CaracteristicasController@pagModificar',
+    'as' =>'caracteristicas/modificar/item'
+
+]);
+
+
+Route::post('caracteristicas/modificar/caracteristicas','CaracteristicasController@modificarCaracteristicas',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+/*
+ *
+ *  Rutas para paquetes
+ *
+ * */
+
+Route::get('paquetes',[
+    'uses' => 'PaquetesController@index',
+    'as' =>'paquetes'
+
+]);
+
+Route::get('paquetes/agregar',[
+    'uses' => 'PaquetesController@pagAgregar',
+    'as' =>'paquetesAgregar'
+
+]);
+
+
+Route::post('paquetes/agregar/crear','PaquetesController@agregarPaquetes',array('before' => 'csrf', function()
+{
+    //
+}));
+
+
+Route::get('paquetesLista',[
+        'uses' =>'PaquetesController@buscador',
+        'as' =>'paquetesLista']
+
+);
+
+
+
+Route::get('paquetesLista/item/{id?}',[
+        'uses' =>'PaquetesController@seleccion',
+        'as' =>'paquetesLista/item']
+
+);
+
+Route::get('paquetesExport/item/{id?}',[
+        'uses' =>'PdfController@exportar',
+        'as' =>'paquetesExport/item/']
+
+);
+
+Route::get('paquetes/modificar/item/{id}',[
+    'uses' => 'PaquetesController@pagModificar',
+    'as' =>'paquetes/modificar/item'
+
+]);
+
+
+Route::post('paquetes/modificar/paquetes','PaquetesController@modificarPaquetes',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
+
+Route::post('paquetes/eliminar','PaquetesController@eliminarPaquetes',array('before' => 'csrf', function()
+{
+
+}));
 
 
 
