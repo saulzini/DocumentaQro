@@ -3,7 +3,7 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-        $('#Trafico').multiselect({
+        $('#Integrante').multiselect({
             enableFiltering: true,
             buttonWidth: '100%',
         });
@@ -125,7 +125,7 @@
 
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de traficos</button></a></h3>
+                <h3><a href="{{route('caracteristicas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR FUNCIONES -->
@@ -135,11 +135,11 @@
                             @include('Partials.Mensajes.mensajes')
 
 
-                            {!! Form::open(['action'=>['TraficosController@agregarTraficos'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarTrafico'])!!}
+                            {!! Form::open(['action'=>['CaracteristicasController@agregarCaracteristicas'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarCaracteristica'])!!}
 
-                                <h4><i class="fa fa-angle-right"></i>Agregar trafico</h4>
+                                <h4><i class="fa fa-angle-right"></i>Agregar caracteristica</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
-                                @include('Partials.Traficos.Traficos')
+                                @include('Partials.Caracteristicas.Caracteristicas')
 
                             {!! Form::close() !!}
                         </div>
@@ -162,22 +162,7 @@
         //previene lo del input
         $('#fechaDP').keypress(function(event) {event.preventDefault();});
         ///////////////AGREGAR///////////////////
-        $("#imagenDocumentaQro").fileinput({
-            overwriteInitial: true,
-            maxFileSize: 1500,
-            showClose: false,
-            showCaption: false,
-            browseLabel: '',
-            removeLabel: '',
-            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
-            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-            removeTitle: 'Cancel or reset changes',
-            elErrorContainer: '#kv-avatar-errors',
-            msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="Imagen de pelicula" style="height:400px" class="img-thumbnail"/>',
-            layoutTemplates: {main2: '{preview} {remove} {browse}'},
-            allowedFileExtensions: ["jpg","png","bmp","jpeg"]
-        });
+
         ////////////////////////////////////////
     </script>
 
@@ -185,82 +170,25 @@
 
         $(document).ready(function() {
 
-            $('#formAgregarTrafico').bootstrapValidator({
+            $('#formAgregarCaracteristica').bootstrapValidator({
                 message: 'Los valores no son válidos',
                 feedbackIcons: {
                     invalid: 'glyphicon glyphicon-remove',
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                    Pelicula: {
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona una pelicula'
-                            }
-                        }
-                    },
 
-                    Formato: {
+                    Caracteristica: {
                         validators: {
                             notEmpty: {
-                                message: 'El formato es requerido'
+                                message: 'El nombre es requerido'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El formato debe tener como máximo 255 caracteres'
+                                message: 'La caracteristica debe tener como máximo 255 caracteres'
                             }
                         }
                     },
-
-                    Status:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona un status'
-                            }
-                        }
-                    },
-
-                    Costo:{
-                        validators: {
-                            notEmpty: {
-                                message: 'El costo es requerido'
-                            },
-                            stringLength: {
-                                max: 255,
-                                message: 'El costo debe tener como máximo 255 caracteres'
-                            },
-
-                            integer:{
-                                message: 'Ingresa un número'
-                            }
-                        }
-                    },
-
-                    Tipo:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona un tipo'
-                            }
-                        }
-                    },
-
-                    Integrante:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona un integrante'
-                            }
-                        }
-                    },
-
-                    Realizador:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona un realizador'
-                            }
-                        }
-                    },
-
-
 
                 }
             });

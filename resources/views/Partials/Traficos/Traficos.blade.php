@@ -5,7 +5,8 @@
         <input type="hidden" name="traficosID" value={{$traficosItem->id}}>
             @endif
     </div>
-    <div class="col-md-8">
+
+    <div class="col-md-7">
         <div class="form-group">
             <label for="Titulo" class="col-lg-2 control-label">Película</label>
             <div class="col-lg-10">

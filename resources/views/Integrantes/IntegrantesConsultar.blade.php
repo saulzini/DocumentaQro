@@ -115,7 +115,7 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de traficos</button></a></h3>
+                  <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR TRAFICOS -->
@@ -124,26 +124,26 @@
 
 
 
-                                  <h4><i class="fa fa-angle-right"></i>Consultar trafico</h4>
+                                  <h4><i class="fa fa-angle-right"></i>Consultar integrante</h4>
 
 
 
 
-                              @if( isset($traficoItem))
+                              @if( isset($integranteItem))
 
 
                                   <table align="right">
                                       <tr>
                                           <td>
-                                              <a href="{{ route('traficos/modificar/item',$traficoItem->id) }}">
+                                              <a href="{{ route('integrantes/modificar/item',$integranteItem->id) }}">
                                                   <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                               </a> &nbsp
                                           </td>
 
                                           <td>
-                                              {!! Form::open(['action'=>['TraficosController@eliminarTraficos'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el trafico?")'><i class="fa fa-trash-o "></i></button>
-                                              <input type="hidden" name="traficosID" value={{$traficoItem->id}}>
+                                              {!! Form::open(['action'=>['IntegrantesController@eliminarIntegrantes'],'role'=>'form'] )  !!}
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el integrante?")'><i class="fa fa-trash-o "></i></button>
+                                              <input type="hidden" name="integrantesID" value={{$integranteItem->id}}>
                                               {!! Form::close() !!}
 
                                           </td>
@@ -162,16 +162,11 @@
                                           <dl class="dl-horizontal">
 
 
-                                              <dt>Título</dt><dd>{{ $titulo }}</dd>
-                                              <dt>Ubicación</dt><dd>{{ $ubicacion }}</dd>
-                                              <dt>Status</dt><dd>{{ $status}}</dd>
+                                              <dt>Nombre</dt><dd>{{ $nombre }}</dd>
+                                              <dt>Telefono</dt><dd>{{ $telefono }}</dd>
+                                              <dt>Puesto</dt><dd>{{ $puesto}}</dd>
 
-                                              <dt>Formato material</dt><dd>{{ $formato_material}}</dd>
-
-                                              <dt>Costo</dt><dd>{{ $costo }}</dd>
-                                              <dt>Tipo</dt><dd>{{ $tipo }}</dd>
-                                              <dt>Integrante</dt><dd>{{ $integrante->nombre }}</dd>
-                                              <dt>Realizador</dt><dd>{{ $realizador->nombre }}</dd>
+                                              <dt>Email</dt><dd>{{ $email}}</dd>
                                           </dl>
 
 

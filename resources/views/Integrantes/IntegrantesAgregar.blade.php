@@ -3,7 +3,7 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-        $('#Trafico').multiselect({
+        $('#Pelicula').multiselect({
             enableFiltering: true,
             buttonWidth: '100%',
         });
@@ -125,7 +125,7 @@
 
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de traficos</button></a></h3>
+                <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR FUNCIONES -->
@@ -135,11 +135,11 @@
                             @include('Partials.Mensajes.mensajes')
 
 
-                            {!! Form::open(['action'=>['TraficosController@agregarTraficos'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarTrafico'])!!}
+                            {!! Form::open(['action'=>['IntegrantesController@agregarIntegrantes'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarIntegrante'])!!}
 
-                                <h4><i class="fa fa-angle-right"></i>Agregar trafico</h4>
+                                <h4><i class="fa fa-angle-right"></i>Agregar integrante</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
-                                @include('Partials.Traficos.Traficos')
+                                @include('Partials.Integrantes.Integrantes')
 
                             {!! Form::close() !!}
                         </div>
@@ -162,22 +162,7 @@
         //previene lo del input
         $('#fechaDP').keypress(function(event) {event.preventDefault();});
         ///////////////AGREGAR///////////////////
-        $("#imagenDocumentaQro").fileinput({
-            overwriteInitial: true,
-            maxFileSize: 1500,
-            showClose: false,
-            showCaption: false,
-            browseLabel: '',
-            removeLabel: '',
-            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
-            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-            removeTitle: 'Cancel or reset changes',
-            elErrorContainer: '#kv-avatar-errors',
-            msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="Imagen de pelicula" style="height:400px" class="img-thumbnail"/>',
-            layoutTemplates: {main2: '{preview} {remove} {browse}'},
-            allowedFileExtensions: ["jpg","png","bmp","jpeg"]
-        });
+
         ////////////////////////////////////////
     </script>
 
@@ -185,49 +170,34 @@
 
         $(document).ready(function() {
 
-            $('#formAgregarTrafico').bootstrapValidator({
+            $('#formAgregarIntegrante').bootstrapValidator({
                 message: 'Los valores no son válidos',
                 feedbackIcons: {
                     invalid: 'glyphicon glyphicon-remove',
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                    Pelicula: {
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona una pelicula'
-                            }
-                        }
-                    },
 
-                    Formato: {
+                    Nombre: {
                         validators: {
                             notEmpty: {
-                                message: 'El formato es requerido'
+                                message: 'El nombre es requerido'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El formato debe tener como máximo 255 caracteres'
+                                message: 'El nombre debe tener como máximo 255 caracteres'
                             }
                         }
                     },
 
-                    Status:{
+                    Telefono:{
                         validators: {
                             notEmpty: {
-                                message: 'Selecciona un status'
-                            }
-                        }
-                    },
-
-                    Costo:{
-                        validators: {
-                            notEmpty: {
-                                message: 'El costo es requerido'
+                                message: 'El telefono es requerido'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El costo debe tener como máximo 255 caracteres'
+                                message: 'El telefono debe tener como máximo 255 caracteres'
                             },
 
                             integer:{
@@ -236,29 +206,35 @@
                         }
                     },
 
-                    Tipo:{
+                    Puesto: {
                         validators: {
                             notEmpty: {
-                                message: 'Selecciona un tipo'
+                                message: 'El puesto es requerido'
+                            },
+                            stringLength: {
+                                max: 255,
+                                message: 'El puesto debe tener como máximo 255 caracteres'
                             }
                         }
                     },
 
-                    Integrante:{
+                    Email: {
                         validators: {
                             notEmpty: {
-                                message: 'Selecciona un integrante'
+                                message: 'El email es requerido'
+                            },
+                            stringLength: {
+                                max: 255,
+                                message: 'El email debe tener como máximo 255 caracteres'
+                            },
+
+                            mail:{
+                                message: 'Ingresa un correo'
                             }
                         }
                     },
 
-                    Realizador:{
-                        validators: {
-                            notEmpty: {
-                                message: 'Selecciona un realizador'
-                            }
-                        }
-                    },
+
 
 
 

@@ -1,6 +1,19 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
 
+  <body>
 
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Pelicula').multiselect({
+            enableFiltering: true,
+            buttonWidth: '100%',
+        });
+
+
+
+    });
+   </script>
 
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
@@ -115,70 +128,47 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de traficos</button></a></h3>
+                  <h3><a href="{{route('caracteristicas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
                   <div class="row mt">
 
-                      <!-- INICIO CONSULTAR TRAFICOS -->
+                      <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
+                              @include('Partials.Mensajes.mensajes')
+                              <h4><i class="fa fa-angle-right"></i>Modificar caracteristica</h4>
+                               @if( isset($caracteristicasItem))
 
 
+                            <table align="right">
+                                <tr>
+                                  <td>
+                                      <a href="{{ route('caracteristicasLista/item',$caracteristicasItem->id) }}">
+                                          <button class="btn btn-success btn-xs">
+                                              <i class="fa fa-eye"></i></button>
+                                      </a> &nbsp
+                                   </td>
 
-                                  <h4><i class="fa fa-angle-right"></i>Consultar trafico</h4>
+                                    <td>
+                                      {!! Form::open(['action'=>['CaracteristicasController@eliminarCaracteristicas'],'role'=>'form'] )  !!}
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la caracteristica")'><i class="fa fa-trash-o "></i></button>
+                                      <input type="hidden" name="caracteristicasID" value={{$caracteristicasItem->id}}>
+                                      {!! Form::close() !!}
 
-
-
-
-                              @if( isset($traficoItem))
-
-
-                                  <table align="right">
-                                      <tr>
-                                          <td>
-                                              <a href="{{ route('traficos/modificar/item',$traficoItem->id) }}">
-                                                  <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                              </a> &nbsp
-                                          </td>
-
-                                          <td>
-                                              {!! Form::open(['action'=>['TraficosController@eliminarTraficos'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el trafico?")'><i class="fa fa-trash-o "></i></button>
-                                              <input type="hidden" name="traficosID" value={{$traficoItem->id}}>
-                                              {!! Form::close() !!}
-
-                                          </td>
-                                      </tr>
-                                  </table>
-                                  <br><br>
+                                    </td>
+                                  </tr>
+                             </table>
+                              <br><br>
 
                               @endif
 
-                                  <div class="row">
-                                      <br>
-                                      <div class="col-md-4">
+                              {!! Form::open(['action'=>['CaracteristicasController@modificarCaracteristicas'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formModificarCaracteristicas'] )  !!}
 
-                                      </div>
-                                      <div class="col-md-7">
-                                          <dl class="dl-horizontal">
+                                  <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
 
+                                  @include('Partials.Caracteristicas.Caracteristicas')
 
-                                              <dt>Título</dt><dd>{{ $titulo }}</dd>
-                                              <dt>Ubicación</dt><dd>{{ $ubicacion }}</dd>
-                                              <dt>Status</dt><dd>{{ $status}}</dd>
+                                  {!! Form::close() !!}
 
-                                              <dt>Formato material</dt><dd>{{ $formato_material}}</dd>
-
-                                              <dt>Costo</dt><dd>{{ $costo }}</dd>
-                                              <dt>Tipo</dt><dd>{{ $tipo }}</dd>
-                                              <dt>Integrante</dt><dd>{{ $integrante->nombre }}</dd>
-                                              <dt>Realizador</dt><dd>{{ $realizador->nombre }}</dd>
-                                          </dl>
-
-
-                                      </div>
-
-                                  </div>
-                                  <br>
 
                           </div>
                       </div>
@@ -190,5 +180,62 @@
 
 
 
+      <script type="text/javascript">
+          $(function () {
+              $('#fechaDP').datetimepicker({
+                  format:'DD/MM/YYYY HH:mm',
+
+              });
+
+          });
+
+          //previene lo del input
+          $('#fechaDP').keypress(function(event) {event.preventDefault();});
+          ///////////////AGREGAR///////////////////
+
+          ////////////////////////////////////////
+      </script>
+
+      <script type="text/javascript">
+
+          $(document).ready(function() {
+
+              $('#formAgregarCaracteristica').bootstrapValidator({
+                  message: 'Los valores no son válidos',
+                  feedbackIcons: {
+                      invalid: 'glyphicon glyphicon-remove',
+                      validating: 'glyphicon glyphicon-refresh'
+                  },
+                  fields: {
+                      Caracteristica: {
+                          validators: {
+                              notEmpty: {
+                                  message: 'La caracteristica es requerido'
+                              },
+                              stringLength: {
+                                  max: 255,
+                                  message: 'La caracteristica debe tener como máximo 255 caracteres'
+                              }
+                          }
+                      },
+
+                  }
+              });
+
+              $('#fechaDP')
+                      .on('dp.change dp.show', function(e) {
+                          $('#formAgregarFuncion').data('bootstrapValidator').revalidateField('Fecha');
+                      });
+
+              /*   $('#formAgregarFuncion')
+               .find('[name="Sede"]')
+               .selectpicker()
+               .change(function(e) {
+               $('#formAgregarFuncion').bootstrapValidator('revalidateField', 'Sede');
+               })
+               .end()*/
+
+          });
+      </script>
 
 @include('Partials.ScriptsGenerales.scriptsPartialsAbajo')

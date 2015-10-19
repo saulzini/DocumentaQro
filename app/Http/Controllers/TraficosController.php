@@ -146,7 +146,7 @@ class TraficosController extends Controller
         DB::transaction(function() use ($trafico,$request)
         {
             $trafico->save();
-            $trafico->peliculas()->sync($request->Pelicula);
+            $trafico->peliculas()->sync([$request->Pelicula]);
 
         });
         //El registro se ha agregado
@@ -175,11 +175,10 @@ class TraficosController extends Controller
     public function eliminarTraficos(Eliminar $request){
 
         $traficos= Trafico::findOrFail($request->traficosID);
-
         DB::transaction(function() use ($traficos)
+
         {
             $traficos->delete();
-
         });
         //El registro se ha eliminado
         Session::flash('message', $traficos->titulo. ' ha sido eliminado');
@@ -246,5 +245,36 @@ class TraficosController extends Controller
         Session::flash('message', $trafico->titulo. ' ha sido modificado');
 
         return redirect('traficos/modificar/item/'.$trafico->id);
+    }
+
+    public function seleccion($id)
+    {
+        //obtener funcion
+        //CAMBIAR EL FIND
+
+        $traficoItem = Trafico::find($id);
+        $titulo = $traficoItem->titulo;
+
+        $ubicacion = $traficoItem->ubicacion;
+        $status = $traficoItem->status;
+        $formato_material= $traficoItem->formato_material;
+        $costo= $traficoItem->costo;
+        $tipo= $traficoItem->tipo;
+        $integrante= $traficoItem->integrantes;
+        $realizador= $traficoItem->realizadores;
+
+        return view('Traficos/TraficosConsultar')->with([
+
+            'traficoItem'=>$traficoItem,
+            'titulo' => $titulo,
+            'ubicacion' => $ubicacion,
+            'status' => $status,
+            'formato_material' => $formato_material,
+            'costo' => $costo,
+            'tipo' => $tipo,
+            'integrante' => $integrante,
+            'realizador' => $realizador,
+
+        ]);
     }
 }
