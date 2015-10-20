@@ -11,11 +11,8 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Caracteristica::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt("administrador"),
-        'remember_token' => str_random(10),
+        'nombre' => $faker->name
     ];
 });

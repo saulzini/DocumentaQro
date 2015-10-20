@@ -11,11 +11,14 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Caracteristica_Paquete::class, function (Faker\Generator $faker) {
+
+    $caracteristica= DB::table('caracteristicas')->lists('id');
+    $paquete= DB::table('paquetes')->lists('id');
+
+
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt("administrador"),
-        'remember_token' => str_random(10),
+        'id_caracteristica' => $faker->randomElement($caracteristica),
+        'id_paquete' => $faker->randomElement($paquete)
     ];
 });
