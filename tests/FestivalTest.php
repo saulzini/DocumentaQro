@@ -55,7 +55,7 @@ class FestivalTest extends TestCase
             ->see("10 ha sido modificado");
 
     }
-*/
+
     public function testPrueba()
     {
         $this->withoutMiddleware();
