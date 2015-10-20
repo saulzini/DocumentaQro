@@ -52,6 +52,8 @@ class ReportesController extends Controller
             $resultado[0]['Funciones']=0;
             $resultado[0]['Total espectadores']=0;
             $resultado[0]['Total minutos']=0;
+            $resultado[0]['Fecha inicial']=$request->FechaInicio;
+            $resultado[0]['Fecha final']=$request->FechaFinal;
 
 
             foreach ($Funciones as $funcion)

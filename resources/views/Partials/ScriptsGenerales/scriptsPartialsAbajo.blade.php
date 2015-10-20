@@ -13,6 +13,7 @@
 <script type="text/javascript" src="{{ asset('assets/js/zabuto_calendar.js') }}"></script>
 <script type="text/javascript" src="{{ asset ('assets/js/moment.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/jquery.table-sort.js')}}"></script>
 
 
 

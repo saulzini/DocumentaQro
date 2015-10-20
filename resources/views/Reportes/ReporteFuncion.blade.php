@@ -202,19 +202,19 @@
                                            {!! Form::close() !!}
                                     </div>
                                     </div>
-                            </div>
+
                             <hr>
                     @if(isset($resultados))
 
                             <h5><i class="fa fa-angle-right"></i>Historial</h5>
                            <div align="center">
-                            <table  class="table table-striped table-advance table-hover" id="sample_1" >
+                            <table  class="table table-striped table-advance table-hover table_sort"  >
                                 <thead >
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> Función </th>
                                     <th class="hidden-phone"><i class="fa fa-calendar-o"></i> Asistentes </th>
                                     <th><i class=" fa fa-edit"></i>Minutos</th>
-                                    <th></th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -231,7 +231,7 @@
                                </div>
 
 
-                        <br><br>
+
                         <hr>
 
                         <h5><i class="fa fa-angle-right"></i>Datos generales</h5>
@@ -274,12 +274,15 @@
                         </div>
 
                     @endif
+                            <br>
+                            <br>
                     </div>
 
 
                     <!-- FIN CONTENIDO -->
 
                 </div>
+                    </div>
             </section>
         </section>
       </section>
@@ -332,6 +335,14 @@
                   if ( $('#defaultForm').data('bootstrapValidator').revalidateField('FechaFinal') && ! $('#defaultForm').data('bootstrapValidator').revalidateField('FechaInicio')) {
                       $('#defaultForm').data('bootstrapValidator').revalidateField('FechaInicio');
                   }
+              });
+          });
+      </script>
+
+      <script>
+          $(function(){
+              $("table.table_sort").sort_table({
+                  "action" : "init"
               });
           });
       </script>

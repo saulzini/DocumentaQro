@@ -18,12 +18,18 @@ class ExcelController extends Controller
     public function export($report)
     {
         $data=null;
+        $title=null;
+        $fechaIni=null;
+        $fechaFin=null;
         if($report=='1')
         {
             $data=session()->get('funciones');
+            $title='Funciones';
+            $fechaIni=$data[0]['Fecha inicial'];
+            $fechaFin=$data[0]['Fecha final'];
         }
 
-        Excel::create('Laravel Excel', function($excel) use($data) {
+        Excel::create('Reporte DocumentaQro '.$title.' de '.$fechaIni.' hasta '.$fechaFin, function($excel) use($data) {
 
             $excel->sheet('Export', function($sheet) use($data) {
 
