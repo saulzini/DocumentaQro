@@ -34,4 +34,31 @@ class sedesUnitTest extends TestCase
         // Use model in tests...
     }
 
+    public function testRutaBase()
+    {
+        $response = $this->call('GET', 'sedes');
+
+        $this->assertEquals(200, $response->status());
+    }
+    public function testRutaAgregar()
+    {
+        $response = $this->call('GET', 'sedes/agregar');
+
+        $this->assertEquals(200, $response->status());
+    }
+
+    public function testRutaModificar()
+    {
+        $response = $this->call('GET', 'sedes/modificar/item/1');
+
+        $this->assertEquals(200, $response->status());
+    }
+
+    public function testRutaConsultar()
+    {
+        $response = $this->call('GET', 'sedesLista/item/1');
+
+        $this->assertEquals(200, $response->status());
+    }
+
 }
