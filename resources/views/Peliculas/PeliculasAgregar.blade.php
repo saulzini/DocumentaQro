@@ -1,5 +1,17 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
 <body>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Pais').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+    });
+</script>
+
 
 <section id="container" >
     <!-- **********************************************************************************************************************************************************
