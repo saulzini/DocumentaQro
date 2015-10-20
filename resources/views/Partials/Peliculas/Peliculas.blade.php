@@ -15,8 +15,9 @@
     </div>
 
     <div class="col-md-7">
+        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Titulo</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Titulo</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
@@ -29,7 +30,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Director</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Director</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
@@ -44,7 +45,7 @@
 
 
         <div class="form-group">
-            <label for="SedeS" class="col-lg-2 control-label">País</label>
+            <label for="SedeS" class="col-lg-2 control-label"><strong>*</strong>País</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Pais" name="Pais">
@@ -72,7 +73,7 @@
 
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label">Año</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>Año</label>
             <div class="col-lg-10">
                 @if( isset($peliculasItem))
                 {!!Form::text('Anio' ,$peliculasItem->anio,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la pelicula'])!!}
@@ -83,7 +84,7 @@
         </div>
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label">Duración</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>Duración</label>
             <div class="col-lg-10">
                 @if( isset($peliculasItem))
                     {!!Form::text('Duracion' ,$peliculasItem->duracion,['class'=>'form-control','id'=>'Duracion','placeholder'=>'Duración en minutos'])!!}
@@ -94,7 +95,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Subtitulos" class="col-lg-2 control-label">Subtitulos</label>
+            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>Subtitulos</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="subtitulos" name="Subtitulos">
@@ -119,7 +120,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Subtitulos" class="col-lg-2 control-label">Tipo</label>
+            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>Tipo</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Tipo" name="Tipo">
