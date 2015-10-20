@@ -101,7 +101,7 @@
 
                         @foreach($Paquetes as $paquete)
 
-                                @if($paqueteSeleccion == $paquete->id)
+                                @if( isset($paqueteSeleccion) && $paqueteSeleccion == $paquete->id)
                                     <option value="{{  $paquete->id  }}" selected > {{ $paquete->descripcion}}  </option>
                                 @else
                                     <option value="{{  $paquete->id }}" > {{ $paquete->descripcion }}  </option>
