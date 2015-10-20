@@ -6,8 +6,10 @@
 
 
         $('#Patrocinador').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
             enableFiltering: true,
-            buttonWidth: '100%',
+            buttonWidth: '100%'
         });
 
 
