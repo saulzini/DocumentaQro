@@ -56,7 +56,7 @@ class FestivalTest extends TestCase
 
     }
 
-    public function testPrueba()
+    public function testAgregarMediantePost()
     {
         $this->withoutMiddleware();
         $response = $this->call('POST', 'festivales/agregar/crear', ['Titulo' => 'SaulP','Patrocinadores'=>['1','2']]);
