@@ -19,15 +19,20 @@ class ExcelController extends Controller
     {
         $data=null;
         $title=null;
-        $fechaIni=null;
-        $fechaFin=null;
+
         if($report=='1')
         {
             $data=session()->get('funciones');
             $title='Funciones';
-            $fechaIni=$data[0]['Fecha inicial'];
-            $fechaFin=$data[0]['Fecha final'];
         }
+
+        if($report=='2')
+        {
+            $data=session()->get('paises');
+            $title='Paises';
+        }
+        $fechaIni=$data[0]['Fecha inicial'];
+        $fechaFin=$data[0]['Fecha final'];
 
         Excel::create('Reporte DocumentaQro '.$title.' de '.$fechaIni.' hasta '.$fechaFin, function($excel) use($data) {
 

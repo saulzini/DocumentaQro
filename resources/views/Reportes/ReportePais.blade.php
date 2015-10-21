@@ -153,12 +153,13 @@
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Funciones</h4>
+                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Paises</h4>
                             @include('Partials.Mensajes.mensajes')
                             <br>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    {!! Form::open(['route' => 'reportesConsultarFunciones' ,'method'=>'GET','role'=>'form','id'=>'defaultForm']) !!}
+                                    {!! Form::open(['route' => 'reportesConsultarPaises' ,'method'=>'GET','role'=>'form','id'=>'defaultForm']) !!}
+
 
                                         <div class="col-xs-3">
                                             <div class="form-group">
@@ -211,7 +212,8 @@
                             <table  class="table table-striped table-advance table-hover table_sort"  >
                                 <thead >
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Función </th>
+                                    <th><i class="fa fa-thumb-tack"></i> Pais </th>
+                                    <th><i class="fa fa-film"></i> Peliculas </th>
                                     <th class="hidden-phone"><i class="fa fa-calendar-o"></i> Asistentes </th>
                                     <th><i class=" fa fa-edit"></i>Minutos</th>
 
@@ -221,9 +223,10 @@
                                 @foreach ($resultados as $resultado)
 
                                         <tr>
-                                            <td style="width: 50%">{{$resultado['Funcion']}}</td>
-                                            <td style="width: 25%">{{$resultado['Asistencia']}}</td>
-                                            <td style="width: 25%">{{$resultado['Duracion']}}</td>
+                                            <td style="width: 40%">{{$resultado['Pais']}}</td>
+                                            <td style="width: 20%">{{$resultado['Peliculas']}}</td>
+                                            <td style="width: 20%">{{$resultado['Asistencia']}}</td>
+                                            <td style="width: 20%">{{$resultado['Duracion']}}</td>
                                        </tr>
                                 @endforeach
                                 </tbody>
@@ -243,9 +246,9 @@
                                     <div class="form-group">
                                         <div class="col-lg-2">
                                    <dl class="dl-horizontal">
-                                        <dt>Peliculas</dt><dd>{{$resultados[0]['Peliculas']}}</dd><br>
-                                        <dt>Largometrajes</dt><dd>{{$resultados[0]['Largometrajes']}}</dd><br>
-                                        <dt>Cortometrajes</dt><dd>{{$resultados[0]['Cortometrajes']}}</dd><br>
+                                        <dt>Peliculas</dt><dd>{{$resultados[0]['Total Peliculas']}}</dd><br>
+                                        <dt>Mexicanas</dt><dd>{{$resultados[0]['Mexicanas']}}</dd><br>
+                                        <dt>Extranjeras</dt><dd>{{$resultados[0]['Extranjeras']}}</dd><br>
                                     </dl>
                                          </div>
                                      </div>
@@ -256,7 +259,7 @@
                                     <div class="form-group">
                                         <div class="col-lg-2">
                                             <dl class="dl-horizontal">
-                                                <dt>Funciones</dt><dd>{{$resultados[0]['Funciones']}}</dd><br>
+                                                <dt>Paises</dt><dd>{{$resultados[0]['Paises']}}</dd><br>
                                                 <dt>Total espectadores</dt><dd>{{$resultados[0]['Total espectadores']}}</dd><br>
                                                 <dt>Total minutos</dt><dd>{{$resultados[0]['Total minutos']}}</dd><br>
                                             </dl>
@@ -268,7 +271,7 @@
                         <div clas="row">
 
                         <div class="col-xs-12" align="center">
-                            <a href="{{route('reporte',"1")}}">
+                            <a href="{{route('reporte',"2")}}">
                             <button class="btn btn-success">Exportar a excel</button>
                             </a>
                         </div>
