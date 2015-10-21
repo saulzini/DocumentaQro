@@ -210,15 +210,15 @@
 
                                             <td><span>{{ $patrocinador->telefono}}</span></td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('patrocinadoresLista/item',$patrocinador->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('patrocinadores/modificar/item',$patrocinador->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 {!! Form::open(['action'=>['PatrocinadoresController@eliminarPatrocinadores'],'role'=>'form'] )  !!}
                                                 <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar el patrocinador?")'><i class="fa fa-trash-o "></i></button>
 
