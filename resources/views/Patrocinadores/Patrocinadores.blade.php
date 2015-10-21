@@ -1,37 +1,6 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
   <body>
-  <script type="text/javascript">
 
-      $(function () {
-
-          //previene lo del input
-          $('#fechaFinDP').keypress(function(event) {event.preventDefault();});
-          //previene lo del input
-          $('#fechaInicioDP').keypress(function(event) {event.preventDefault();});
-
-
-          //VALIDAR FECHAS EN BUSQUEDA
-
-          $('#fechaFinDP').datetimepicker({
-              format: 'DD/MM/YYYY'
-          });
-
-          $('#fechaInicioDP').datetimepicker({
-              format: 'DD/MM/YYYY'
-          });
-
-          $('#fechaInicioDP').datetimepicker();
-          $('#fechaFinDP').datetimepicker({
-              useCurrent: false //Important! See issue  #1075
-          });
-          $("#fechaInicioDP").on("dp.change", function (e) {
-              $('#fechaFinDP').data("DateTimePicker").minDate(e.date);
-          });
-          $("#fechaFinDP").on("dp.change", function (e) {
-              $('#fechaInicioDP').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
 
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
@@ -44,103 +13,7 @@
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              	  	
-                 <li class="sub-menu">
-                      <a href="#" >
-                         <i class="fa fa-film"></i>
-                          <span>Películas</span>
-                      </a>
-                      <ul class="sub">
-
-                          <li><a href="#" >
-                          <i class="fa fa-film"></i>
-                          <span>Película</span>
-                          </a></li>
-
-                           <li><a href="#" >
-                          <i class="fa fa-hand-o-up fa-lg"></i>
-                          <span>Patrocinadores</span>
-                          </a></li>
-
-                          <li><a href="#" >
-                          <i class="fa fa-envelope"></i>
-                          <span>Tráfico</span>
-                          </a></li>
-
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="#" >
-                        <i class="fa fa-video-camera"></i>
-                          <span>Función</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="#" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Programa</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="#" >
-                          <i class="fa fa-ticket"></i>
-                          <span>Festival</span>
-                      </a>
-                  </li>
-              
-                  <li class="sub-menu">
-                      <a href="#" >
-                          <i class="fa fa-users"></i>
-                          <span>Integrantes</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="#" >
-                          <i class="fa fa-thumbs-o-up"></i>
-                          <span>Patrocinios</span>
-                      </a>
-
-                      <ul class="sub">
-                          <li><a href="#" >
-                          <i class="fa fa-cubes"></i>
-                          <span>Paquetes</span>
-                          </a></li>
-                          
-                          <li><a href="" >
-                          <i class="fa fa-thumbs-o-up"></i>
-                          <span>Patrocinadores</span>
-                          </a></li>
-
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="#" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Reportes</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="#" >
-                          <i class="fa fa-cog"></i>
-                          <span>Configuración</span>
-                      </a>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
+     @include('Patrocinadores.PatrocinadoresAside')
       
      
       <section id="container">
@@ -246,8 +119,5 @@
             </section>
         </section>
       </section>>
-
-
-
 
 @include('Partials.ScriptsGenerales.scriptsPartialsAbajo')
