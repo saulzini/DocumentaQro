@@ -726,12 +726,25 @@ Route::get('reportes/funciones',[
 
 Route::get('reporteExcel/{reporte}',[
     'uses' => 'ExcelController@export',
-    'as' =>'reporteFuncion'
+    'as' =>'reporte'
+]);
+
+
+Route::get('reportes/funciones/consultar',[
+    'uses' => 'ReportesController@consultarFunciones',
+    'as' =>'reportesConsultarFunciones'
 ]);
 
 
 
-Route::post('reportes/funciones/consultar','ReportesController@consultarFunciones',array('before' => 'csrf', function()
-{
+Route::get('reportes/paises',[
+    'uses' => 'ReportesController@indexPais',
+    'as' =>'reportes'
+]);
 
-}));
+Route::get('reportes/paises/consultar',[
+    'uses' => 'ReportesController@consultarPaises',
+    'as' =>'reportesConsultarPaises'
+]);
+
+
