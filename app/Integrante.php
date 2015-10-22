@@ -31,10 +31,19 @@ class Integrante extends Model
      */
     protected $hidden = ['remember_token'];
 
+
     //N to 1
 
     public function traficos(){
         return $this->hasMany('App\Integrante', 'id_integrante', 'id');
+    }
+
+    public function scopeNombre($query ,$nombre)
+    {//
+        //
+        if(trim($nombre) != ""){
+            $query->where('Nombre',"LIKE","%$nombre%");
+        }
     }
 
 }

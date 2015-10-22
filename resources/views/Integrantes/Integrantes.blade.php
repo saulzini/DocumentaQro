@@ -208,15 +208,15 @@
 
                                             <td><span>{{ $integrante->puesto}}</span></td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('integrantesLista/item',$integrante->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('integrantes/modificar/item',$integrante->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 {!! Form::open(['action'=>['IntegrantesController@eliminarIntegrantes'],'role'=>'form'] )  !!}
                                                 <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar al integrante?")'><i class="fa fa-trash-o "></i></button>
 

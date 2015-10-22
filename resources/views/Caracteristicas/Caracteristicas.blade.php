@@ -206,15 +206,15 @@
                                             <td><a href="{{ route('caracteristicasLista/item',$caracteristica->id) }}">{{ $caracteristica->nombre }}</a></td>
 
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('caracteristicasLista/item',$caracteristica->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 <a href="{{ route('caracteristicas/modificar/item',$caracteristica->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
-                                            <td>
+                                            <td style="width: 5px">
                                                 {!! Form::open(['action'=>['CaracteristicasController@eliminarCaracteristicas'],'role'=>'form'] )  !!}
                                                 <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar la caracteristica?")'><i class="fa fa-trash-o "></i></button>
 

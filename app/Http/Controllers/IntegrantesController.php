@@ -103,7 +103,7 @@ class IntegrantesController extends Controller
 
     public function pagAgregar()
     {
-        return view('Integrantes/integrantesAgregar')->with([
+        return view('Integrantes/IntegrantesAgregar')->with([
 
         ]);
 
