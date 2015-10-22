@@ -230,7 +230,7 @@
                                 message: 'El costo debe tener como máximo 255 caracteres'
                             },
 
-                            integer:{
+                            numeric:{
                                 message: 'Ingresa un número'
                             }
                         }

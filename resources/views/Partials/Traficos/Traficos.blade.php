@@ -83,6 +83,8 @@
         <div class="form-group">
             <label for="Costo" class="col-lg-2 control-label"><strong>*</strong>Costo</label>
             <div class="col-lg-10">
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
 
                 @if( isset($traficosItem))
 
@@ -90,6 +92,7 @@
                 @else
                     {!!Form::text('Costo' ,null,['class'=>'form-control','id'=>'Costo','placeholder'=>'Costo del material'])!!}
                 @endif
+                    </div>
             </div>
         </div>
 
