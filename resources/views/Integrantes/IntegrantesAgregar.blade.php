@@ -228,7 +228,7 @@
                                 message: 'El email debe tener como máximo 255 caracteres'
                             },
 
-                            mail:{
+                            emailAddress:{
                                 message: 'Ingresa un correo'
                             }
                         }
