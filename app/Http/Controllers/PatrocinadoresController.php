@@ -233,6 +233,8 @@ class PatrocinadoresController extends Controller
 
         DB::transaction(function() use ($patrocinador,$request)
         {
+            $patrocinador->programas()->sync([]);
+
 
             $patrocinador->delete();
 
