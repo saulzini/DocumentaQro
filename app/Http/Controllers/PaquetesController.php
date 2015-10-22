@@ -164,7 +164,7 @@ class PaquetesController extends Controller
         });
 
         //El registro se ha agregado
-        Session::flash('message', $Paquetes->descripcion. 'ha sido modificado');
+        Session::flash('message', $Paquetes->descripcion. ' ha sido modificado');
 
         return redirect('paquetes/modificar/item/'.$Paquetes->id);
     }
