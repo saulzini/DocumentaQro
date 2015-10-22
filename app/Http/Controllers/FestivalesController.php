@@ -215,7 +215,7 @@ class FestivalesController extends Controller
             }
             else{
 
-                $festival->patrocinadores()->delete();
+                $festival->patrocinadores()->sync([]);
             }
            $festival->push();
         });
