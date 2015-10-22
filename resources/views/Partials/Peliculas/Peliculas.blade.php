@@ -160,8 +160,9 @@
             <div class="form-group">
                 <label for="Titulo" class="col-lg-2 control-label">Material actual</label>
                 <div class="col-lg-10">
+                    <br>
 
-                        <a class='form-control' href="{{asset($peliculasItem->material)}}">Click aquí para descargar</a>
+                        <a height="20px" href="{{asset($peliculasItem->material)}}">Click aquí para descargar</a>
 
                 </div>
             </div>
