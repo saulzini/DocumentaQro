@@ -45,9 +45,11 @@ class PaquetesController extends Controller
 
     public function eliminarPaquetes(Eliminar $request){
         $Paquetes= Paquete::findOrFail($request->paqueteId);
+        $PaquetesCaracteristicas = $Paquetes->caracteristicas;
 
         DB::transaction(function() use ($Paquetes)
         {
+            $Paquetes->caracteristicas()->sync([]);
             $Paquetes->delete();
         });
 
@@ -156,7 +158,7 @@ class PaquetesController extends Controller
             if ( !empty($Caracteristicas) ) {
                 $Paquetes->caracteristicas()->sync($Caracteristicas);
             }else{
-                $Paquetes->caracteristicas()->delete();
+                $Paquetes->caracteristicas()->sync([]);
             }
             $Paquetes->push();
         });

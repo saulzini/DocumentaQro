@@ -38,6 +38,9 @@ class DatabaseSeeder extends Seeder
         $this->call('PaquetesSeeder');
         $this->call('Caracteristicas_PaquetesSeeder');
 
+        $this->call('Patrocinador_Programa');
+        $this->call('Festival_Programa');
+
 
 
 

@@ -50,6 +50,10 @@ class Patrocinador extends Model
     {
         return $this->belongsTo('App\Paquete','id_paquete');
     }
+    
+    public function programas(){
+        return $this->belongsToMany('App\Programa', 'patrocinador_programa','id_patrocinador','id_programa');
+    }
 
 
 }

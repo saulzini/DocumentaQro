@@ -34,4 +34,20 @@ class Programa extends Model
         return $this->hasMany('App\Programa', 'id_funcion', 'id');
     }
 
+    public function festivales(){
+        return $this->belongsToMany('App\Festival', 'festival_programa','id_programa','id_festival');
+    }
+
+    public function patrocinadores(){
+        return $this->belongsToMany('App\Patrocinador', 'patrocinador_programa','id_programa','id_patrocinador');
+    }
+
+    public function scopeTitulo($query ,$titulo)
+    {//
+        //
+        if(trim($titulo) != ""){
+            $query->where('Titulo',"LIKE","%$titulo%");
+        }
+    }
+
 }
