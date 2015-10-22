@@ -45,7 +45,7 @@ class ReportesController extends Controller
             $fecha=$request->FechaFinal." 23:59:59";
             $fechaSup=Carbon::createFromFormat("d/m/Y H:i:s", $fecha);
             //dd($fechaInf,$fechaSup);
-            $Funciones = Funcion::whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
+            $Funciones = Funcion::where('status','Realizada')->whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
             $resultado=[];
             $i=0;
             $resultado[0]['Funcion']="";
