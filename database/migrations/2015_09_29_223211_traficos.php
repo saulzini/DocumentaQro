@@ -24,7 +24,7 @@ class Traficos extends Migration
             $table->enum('tipo',['Entrante','Saliente']);
 
             $table->integer('id_integrante')->unsigned();
-           $table->foreign('id_integrante')->references('id')->on('integrantes');
+           //$table->foreign('id_integrante')->references('id')->on('integrantes');
 
             $table->integer('id_realizador')->unsigned();
             //$table->foreign('id_realizador')->references('id')->on('realizadores');

@@ -102,7 +102,7 @@ class CaracteristicasController extends Controller
 
     public function pagAgregar()
     {
-        return view('Caracteristicas/caracteristicasAgregar')->with([
+        return view('Caracteristicas/CaracteristicasAgregar')->with([
 
         ]);
     }
