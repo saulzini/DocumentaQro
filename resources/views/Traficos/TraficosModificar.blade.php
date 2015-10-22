@@ -128,7 +128,7 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Gestión de traficos</button></a></h3>
+                  <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
@@ -200,7 +200,7 @@
 
           $(document).ready(function() {
 
-              $('#formAgregarTrafico').bootstrapValidator({
+              $('#formModificarTrafico').bootstrapValidator({
                   message: 'Los valores no son válidos',
                   feedbackIcons: {
                       invalid: 'glyphicon glyphicon-remove',

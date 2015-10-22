@@ -200,7 +200,7 @@
 
           $(document).ready(function() {
 
-              $('#formAgregarIntegrante').bootstrapValidator({
+              $('#formModificarIntegrante').bootstrapValidator({
                   message: 'Los valores no son válidos',
                   feedbackIcons: {
                       invalid: 'glyphicon glyphicon-remove',
