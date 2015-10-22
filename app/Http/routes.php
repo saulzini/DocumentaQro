@@ -660,6 +660,73 @@ Route::post('paquetes/eliminar','PaquetesController@eliminarPaquetes',array('bef
 }));
 
 
+/*
+ *
+ *  Rutas para programas
+ *
+ * */
+
+Route::get('programas',[
+    'uses' => 'ProgramasController@index',
+    'as' =>'programas'
+
+]);
+
+Route::get('programas/agregar',[
+    'uses' => 'ProgramasController@pagAgregar',
+    'as' =>'programasAgregar'
+
+]);
+
+
+Route::post('programas/agregar/crear','ProgramasController@agregarProgramas',array('before' => 'csrf', function()
+{
+    //
+}));
+
+
+Route::get('programasLista',[
+        'uses' =>'ProgramasController@buscador',
+        'as' =>'programasLista']
+
+);
+
+
+
+Route::get('programasLista/item/{id?}',[
+        'uses' =>'ProgramasController@seleccion',
+        'as' =>'programasLista/item']
+
+);
+
+Route::get('programasExport/item/{id?}',[
+        'uses' =>'PdfController@exportar',
+        'as' =>'programasExport/item/']
+
+);
+
+Route::get('programas/modificar/item/{id}',[
+    'uses' => 'ProgramasController@pagModificar',
+    'as' =>'programas/modificar/item'
+
+]);
+
+
+Route::post('programas/modificar/programas','ProgramasController@modificarProgramas',array('before' => 'csrf', function()
+{
+    // dd("modificar");
+}));
+
+
+
+Route::post('programas/eliminar','ProgramasController@eliminarProgramas',array('before' => 'csrf', function()
+{
+
+}));
+
+
+
+
 
 /*
  *
