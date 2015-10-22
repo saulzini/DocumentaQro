@@ -174,7 +174,7 @@ class FestivalesController extends Controller
         $ultimoPatrocinador=end($aux);
         if($festivalesPatrocinadores->isEmpty())
             $festivalesPatrocinadores=null;
-        return view('Festivales/festivalesModificar')->with([
+        return view('Festivales/FestivalesModificar')->with([
 
             'festivalesItem'=>$festivalesItem,
             'Patrocinadores'=>$Patrocinadores,
