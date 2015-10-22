@@ -259,24 +259,6 @@
                           }
                       },
 
-                      Integrante:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'Selecciona un integrante'
-                              }
-                          }
-                      },
-
-                      Realizador:{
-                          validators: {
-                              notEmpty: {
-                                  message: 'Selecciona un realizador'
-                              }
-                          }
-                      },
-
-
-
                   }
               });
 

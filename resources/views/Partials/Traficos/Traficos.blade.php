@@ -7,8 +7,9 @@
     </div>
 
     <div class="col-md-7">
+        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Película</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Película</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Pelicula" name="Pelicula">
                     <option value="">Selecciona</option>
@@ -45,7 +46,7 @@
 
 
         <div class="form-group">
-            <label for="Status" class="col-lg-2 control-label">Status</label>
+            <label for="Status" class="col-lg-2 control-label"><strong>*</strong>Status</label>
             <div class="col-lg-10">
                 <select  class="form-control" id="Status" name="Status">
                     <option value="">Selecciona</option>
@@ -68,7 +69,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Formato" class="col-lg-2 control-label">Formato material</label>
+            <label for="Formato" class="col-lg-2 control-label"><strong>*</strong>Formato material</label>
             <div class="col-lg-10">
                 @if( isset($traficosItem))
                     {!!Form::text('Formato' ,$traficosItem->formato_material,['class'=>'form-control','id'=>'Formato','placeholder'=>'Formato del material'])!!}
@@ -80,7 +81,7 @@
 
 
         <div class="form-group">
-            <label for="Costo" class="col-lg-2 control-label">Costo</label>
+            <label for="Costo" class="col-lg-2 control-label"><strong>*</strong>Costo</label>
             <div class="col-lg-10">
 
                 @if( isset($traficosItem))
@@ -93,7 +94,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Tipo" class="col-lg-2 control-label">Tipo</label>
+            <label for="Tipo" class="col-lg-2 control-label"><strong>*</strong>Tipo</label>
             <div class="col-lg-10">
                 <select  class="form-control" id="Tipo" name="Tipo">
                     <option value="">Selecciona</option>
