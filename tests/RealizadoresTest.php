@@ -22,12 +22,18 @@ class RealizadoresTest extends TestCase
             ->see("Realzidor1 ha sido agregado");
     }
 
+    /**
+     * @group realizadores
+     */
     public function testSinNombre()
     {
         $this->visit('realizadores/agregar')
             ->press('Agregar')
             ->see("El campo nombre es obligatorio.");
     }
+    /**
+     * @group realizadores
+     */
 
     public function testModificarNombre()
     {
@@ -36,7 +42,9 @@ class RealizadoresTest extends TestCase
             ->press("Modificar")
             ->see("Realizador11 ha sido modificado");
     }
-
+    /**
+     * @group realizadores
+     */
     public function testModificarVinculoTelefono()
     {
         $this->visit('realizadores/modificar/item/11')
