@@ -123,7 +123,7 @@ class TraficosController extends Controller
 
         //dd($Sedes);
 
-        return view('Traficos/traficosAgregar')->with([
+        return view('Traficos/TraficosAgregar')->with([
 
             'Tipos'=>$tipo,
             'Status'=>$status,
