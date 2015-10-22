@@ -120,7 +120,7 @@ class ReportesController extends Controller
             //dd($fechaInf,$fechaSup);
             Funcion::whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
 
-            $Funciones = Funcion::whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
+            $Funciones = Funcion::where('status','Realizada')->whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
             $resultado=[];
             $i=0;
             $resultado[0]['Pais']="";
