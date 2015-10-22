@@ -7,9 +7,9 @@
     </div>
 
     <div class="col-md-7">
-
+        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Caracteristica</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Caracteristica</label>
             <div class="col-lg-10">
 
                 @if( isset($caracteristicasItem))
