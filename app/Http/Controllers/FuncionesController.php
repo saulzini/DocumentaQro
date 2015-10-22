@@ -73,9 +73,7 @@ class FuncionesController extends Controller
         //
         //obtener funcion
 
-
-        $funcionesItem = Funcion::find($id);
-
+        $funcionesItem = Funcion::findOrFail($id);
 
         $fecha=Carbon::createFromFormat('Y-m-d H:i:s', $funcionesItem->fecha);
         $funcionesItem->fecha=$fecha->format('d-m-Y H:i');
@@ -421,7 +419,7 @@ class FuncionesController extends Controller
        //obtener funcion
 
 
-        $funcionesItem = Funcion::find($id);
+        $funcionesItem = Funcion::findOrFail($id);
 
         $funcionesPeliculas = $funcionesItem->peliculas;
 
