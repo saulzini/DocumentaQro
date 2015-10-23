@@ -178,33 +178,28 @@
                 },
                 fields: {
 
-                    Caracteristica: {
+                    Nombre: {
                         validators: {
                             notEmpty: {
-                                message: 'El nombre es requerido'
+                                message: 'La caracteristica es requerido'
                             },
-                            stringLength: {
-                                max: 255,
-                                message: 'La caracteristica debe tener como máximo 255 caracteres'
-                            }
                         }
                     },
-
                 }
             });
 
             $('#fechaDP')
-                .on('dp.change dp.show', function(e) {
-                    $('#formAgregarFuncion').data('bootstrapValidator').revalidateField('Fecha');
-                });
+                    .on('dp.change dp.show', function(e) {
+                        $('#formAgregarCaracteristica').data('bootstrapValidator').revalidateField('Fecha');
+                    });
 
-         /*   $('#formAgregarFuncion')
-                .find('[name="Sede"]')
-                .selectpicker()
-                .change(function(e) {
-                    $('#formAgregarFuncion').bootstrapValidator('revalidateField', 'Sede');
-                })
-                .end()*/
+            /*   $('#formAgregarFuncion')
+             .find('[name="Sede"]')
+             .selectpicker()
+             .change(function(e) {
+             $('#formAgregarFuncion').bootstrapValidator('revalidateField', 'Sede');
+             })
+             .end()*/
 
         });
     </script>
