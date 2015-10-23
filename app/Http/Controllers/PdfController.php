@@ -27,27 +27,4 @@ class PdfController extends Controller
 
   }
 
-    public function exportarPatrocinadores($id){
-        $patrocinadorItem = Patrocinador::findOrFail($id);
-
-        //dd($patrocinadorItem->paquetes);
-        $view =  \View::make('Patrocinadores.PDFPatrocinadores',compact('patrocinadorItem'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-        return $pdf->stream('invoice.pdf');
-
-
-    }
-
-    public function exportarRealizadores($id){
-        $realizadoresItem = Realizador::findOrFail($id);
-
-        //dd($patrocinadorItem->paquetes);
-        $view =  \View::make('Realizadores.PDFRealizadores',compact('realizadoresItem'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-        return $pdf->stream('invoice.pdf');
-
-
-    }
 }
