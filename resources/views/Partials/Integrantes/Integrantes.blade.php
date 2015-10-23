@@ -23,7 +23,7 @@
 
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Telefono</label>
+            <label for="Titulo" class="col-lg-2 control-label">Telefono</label>
             <div class="col-lg-10">
 
                 @if( isset($integrantesItem))
@@ -36,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Puesto</label>
+            <label for="Titulo" class="col-lg-2 control-label">Puesto</label>
             <div class="col-lg-10">
 
                 @if( isset($integrantesItem))
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Email</label>
+            <label for="Titulo" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
 
                 @if( isset($integrantesItem))
