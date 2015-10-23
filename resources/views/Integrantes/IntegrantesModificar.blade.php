@@ -224,11 +224,6 @@
                               notEmpty: {
                                   message: 'El telefono es requerido'
                               },
-                              stringLength: {
-                                  max: 255,
-                                  message: 'El telefono debe tener como máximo 255 caracteres'
-                              },
-
                               integer:{
                                   message: 'Ingresa un número'
                               }
@@ -257,7 +252,7 @@
                                   message: 'El email debe tener como máximo 255 caracteres'
                               },
 
-                              mail:{
+                              emailAddress:{
                                   message: 'Ingresa un correo'
                               }
                           }
