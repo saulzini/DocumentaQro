@@ -162,7 +162,7 @@
                 <div class="col-lg-10">
                     <br>
 
-                        <a height="20px" href="{{asset($peliculasItem->material)}}">Click aquí para descargar</a>
+                        <a height="20px" href="{{asset($peliculasItem->material)}}"><strong>Click aquí para descargar</strong></a>
 
                 </div>
             </div>
