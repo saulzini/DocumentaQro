@@ -815,3 +815,21 @@ Route::get('reportes/paises/consultar',[
 ]);
 
 
+/*
+ *
+ *  Exportar
+ *
+ * */
+
+Route::get('patrocinadoresExport/item/{id?}',[
+        'uses' =>'PdfController@exportarPatrocinadores',
+        'as' =>'patrocinadoresExport/item/']
+
+);
+
+
+Route::get('realizadoresExport/item/{id?}',[
+        'uses' =>'PdfController@exportarRealizadores',
+        'as' =>'realizadoresExport/item/']
+
+);

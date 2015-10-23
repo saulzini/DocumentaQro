@@ -77,7 +77,10 @@
                                       </div>
 
                                   </div>
-                                  <br>
+                              <br><br>
+                                  <div class="form-group" align="center">
+                                      <a href="{{ route('realizadoresExport/item/',$realizadoresItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                  </div>
 
                           </div>
                       </div>
