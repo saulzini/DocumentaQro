@@ -122,7 +122,7 @@
         <div class="form-group">
             <label for="Status" class="col-lg-2 control-label">Integrante</label>
             <div class="col-lg-10">
-                <select  class="form-control" id="Tipo" name="Integrante">
+                <select  class="form-control" id="Integrante" name="Integrante">
                     <option value="">Selecciona</option>
                     @if( isset($traficosItem))
 
@@ -145,7 +145,7 @@
         <div class="form-group">
             <label for="Status" class="col-lg-2 control-label">Realizador</label>
             <div class="col-lg-10">
-                <select  class="form-control" id="Tipo" name="Realizador">
+                <select  class="form-control" id="Realizador" name="Realizador">
                     <option value="">Selecciona</option>
                     @if( isset($traficosItem))
 

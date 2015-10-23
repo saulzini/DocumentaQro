@@ -3,12 +3,30 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-        $('#Trafico').multiselect({
+        $('#Pelicula').multiselect({
             enableFiltering: true,
             buttonWidth: '100%',
         });
+    });
+</script>
 
+<script type="text/javascript">
 
+    $(document).ready(function() {
+        $('#Integrante').multiselect({
+            enableFiltering: true,
+            buttonWidth: '100%',
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Realizador').multiselect({
+            enableFiltering: true,
+            buttonWidth: '100%',
+        });
     });
 </script>
 <section id="container" >
