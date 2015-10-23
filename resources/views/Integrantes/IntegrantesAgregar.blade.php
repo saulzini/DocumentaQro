@@ -195,11 +195,6 @@
                             notEmpty: {
                                 message: 'El telefono es requerido'
                             },
-                            stringLength: {
-                                max: 255,
-                                message: 'El telefono debe tener como máximo 255 caracteres'
-                            },
-
                             integer:{
                                 message: 'Ingresa un número'
                             }
