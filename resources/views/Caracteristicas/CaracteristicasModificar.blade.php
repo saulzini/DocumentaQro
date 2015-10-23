@@ -212,10 +212,6 @@
                               notEmpty: {
                                   message: 'La caracteristica es requerido'
                               },
-                              stringLength: {
-                                  max: 255,
-                                  message: 'La caracteristica debe tener como máximo 255 caracteres'
-                              }
                           }
                       },
 
@@ -224,7 +220,7 @@
 
               $('#fechaDP')
                       .on('dp.change dp.show', function(e) {
-                          $('#formAgregarFuncion').data('bootstrapValidator').revalidateField('Fecha');
+                          $('#formAgregarCaracteristica').data('bootstrapValidator').revalidateField('Fecha');
                       });
 
               /*   $('#formAgregarFuncion')
