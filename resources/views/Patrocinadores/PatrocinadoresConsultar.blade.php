@@ -75,7 +75,10 @@
                                               @endif
 
                                               <dt>Notas</dt><dd>{{ $patrocinadoresItem->notas}}</dd>
-
+                                              <br><br>
+                                              <div class="form-group" align="center">
+                                                  <a href="{{ route('patrocinadoresExport/item/',$patrocinadoresItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                              </div>
                                           </dl>
 
 
