@@ -221,9 +221,6 @@
 
                       Telefono:{
                           validators: {
-                              notEmpty: {
-                                  message: 'El telefono es requerido'
-                              },
                               integer:{
                                   message: 'Ingresa un número'
                               }
@@ -232,9 +229,6 @@
 
                       Puesto: {
                           validators: {
-                              notEmpty: {
-                                  message: 'El puesto es requerido'
-                              },
                               stringLength: {
                                   max: 255,
                                   message: 'El puesto debe tener como máximo 255 caracteres'
@@ -244,9 +238,6 @@
 
                       Email: {
                           validators: {
-                              notEmpty: {
-                                  message: 'El email es requerido'
-                              },
                               stringLength: {
                                   max: 255,
                                   message: 'El email debe tener como máximo 255 caracteres'

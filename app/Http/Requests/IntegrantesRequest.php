@@ -26,9 +26,6 @@ class IntegrantesRequest extends Request
         return [
 
             'Nombre'=>'required',
-            'Telefono'=>'required',
-            'Puesto'=>'required',
-            'Email'=>'required'
         ];
     }
 }
