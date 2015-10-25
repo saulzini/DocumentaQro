@@ -41,6 +41,12 @@ class ReportesController extends Controller
         ]);
     }
 
+    public function indexPrograma()
+    {
+        return view('Reportes/ReportePrograma')->with([
+        ]);
+    }
+
     public function consultarFunciones(Request $request)
     {
        // dd($request);
@@ -383,6 +389,147 @@ class ReportesController extends Controller
         {
             Session::flash('error', 'No se encontraron resultados');
             return redirect('reportes/sedes');
+        }
+
+
+    }
+
+
+    public function consultarProgramas(Request $request)
+    {
+        // dd($request);
+        if ( $request->FechaFinal != "" && $request->FechaInicio !="") {
+
+            $fecha=$request->FechaInicio." 00:00:00";
+            $fechaInf=Carbon::createFromFormat("d/m/Y H:i:s", $fecha);
+            $fecha=$request->FechaFinal." 23:59:59";
+            $fechaSup=Carbon::createFromFormat("d/m/Y H:i:s", $fecha);
+            //dd($fechaInf,$fechaSup);
+            Funcion::whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
+
+            $Funciones = Funcion::where('status','Realizada')->whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
+            $resultado=[];
+            $i=0;
+            $resultado[0]['Programa']="";
+            $resultado[0]['Peliculas']="";
+            $resultado[0]['Asistencia']=0;
+            $resultado[0]['Duracion']=0;
+            $resultado[0]["      "]="";
+            $resultado[0]['Total Peliculas']=0;
+            $resultado[0]['Largometrajes']=0;
+            $resultado[0]['Cortometrajes']=0;
+            $resultado[0]['Programas']=0;
+            $resultado[0]['Total espectadores']=0;
+            $resultado[0]['Total minutos']=0;
+            $resultado[0]['Fecha inicial']=$request->FechaInicio;
+            $resultado[0]['Fecha final']=$request->FechaFinal;
+            $programas=array();
+            $aux=array();
+            $j=0;
+
+
+            foreach ($Funciones as $funcion)
+            {
+
+                $resultado[0]['Total espectadores']+=$funcion->asistencia;
+
+
+                $peliculas=$funcion->peliculas;
+                $programa=$funcion->programas->titulo;
+
+                if (isset($aux[$programa.'asistencia']))
+                    $aux[$programa.'asistencia']+=$funcion->asistencia;
+                else {
+                    $aux[$programa.'asistencia']=$funcion->asistencia;
+                }
+                foreach ($peliculas as $pelicula)
+                {
+
+                    $resultado[0]['Total Peliculas']++;
+
+                    if($pelicula->tipo=='Largometraje')
+                    {
+                        $resultado[0]['Largometrajes']++;
+                    }
+                    if($pelicula->tipo=='Cortometraje')
+                    {
+                        $resultado[0]['Cortometrajes']++;
+                    }
+
+                    $resultado[0]['Total minutos']+=$pelicula->duracion;
+
+
+                    if (isset($aux[$programa.'peliculas']))
+                        $aux[$programa.'peliculas']++;
+                    else {
+                        $aux[$programa.'peliculas']=1;
+                    }
+                    if (isset($aux[$programa.'duracion']))
+                        $aux[$programa.'duracion']+=$pelicula->duracion;
+                    else {
+                        $aux[$programa.'duracion']=$pelicula->duracion;
+                    }
+
+
+
+
+
+                    $programas[$j]=$programa;
+
+                    $j++;
+                }
+
+                $i++;
+
+
+            }
+
+
+            $resultadoProgramas= array_unique($programas);
+            $resultado[0]['Programas']=count($resultadoProgramas);
+            $i=0;
+
+            foreach($resultadoProgramas as $programa)
+            {
+                $resultado[$i]['Programa']=$programa;
+                if (isset($aux[$programa.'peliculas'])){
+                    $resultado[$i]['Peliculas']=$aux[$programa.'peliculas'];
+                }
+                else
+                    $resultado[$i]['Peliculas']=0;
+
+                if (isset($aux[$programa.'asistencia'])){
+                    $resultado[$i]['Asistencia']=$aux[$programa.'asistencia'];
+                }
+                else
+                    $resultado[$i]['Asistencia']=0;
+
+                if (isset($aux[$programa.'duracion'])){
+                    $resultado[$i]['Duracion']=$aux[$programa.'duracion'];
+                }
+                else
+                    $resultado[$i]['Duracion']=0;
+                $i++;
+
+            }
+            //dd($resultado,$aux,$programas,$resultadoProgramas);
+            $request->session()->put('programas',$resultado);
+
+
+
+        }
+
+        if($resultado[0]['Programas']>0) {
+            return view('Reportes/ReportePrograma')->with([
+                'resultados'=>$resultado,
+                'FechaIni'=>$request->FechaInicio,
+                'FechaFin'=>$request->FechaFinal
+            ]);
+        }
+        else
+        {
+            Session::flash('error', 'No se encontraron resultados');
+            return redirect('reportes/programas');
         }
 
 
