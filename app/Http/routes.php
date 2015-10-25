@@ -787,7 +787,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 //RUTAS DE REPORTES
 Route::get('reportes/funciones',[
     'uses' => 'ReportesController@index',
-    'as' =>'reportes'
+    'as' =>'reportesFuncion'
 ]);
 
 
@@ -823,6 +823,17 @@ Route::get('reportes/sedes/consultar',[
     'uses' => 'ReportesController@consultarSedes',
     'as' =>'reportesConsultarSedes'
 ]);
+
+Route::get('reportes/programas',[
+    'uses' => 'ReportesController@indexPrograma',
+    'as' =>'reportesPrograma'
+]);
+
+Route::get('reportes/programas/consultar',[
+    'uses' => 'ReportesController@consultarProgramas',
+    'as' =>'reportesConsultarProgramas'
+]);
+
 
 
 /*
