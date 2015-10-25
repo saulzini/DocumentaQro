@@ -46,6 +46,11 @@ class ReportesController extends Controller
         return view('Reportes/ReportePrograma')->with([
         ]);
     }
+    public function indexFestival()
+    {
+        return view('Reportes/ReporteFestival')->with([
+        ]);
+    }
 
     public function consultarFunciones(Request $request)
     {
@@ -104,6 +109,8 @@ class ReportesController extends Controller
 
 
         }
+        if(!isset($resultado[0]['Funciones']))
+            $resultado[0]['Funciones']=0;
         if($resultado[0]['Funciones']>0) {
             return view('Reportes/ReporteFuncion')->with([
                 'resultados'=>$resultado,
@@ -236,7 +243,8 @@ class ReportesController extends Controller
 
 
         }
-
+        if(!isset($resultado[0]['Paises']))
+            $resultado[0]['Paises']=0;
         if($resultado[0]['Paises']>0) {
             return view('Reportes/ReportePais')->with([
                 'resultados'=>$resultado,
@@ -377,6 +385,8 @@ class ReportesController extends Controller
 
 
         }
+        if(!isset($resultado[0]['Sedes']))
+            $resultado[0]['Sedes']=0;
 
         if($resultado[0]['Sedes']>0) {
             return view('Reportes/ReporteSede')->with([
@@ -518,7 +528,8 @@ class ReportesController extends Controller
 
 
         }
-
+        if(!isset($resultado[0]['Programas']))
+            $resultado[0]['Programas']=0;
         if($resultado[0]['Programas']>0) {
             return view('Reportes/ReportePrograma')->with([
                 'resultados'=>$resultado,
@@ -530,6 +541,150 @@ class ReportesController extends Controller
         {
             Session::flash('error', 'No se encontraron resultados');
             return redirect('reportes/programas');
+        }
+
+
+    }
+
+
+    public function consultarFestivales(Request $request)
+    {
+        // dd($request);
+        if ( $request->FechaFinal != "" && $request->FechaInicio !="") {
+
+            $fecha=$request->FechaInicio." 00:00:00";
+            $fechaInf=Carbon::createFromFormat("d/m/Y H:i:s", $fecha);
+            $fecha=$request->FechaFinal." 23:59:59";
+            $fechaSup=Carbon::createFromFormat("d/m/Y H:i:s", $fecha);
+            //dd($fechaInf,$fechaSup);
+            Funcion::whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
+
+            $Funciones = Funcion::where('status','Realizada')->whereBetween('fecha', array($fechaInf,$fechaSup))->orderBy('titulo', 'asc')->get();
+            $resultado=[];
+            $i=0;
+            $resultado[0]['Festival']="";
+            $resultado[0]['Peliculas']="";
+            $resultado[0]['Asistencia']=0;
+            $resultado[0]['Duracion']=0;
+            $resultado[0]["      "]="";
+            $resultado[0]['Total Peliculas']=0;
+            $resultado[0]['Largometrajes']=0;
+            $resultado[0]['Cortometrajes']=0;
+            $resultado[0]['Festivales']=0;
+            $resultado[0]['Total espectadores']=0;
+            $resultado[0]['Total minutos']=0;
+            $resultado[0]['Fecha inicial']=$request->FechaInicio;
+            $resultado[0]['Fecha final']=$request->FechaFinal;
+            $festivales=array();
+            $aux=array();
+            $j=0;
+
+
+            foreach ($Funciones as $funcion)
+            {
+
+                $resultado[0]['Total espectadores']+=$funcion->asistencia;
+
+
+                $peliculas=$funcion->peliculas;
+                $festival=$funcion->festivales->titulo;
+
+                if (isset($aux[$festival.'asistencia']))
+                    $aux[$festival.'asistencia']+=$funcion->asistencia;
+                else {
+                    $aux[$festival.'asistencia']=$funcion->asistencia;
+                }
+                foreach ($peliculas as $pelicula)
+                {
+
+                    $resultado[0]['Total Peliculas']++;
+
+                    if($pelicula->tipo=='Largometraje')
+                    {
+                        $resultado[0]['Largometrajes']++;
+                    }
+                    if($pelicula->tipo=='Cortometraje')
+                    {
+                        $resultado[0]['Cortometrajes']++;
+                    }
+
+                    $resultado[0]['Total minutos']+=$pelicula->duracion;
+
+
+                    if (isset($aux[$festival.'peliculas']))
+                        $aux[$festival.'peliculas']++;
+                    else {
+                        $aux[$festival.'peliculas']=1;
+                    }
+                    if (isset($aux[$festival.'duracion']))
+                        $aux[$festival.'duracion']+=$pelicula->duracion;
+                    else {
+                        $aux[$festival.'duracion']=$pelicula->duracion;
+                    }
+
+
+
+
+
+                    $festivales[$j]=$festival;
+
+                    $j++;
+                }
+
+                $i++;
+
+
+            }
+
+
+            $resultadoFestivales= array_unique($festivales);
+            $resultado[0]['Festivales']=count($resultadoFestivales);
+            $i=0;
+
+            foreach($resultadoFestivales as $festival)
+            {
+                $resultado[$i]['Festival']=$festival;
+                if (isset($aux[$festival.'peliculas'])){
+                    $resultado[$i]['Peliculas']=$aux[$festival.'peliculas'];
+                }
+                else
+                    $resultado[$i]['Peliculas']=0;
+
+                if (isset($aux[$festival.'asistencia'])){
+                    $resultado[$i]['Asistencia']=$aux[$festival.'asistencia'];
+                }
+                else
+                    $resultado[$i]['Asistencia']=0;
+
+                if (isset($aux[$festival.'duracion'])){
+                    $resultado[$i]['Duracion']=$aux[$festival.'duracion'];
+                }
+                else
+                    $resultado[$i]['Duracion']=0;
+                $i++;
+
+            }
+          //  dd($resultado,$aux,$festivales,$resultadoFestivales);
+            $request->session()->put('festivales',$resultado);
+
+
+
+        }
+
+        if(!isset($resultado[0]['Festivales']))
+            $resultado[0]['Festivales']=0;
+
+        if($resultado[0]['Festivales']>0) {
+            return view('Reportes/ReporteFestival')->with([
+                'resultados'=>$resultado,
+                'FechaIni'=>$request->FechaInicio,
+                'FechaFin'=>$request->FechaFinal
+            ]);
+        }
+        else
+        {
+            Session::flash('error', 'No se encontraron resultados');
+            return redirect('reportes/festivales');
         }
 
 
