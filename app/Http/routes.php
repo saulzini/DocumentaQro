@@ -834,6 +834,18 @@ Route::get('reportes/programas/consultar',[
     'as' =>'reportesConsultarProgramas'
 ]);
 
+Route::get('reportes/festivales',[
+    'uses' => 'ReportesController@indexFestival',
+    'as' =>'reportesFestival'
+]);
+
+Route::get('reportes/festivales/consultar',[
+    'uses' => 'ReportesController@consultarFestivales',
+    'as' =>'reportesConsultarFestivales'
+]);
+
+
+
 
 
 /*
