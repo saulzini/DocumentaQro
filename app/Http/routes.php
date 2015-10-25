@@ -806,12 +806,22 @@ Route::get('reportes/funciones/consultar',[
 
 Route::get('reportes/paises',[
     'uses' => 'ReportesController@indexPais',
-    'as' =>'reportes'
+    'as' =>'reportesPais'
 ]);
 
 Route::get('reportes/paises/consultar',[
     'uses' => 'ReportesController@consultarPaises',
     'as' =>'reportesConsultarPaises'
+]);
+
+Route::get('reportes/sedes',[
+    'uses' => 'ReportesController@indexSede',
+    'as' =>'reportesSede'
+]);
+
+Route::get('reportes/sedes/consultar',[
+    'uses' => 'ReportesController@consultarSedes',
+    'as' =>'reportesConsultarSedes'
 ]);
 
 

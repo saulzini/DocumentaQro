@@ -31,6 +31,11 @@ class ExcelController extends Controller
             $data=session()->get('paises');
             $title='Paises';
         }
+        if($report=='3')
+        {
+            $data=session()->get('sedes');
+            $title='Sedes';
+        }
         $fechaIni=$data[0]['Fecha inicial'];
         $fechaFin=$data[0]['Fecha final'];
 
