@@ -12,6 +12,6 @@ class FuncionesSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\Funcion::class,100)->create();
+        factory(App\Funcion::class,40)->create();
     }
 }

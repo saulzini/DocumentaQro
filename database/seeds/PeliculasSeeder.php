@@ -12,6 +12,6 @@ class PeliculasSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\Pelicula::class,10)->create();
+        factory(App\Pelicula::class,40)->create();
     }
 }

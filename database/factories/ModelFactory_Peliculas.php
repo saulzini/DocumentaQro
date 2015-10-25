@@ -12,6 +12,8 @@
 */
 
 $factory->define(App\Pelicula::class, function (Faker\Generator $faker) {
+
+     $tipo=['Cortometraje','Largometraje'];
     return [
         'titulo' => $faker->name,
         'director' => $faker->name,
@@ -25,6 +27,7 @@ $factory->define(App\Pelicula::class, function (Faker\Generator $faker) {
         'sinopsis' => $faker->text(200),
 
         'poster' => $faker->url,
+        'tipo'=>$faker->randomElement($tipo)
 
 
     ];
