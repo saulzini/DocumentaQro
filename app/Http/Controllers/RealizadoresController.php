@@ -235,4 +235,16 @@ class RealizadoresController extends Controller
         return redirect('realizadores/modificar/item/'.$realizador->id);
     }
 
+    public function exportarRealizadores($id){
+        $realizadoresItem = Realizador::findOrFail($id);
+
+        //dd($patrocinadorItem->paquetes);
+        $view =  \View::make('Realizadores.PDFRealizadores',compact('realizadoresItem'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+
+
+    }
+
 }

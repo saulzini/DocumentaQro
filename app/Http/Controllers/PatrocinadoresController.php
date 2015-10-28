@@ -268,4 +268,17 @@ class PatrocinadoresController extends Controller
         return redirect('patrocinadores/modificar/item/'.$patrocinador->id);
     }
 
+    public function exportarPatrocinadores($id){
+        $patrocinadorItem = Patrocinador::findOrFail($id);
+
+        //dd($patrocinadorItem->paquetes);
+        $view =  \View::make('Patrocinadores.PDFPatrocinadores',compact('patrocinadorItem'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+
+
+    }
+
+
 }

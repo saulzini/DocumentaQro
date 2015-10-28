@@ -855,14 +855,14 @@ Route::get('reportes/festivales/consultar',[
  * */
 
 Route::get('patrocinadoresExport/item/{id?}',[
-        'uses' =>'PdfController@exportarPatrocinadores',
+        'uses' =>'PatrocinadoresController@exportarPatrocinadores',
         'as' =>'patrocinadoresExport/item/']
 
 );
 
 
 Route::get('realizadoresExport/item/{id?}',[
-        'uses' =>'PdfController@exportarRealizadores',
+        'uses' =>'RealizadoresController@exportarRealizadores',
         'as' =>'realizadoresExport/item/']
 
 );
