@@ -78,12 +78,12 @@
                             <span>Características</span>
                         </a></li>
 
-                    <li><a href="{{route('paquetes')}}">
+                    <li><a href="{{route('paquetes')}}" class="active">
                             <i class="fa fa-cubes"></i>
                             <span>Paquetes</span>
                         </a></li>
 
-                    <li><a href="{{route('patrocinadores')}}" class="active">
+                    <li><a href="{{route('patrocinadores')}}" >
                             <i class="fa fa-thumbs-o-up"></i>
                             <span>Patrocinadores</span>
                         </a></li>

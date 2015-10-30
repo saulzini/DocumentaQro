@@ -5,7 +5,7 @@
     </div>
 
     <!--logo start-->
-    <a href="index.html" class="logo"><img align="middle" style="width:180px;position:absolute" src="{{ asset('assets/img/DQ2.png') }}"></a>
+    <a href="{{route('funciones')}}" class="logo"><img align="middle" style="width:180px;position:absolute" src="{{ asset('assets/img/DQ2.png') }}"></a>
     <!--logo end-->
 
     <div class="nav notify-row" id="top_menu">

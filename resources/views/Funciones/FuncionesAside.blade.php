@@ -31,7 +31,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('funciones')}}" >
+                <a href="{{route('funciones')}}"  class="active" >
                     <i class="fa fa-video-camera"></i>
                     <span>Función</span>
                 </a>
@@ -59,14 +59,14 @@
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('integrantes')}}">
+                <a href="{{route('integrantes')}}" >
                     <i class="fa fa-users"></i>
                     <span>Integrantes</span>
                 </a>
             </li>
 
             <li class="sub-menu">
-                <a  href="#" class="active">
+                <a  href="#">
                     <i class="fa fa-thumbs-o-up "></i>
                     <span>Patrocinios &nbsp;</span>
                     <i class="fa fa-caret-down"></i>
@@ -78,12 +78,12 @@
                             <span>Características</span>
                         </a></li>
 
-                    <li><a href="{{route('paquetes')}}">
+                    <li><a href="{{route('paquetes')}}" >
                             <i class="fa fa-cubes"></i>
                             <span>Paquetes</span>
                         </a></li>
 
-                    <li><a href="{{route('patrocinadores')}}" class="active">
+                    <li><a href="{{route('patrocinadores')}}" >
                             <i class="fa fa-thumbs-o-up"></i>
                             <span>Patrocinadores</span>
                         </a></li>

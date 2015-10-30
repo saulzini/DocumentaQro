@@ -16,7 +16,7 @@
 
                     {!!Form::text('Nombre' ,$realizadoresItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Nombre del realizador'])!!}
                 @else
-                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Título de la pelicula'])!!}
+                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Nombre del realizador'])!!}
                 @endif
             </div>
         </div>

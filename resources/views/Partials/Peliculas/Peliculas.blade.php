@@ -17,14 +17,14 @@
     <div class="col-md-7">
         <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Titulo</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Título</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
 
-                 {!!Form::text('Titulo' ,$peliculasItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Titulo de la pelicula'])!!}
+                 {!!Form::text('Titulo' ,$peliculasItem->titulo,['class'=>'form-control','id'=>'Título','placeholder'=>'Titulo de la película'])!!}
                 @else
-                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título de la pelicula'])!!}
+                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título de la película'])!!}
                 @endif
             </div>
         </div>
@@ -76,9 +76,9 @@
             <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>Año</label>
             <div class="col-lg-10">
                 @if( isset($peliculasItem))
-                {!!Form::text('Anio' ,$peliculasItem->anio,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la pelicula'])!!}
+                {!!Form::text('Anio' ,$peliculasItem->anio,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la película'])!!}
                 @else
-                    {!!Form::text('Anio' ,null,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la pelicula'])!!}
+                    {!!Form::text('Anio' ,null,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la película'])!!}
                 @endif
             </div>
         </div>
@@ -95,7 +95,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>Subtitulos</label>
+            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>Subtítulos</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="subtitulos" name="Subtitulos">
@@ -208,7 +208,7 @@
         <div class="form-group" align="center">
             @if( isset($peliculasItem))
 
-                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la pelicula?")'])!!}
+                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la película?")'])!!}
             @else
                 {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
             @endif

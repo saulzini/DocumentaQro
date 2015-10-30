@@ -45,7 +45,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('festivales')}}">
+                <a href="{{route('festivales')}}" >
                     <i class="fa fa-ticket"></i>
                     <span>Festival</span>
                 </a>
@@ -59,31 +59,31 @@
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('integrantes')}}">
+                <a href="{{route('integrantes')}}" >
                     <i class="fa fa-users"></i>
                     <span>Integrantes</span>
                 </a>
             </li>
 
             <li class="sub-menu">
-                <a  href="#" class="active">
+                <a href="#" class="active">
                     <i class="fa fa-thumbs-o-up "></i>
                     <span>Patrocinios &nbsp;</span>
                     <i class="fa fa-caret-down"></i>
                 </a>
 
                 <ul class="sub">
-                    <li><a href="{{route('caracteristicas')}}">
+                    <li><a href="{{route('caracteristicas')}}" class="active">
                             <i class="fa fa-check-square-o"></i>
                             <span>Características</span>
                         </a></li>
 
-                    <li><a href="{{route('paquetes')}}">
+                    <li><a href="{{route('paquetes')}}" >
                             <i class="fa fa-cubes"></i>
                             <span>Paquetes</span>
                         </a></li>
 
-                    <li><a href="{{route('patrocinadores')}}" class="active">
+                    <li><a href="{{route('patrocinadores')}}" >
                             <i class="fa fa-thumbs-o-up"></i>
                             <span>Patrocinadores</span>
                         </a></li>

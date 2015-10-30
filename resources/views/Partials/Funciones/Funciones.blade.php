@@ -17,12 +17,12 @@
     <div class="col-md-7">
     <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Titulo</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Título</label>
             <div class="col-lg-10">
 
                 @if( isset($funcionesItem))
 
-                 {!!Form::text('Titulo' ,$funcionesItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Titulo de la pelicula'])!!}
+                 {!!Form::text('Titulo' ,$funcionesItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Titulo de la película'])!!}
                 @else
                     {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título de la función'])!!}
                 @endif
@@ -112,7 +112,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label"><strong>*</strong>Peliculas</label>
+            <label class="col-lg-2 control-label"><strong>*</strong>Películas</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Pelicula" name="Pelicula[]" multiple="multiple">
                     @if(isset($funcionesPeliculas) && !$funcionesPeliculas->isEmpty())

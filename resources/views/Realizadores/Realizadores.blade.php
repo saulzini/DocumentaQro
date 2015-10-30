@@ -52,14 +52,14 @@
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><i class="fa fa-angle-right"></i>Búsqueda</h3>
+                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>Realizadores</h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Realizadores</h4>
+                            <h4><i class="fa fa-angle-right"></i>Búsqueda</h4>
 
                             @include('Partials.Mensajes.mensajes')
 
@@ -98,7 +98,7 @@
                                 <thead>
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> Nombre </th>
-                                    <th><i class="fa fa-thumb-tack"></i> Vínculo </th>
+                                    <th><i class="fa fa-user"></i> Vínculo </th>
 
 
 

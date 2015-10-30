@@ -47,7 +47,7 @@
 
                             {!! Form::open(['action'=>['PatrocinadoresController@agregarPatrocinadores'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarPatrocinadores'])!!}
 
-                                <h4><i class="fa fa-angle-right"></i>Agregar patrocinador</h4>
+                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Agregar patrocinador</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
                                 @include('Partials.Patrocinadores.Patrocinadores')
 

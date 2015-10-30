@@ -9,7 +9,7 @@
     <div class="col-md-8">
         <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
         <div class="form-group">
-            <label for="patrocinador" class="col-lg-2 control-label"><strong>*</strong>Nombre del patrocinador</label>
+            <label for="patrocinador" class="col-lg-2 control-label"><strong>*</strong>Nombre</label>
             <div class="col-lg-10">
 
                 @if( isset($patrocinadoresItem))

@@ -5,14 +5,14 @@
         <ul class="sidebar-menu" id="nav-accordion">
 
             <li class="sub-menu">
-                <a href="#">
+                <a href="#" class="active">
                     <i class="fa fa-film"></i>
                     <span>Películas &nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <i class="fa fa-caret-down"></i>
                 </a>
 
                 <ul class="sub">
-                    <li><a href="{{route('peliculas')}}" >
+                    <li><a href="{{route('peliculas')}}" class="active">
                             <i class="fa fa-film"></i>
                             <span>Película</span>
                         </a></li>
@@ -66,7 +66,7 @@
             </li>
 
             <li class="sub-menu">
-                <a  href="#" class="active">
+                <a  href="#">
                     <i class="fa fa-thumbs-o-up "></i>
                     <span>Patrocinios &nbsp;</span>
                     <i class="fa fa-caret-down"></i>
@@ -83,7 +83,7 @@
                             <span>Paquetes</span>
                         </a></li>
 
-                    <li><a href="{{route('patrocinadores')}}" class="active">
+                    <li><a href="{{route('patrocinadores')}}">
                             <i class="fa fa-thumbs-o-up"></i>
                             <span>Patrocinadores</span>
                         </a></li>

@@ -30,7 +30,7 @@
 
 
 
-                                  <h4><i class="fa fa-angle-right"></i>Consultar Realizador </h4>
+                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar Realizador </h4>
 
 
 

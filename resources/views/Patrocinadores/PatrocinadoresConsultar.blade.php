@@ -26,7 +26,7 @@
 
 
 
-                                  <h4><i class="fa fa-angle-right"></i>Consultar Patrocinador </h4>
+                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar Patrocinador </h4>
 
 
 

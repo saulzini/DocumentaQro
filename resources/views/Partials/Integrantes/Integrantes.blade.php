@@ -23,14 +23,14 @@
 
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Telefono</label>
+            <label for="Titulo" class="col-lg-2 control-label">Teléfono</label>
             <div class="col-lg-10">
 
                 @if( isset($integrantesItem))
 
-                    {!!Form::text('Telefono' ,$integrantesItem->telefono,['class'=>'form-control','id'=>'Telefono','placeholder'=>'Telefono'])!!}
+                    {!!Form::text('Telefono' ,$integrantesItem->telefono,['class'=>'form-control','id'=>'Telefono','placeholder'=>'Teléfono'])!!}
                 @else
-                    {!!Form::text('Telefono' ,null,['class'=>'form-control','id'=>'Telefono','placeholder'=>'Telefono'])!!}
+                    {!!Form::text('Telefono' ,null,['class'=>'form-control','id'=>'Telefono','placeholder'=>'Teléfono'])!!}
                 @endif
             </div>
         </div>
@@ -49,14 +49,14 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Email</label>
+            <label for="Titulo" class="col-lg-2 control-label">E-mail</label>
             <div class="col-lg-10">
 
                 @if( isset($integrantesItem))
 
-                    {!!Form::text('Email' ,$integrantesItem->email,['class'=>'form-control','id'=>'Email','placeholder'=>'Email'])!!}
+                    {!!Form::text('Email' ,$integrantesItem->email,['class'=>'form-control','id'=>'Email','placeholder'=>'E-mail'])!!}
                 @else
-                    {!!Form::text('Email' ,null,['class'=>'form-control','id'=>'Email','placeholder'=>'Email'])!!}
+                    {!!Form::text('Email' ,null,['class'=>'form-control','id'=>'Email','placeholder'=>'E-Email'])!!}
                 @endif
             </div>
         </div>

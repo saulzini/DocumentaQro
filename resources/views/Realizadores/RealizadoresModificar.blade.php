@@ -44,7 +44,7 @@
                       <div class="col-lg-12">
                           <div class="form-panel">
                               @include('Partials.Mensajes.mensajes')
-                              <h4><i class="fa fa-angle-right"></i>Modificar realizador</h4>
+                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar realizador</h4>
                                @if( isset($realizadoresItem))
 
 
