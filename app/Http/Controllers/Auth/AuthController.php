@@ -65,7 +65,7 @@ class AuthController extends Controller
 
 
     public function loginPath(){
-        return route('iniciarSesion');
+        return route('login');
 
     }
 
@@ -83,5 +83,7 @@ class AuthController extends Controller
         return  'Usuario o Contraseña incorrectos';
 
     }
+
+
 
 }
