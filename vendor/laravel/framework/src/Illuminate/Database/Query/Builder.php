@@ -224,7 +224,7 @@ class Builder
     /**
      * Set the columns to be selected.
      *
-     * @param  array|mixed  $columns
+     * @param  array  $columns
      * @return $this
      */
     public function select($columns = ['*'])
@@ -283,7 +283,7 @@ class Builder
     /**
      * Add a new select column to the query.
      *
-     * @param  array|mixed  $column
+     * @param  mixed  $column
      * @return $this
      */
     public function addSelect($column)
@@ -337,13 +337,9 @@ class Builder
         // is trying to build a join with a complex "on" clause containing more than
         // one condition, so we'll add the join and call a Closure with the query.
         if ($one instanceof Closure) {
-            $join = new JoinClause($type, $table);
+            $this->joins[] = new JoinClause($type, $table);
 
-            call_user_func($one, $join);
-
-            $this->joins[] = $join;
-
-            $this->addBinding($join->bindings, 'join');
+            call_user_func($one, end($this->joins));
         }
 
         // If the column is simply a string, we can assume the join simply has a basic
@@ -355,8 +351,6 @@ class Builder
             $this->joins[] = $join->on(
                 $one, $operator, $two, 'and', $where
             );
-
-            $this->addBinding($join->bindings, 'join');
         }
 
         return $this;
@@ -1252,7 +1246,7 @@ class Builder
 
         $this->unions[] = compact('query', 'all');
 
-        $this->addBinding($query->getBindings(), 'union');
+        $this->addBinding($query->bindings, 'union');
 
         return $this;
     }
@@ -1376,11 +1370,7 @@ class Builder
      */
     public function get($columns = ['*'])
     {
-        if (is_null($this->columns)) {
-            $this->columns = $columns;
-        }
-
-        return $this->processor->processSelect($this, $this->runSelect());
+        return $this->getFresh($columns);
     }
 
     /**
@@ -1388,12 +1378,14 @@ class Builder
      *
      * @param  array  $columns
      * @return array|static[]
-     *
-     * @deprecated since version 5.1. Use get instead.
      */
     public function getFresh($columns = ['*'])
     {
-        return $this->get($columns);
+        if (is_null($this->columns)) {
+            $this->columns = $columns;
+        }
+
+        return $this->processor->processSelect($this, $this->runSelect());
     }
 
     /**
@@ -1461,7 +1453,7 @@ class Builder
     {
         $this->backupFieldsForCount();
 
-        $this->aggregate = ['function' => 'count', 'columns' => $this->clearSelectAliases($columns)];
+        $this->aggregate = ['function' => 'count', 'columns' => $columns];
 
         $results = $this->get();
 
@@ -1497,20 +1489,6 @@ class Builder
     }
 
     /**
-     * Remove the column aliases since they will break count queries.
-     *
-     * @param  array  $columns
-     * @return array
-     */
-    protected function clearSelectAliases(array $columns)
-    {
-        return array_map(function ($column) {
-            return is_string($column) && ($aliasPosition = strpos(strtolower($column), ' as ')) !== false
-                    ? substr($column, 0, $aliasPosition) : $column;
-        }, $columns);
-    }
-
-    /**
      * Restore some fields after the pagination count.
      *
      * @return void
@@ -1534,7 +1512,7 @@ class Builder
      *
      * @param  int  $count
      * @param  callable  $callback
-     * @return bool
+     * @return void
      */
     public function chunk($count, callable $callback)
     {
@@ -1545,15 +1523,13 @@ class Builder
             // developer take care of everything within the callback, which allows us to
             // keep the memory low for spinning through large result sets for working.
             if (call_user_func($callback, $results) === false) {
-                return false;
+                break;
             }
 
             $page++;
 
             $results = $this->forPage($page, $count)->get();
         }
-
-        return true;
     }
 
     /**
@@ -1608,7 +1584,7 @@ class Builder
     /**
      * Determine if any rows exist for the current query.
      *
-     * @return bool|null
+     * @return bool
      */
     public function exists()
     {
@@ -1692,7 +1668,7 @@ class Builder
      */
     public function average($column)
     {
-        return $this->avg($column);
+        return $this->avg($key);
     }
 
     /**

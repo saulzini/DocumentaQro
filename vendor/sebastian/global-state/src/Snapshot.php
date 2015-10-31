@@ -406,10 +406,6 @@ class Snapshot
             return !is_resource($variable);
         }
 
-        if ($variable instanceof \stdClass) {
-            return true;
-        }
-
         $class = new ReflectionClass($variable);
 
         do {

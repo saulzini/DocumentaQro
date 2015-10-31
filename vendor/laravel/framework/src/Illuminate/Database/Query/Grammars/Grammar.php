@@ -92,7 +92,7 @@ class Grammar extends BaseGrammar
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @param  array  $columns
-     * @return string|null
+     * @return string
      */
     protected function compileColumns(Builder $query, $columns)
     {
@@ -131,6 +131,8 @@ class Grammar extends BaseGrammar
     {
         $sql = [];
 
+        $query->setBindings([], 'join');
+
         foreach ($joins as $join) {
             $table = $this->wrapTable($join->table);
 
@@ -141,6 +143,10 @@ class Grammar extends BaseGrammar
 
             foreach ($join->clauses as $clause) {
                 $clauses[] = $this->compileJoinConstraint($clause);
+            }
+
+            foreach ($join->bindings as $binding) {
+                $query->addBinding($binding, 'join');
             }
 
             // Once we have constructed the clauses, we'll need to take the boolean connector
@@ -609,6 +615,7 @@ class Grammar extends BaseGrammar
      * Compile an exists statement into SQL.
      *
      * @param \Illuminate\Database\Query\Builder $query
+     *
      * @return string
      */
     public function compileExists(Builder $query)
