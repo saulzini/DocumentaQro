@@ -723,7 +723,7 @@ class Router implements RegistrarContract
     /**
      * Resolve the middleware name to a class name preserving passed parameters.
      *
-     * @param  string  $name
+     * @param $name
      * @return string
      */
     public function resolveMiddlewareClassName($name)
@@ -928,7 +928,7 @@ class Router implements RegistrarContract
      * @param  \Closure|null  $callback
      * @return void
      *
-     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @throws NotFoundHttpException
      */
     public function model($key, $class, Closure $callback = null)
     {
