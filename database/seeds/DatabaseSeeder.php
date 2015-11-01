@@ -42,10 +42,6 @@ class DatabaseSeeder extends Seeder
         $this->call('Festival_Programa');
 
 
-        $this->call('RoleSeeder');
-        $this->call('PermissionSeeder');
-
-
 
 
 

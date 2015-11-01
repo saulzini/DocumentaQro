@@ -1,19 +1,12 @@
 @extends('app')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en-us">
-<meta charset="utf-8" />
-<head>
-    <title>Recuperar contraseña | DocumentaQro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href=" {{ asset('assets/css/login.css') }}">
-    <link rel="stylesheet" href=" {{ asset('assets/font-awesome/css/font-awesome.css') }}">
-</head>
-
-<body>
-
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">Reset Password</div>
+				<div class="panel-body">
 					@if (session('status'))
 						<div class="alert alert-success">
 							{{ session('status') }}
@@ -31,31 +24,27 @@
 						</div>
 					@endif
 
-                   <div>
-                    <div style="width:40%; margin:0 auto; background:#221E1F; margin-top:25px">
-                        <div class="headerIS"><h4>Recordar contraseña</h4></div>
-                        <div class="login">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                            <form class="form-horizontal"  role="form" method="POST" action="{{ url('/password/email') }}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<div class="form-group">
+							<label class="col-md-4 control-label">E-Mail Address</label>
+							<div class="col-md-6">
+								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+							</div>
+						</div>
 
-                                <br>
-                                <ul>
-                                    <li>
-                                        <div class="col-md-12"  style="text-align: center">
-                                            <span class="un"><i class="fa fa-envelope-o fa-lg"></i></span><input placeholder="Correo electrónico" type="email" class="text" name="email" value="{{ old('email') }}">
-                                        </div>
-                                    </li>
-
-                                    <li style="text-align: center">
-                                        <button type="submit" class="btn" style="width:95%;">Enviar</button>
-                                    </li>
-                                </ul>
-                                <li></li>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-</body>
-</html>
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								<button type="submit" class="btn btn-primary">
+									Send Password Reset Link
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection
