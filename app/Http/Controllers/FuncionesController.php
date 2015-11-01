@@ -18,6 +18,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\FuncionesRequest;
 use App\Sede;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
@@ -29,6 +30,31 @@ class FuncionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function  __construct()
+    {
+        //se valida que no este logueado
+        if(!Auth::check() ){
+
+            $this->middleware('auth');
+        }
+        else {
+            //Si esta logueado entonces se revisa el permiso
+            if (Auth::user()->can('funciones'))
+            {
+
+
+            }
+            else {
+                //Si no tiene el permiso entonces cierra la sesion y manda un error 404
+                //Auth::logout();
+                abort('404');
+
+            }
+        }
+
+
+    }
+
     public function index()
     {
         $now= Carbon::now()->format('Y/m/d');
