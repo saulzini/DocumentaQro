@@ -1,20 +1,14 @@
 @extends('app')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en-us">
-    <meta charset="utf-8" />
-        <head>
-            <title>Iniciar Sesión | DocumentaQro</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- BOOTSTRAP -->
-            <link rel="stylesheet" href=" {{ asset('assets/css/login.css') }}">
-            <link rel="stylesheet" href=" {{ asset('assets/font-awesome/css/font-awesome.css') }}">
-        </head>
-
-        <body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">Login</div>
+				<div class="panel-body">
 					@if (count($errors) > 0)
-						<div class="alert alert-danger" style="text-align: center">
+						<div class="alert alert-danger">
 							<strong>Error!</strong> Existen algunos problemas con los valores ingresados.<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
@@ -24,37 +18,44 @@
 						</div>
 					@endif
 
-                 <div>
-                    <div  style="text-align: center;">
-                        <img class="logo" src="{{ asset('assets/img/DQ.png') }}" alt="DocumentaQro"><br>
-                    </div>
-
-                    <div style="width:400px; margin:auto; background:#221E1F; margin-top:25px;">
-                       <div  class="headerIS" ><h4>Iniciar sesión</h4></div>
-                         <div class="login">
-
-					  <form class="form" role="form" method="POST" action="{{ route('login') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ route('iniciarSesion') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <ul>
-                            <li>
-                                <span class="un"><i class="fa fa-user fa-lg"></i></span><input type="email" class="text" name="email" value="{{ old('email') }}" placeholder="E-mail">
-                            </li>
 
-                            <li>
-                                <span class="un"><i class="fa fa-lock  fa-lg"></i></span><input type="password" class="text" name="password" placeholder="Contraseña">
-                            </li>
+						<div class="form-group">
+							<label class="col-md-4 control-label">E-Mail Address</label>
+							<div class="col-md-6">
+								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+							</div>
+						</div>
 
-                            <li>
-                                <input type="submit" style="width:100%;" class="btn" value="Ingresar">
-                            </li>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Password</label>
+							<div class="col-md-6">
+								<input type="password" class="form-control" name="password">
+							</div>
+						</div>
 
-                            <li><div class="span"><span class="ch"><input type="checkbox" name="remember" id="r"> <label for="r">Recuérdame</label></span><span class="ch"> <a class="letras" href="{{ url('/password/email') }}">¿Olvidaste tu contraseña?</a></span></div></li>
-                        </ul>
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="remember"> Remember Me
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								<button type="submit" class="btn btn-primary">Login</button>
+
+								<a class="btn btn-link" href="{{ route('password/email') }}">Forgot Your Password?</a>
+							</div>
+						</div>
 					</form>
-
 				</div>
 			</div>
-           </div>
-        </body>
-    </html>
+		</div>
+	</div>
+</div>
 @endsection

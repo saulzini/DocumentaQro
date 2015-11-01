@@ -65,7 +65,7 @@ class AuthController extends Controller
 
 
     public function loginPath(){
-        return route('login');
+        return route('iniciarSesion');
 
     }
 

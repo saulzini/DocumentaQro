@@ -35,13 +35,6 @@ class Kernel implements KernelContract
     protected $artisan;
 
     /**
-     * The Artisan commands provided by the application.
-     *
-     * @var array
-     */
-    protected $commands = [];
-
-    /**
      * The bootstrap classes for the application.
      *
      * @var array
