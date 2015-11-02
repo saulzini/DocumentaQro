@@ -21,7 +21,7 @@
 
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('realizadores')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                <h3><a href="{{route('realizadores')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR FUNCIONES -->
@@ -33,7 +33,7 @@
 
                             {!! Form::open(['action'=>['RealizadoresController@agregarRealizadores'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarRealizadores'])!!}
 
-                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Agregar realizador</h4>
+                                <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.agregarRealizador')  }}</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
                                 @include('Partials.Realizadores.Realizadores')
 
