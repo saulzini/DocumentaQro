@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'es',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -148,6 +148,12 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         'Maatwebsite\Excel\ExcelServiceProvider',
+
+
+        /**
+         * Third Party Service Providers...
+         */
+        Bican\Roles\RolesServiceProvider::class,
 
     ],
 

@@ -7,29 +7,29 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
-        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+        <p align="left" class="help-block"> (*) {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="Realizador" class="col-lg-2 control-label"><strong>*</strong>Nombre del realizador</label>
+            <label for="Realizador" class="col-lg-2 control-label"><strong>*</strong>{{trans('validation.attributes.nombredelRealizador') }}</label>
             <div class="col-lg-10">
 
                 @if( isset($realizadoresItem))
 
-                    {!!Form::text('Nombre' ,$realizadoresItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Nombre del realizador'])!!}
+                    {!!Form::text('Nombre' ,$realizadoresItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>trans('validation.attributes.nombredelRealizador')  ])!!}
                 @else
-                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Nombre del realizador'])!!}
+                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>trans('validation.attributes.nombredelRealizador')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Vínculo</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{trans('validation.attributes.vinculo')}}</label>
             <div class="col-lg-10">
 
                 @if( isset($realizadoresItem))
 
-                    {!!Form::text('Vinculo' ,$realizadoresItem->vinculo,['class'=>'form-control','id'=>'Vinculo','placeholder'=>'Vínculo'])!!}
+                    {!!Form::text('Vinculo' ,$realizadoresItem->vinculo,['class'=>'form-control','id'=>'Vinculo','placeholder'=>trans('validation.attributes.vinculo')])!!}
                 @else
-                    {!!Form::text('Vinculo' ,null,['class'=>'form-control','id'=>'Vinculo','placeholder'=>'Vínculo'])!!}
+                    {!!Form::text('Vinculo' ,null,['class'=>'form-control','id'=>'Vinculo','placeholder'=>trans('validation.attributes.vinculo')])!!}
                 @endif
             </div>
         </div>
@@ -54,7 +54,7 @@
 
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label">Teléfono</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label">{{trans('validation.attributes.telefono')}}</label>
             <div class="col-lg-10">
                 @if( isset($realizadoresItem))
                     {!!Form::text('Telefono' ,$realizadoresItem->telefono,['class'=>'form-control','id'=>'telefono','placeholder'=>'442200726'])!!}
@@ -68,9 +68,9 @@
         <div class="form-group" align="center">
             @if( isset($realizadoresItem))
 
-                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el realizador?")'])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el realizador?")'])!!}
             @else
-                {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
             @endif
         </div>
 
