@@ -108,6 +108,21 @@ return [
     'attributes' => [
         'Anio'=>'año',
         'material'=>'El material',
+        'buscar' => 'Buscar',
+        'realizadores' => 'Realizadores',
+        'nombre' => 'Nombre',
+        'vinculo' => 'Vínculo',
+        'busqueda' => 'Búsqueda',
+        'agregarRealizador' => 'Agregar realizador',
+
+        'camposObligatorios' => 'Campos obligatorios',
+        'nombredelRealizador' => 'Nombre del realizador',
+        'telefono' => 'Teléfono',
+        'agregar' => 'Agregar',
+        'modificar' => 'Modificar',
+        'modificarRealizador' => 'Modificar realizador',
+        'exportar' => 'Exportar',
+        'consultarRealizador' => 'Consultar Realizador'
 
     ],
 

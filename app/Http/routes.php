@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 /*
@@ -736,24 +736,24 @@ Route::post('programas/eliminar','ProgramasController@eliminarProgramas',array('
  * */
 
 // Authentication routes...
-Route::get('iniciarSesion',[
+Route::get('login',[
     'uses' => 'Auth\AuthController@getLogin',
-    'as' => 'iniciarSesion'
+    'as' => 'login'
 
 ]);
 
 
-Route::post('iniciarSesion','Auth\AuthController@postLogin',array('before' => 'csrf', function()
+Route::post('login','Auth\AuthController@postLogin',array('before' => 'csrf', function()
 {
 
 }));
 
 
 
-Route::get('cerrarSesion', [
+Route::get('logout', [
 
     'uses'=>'Auth\AuthController@getLogout',
-    'as'=>'cerrarSesion'
+    'as'=>'logout'
 ]);
 
 
