@@ -148,6 +148,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         'Maatwebsite\Excel\ExcelServiceProvider',
+        Bican\Roles\RolesServiceProvider::class
 
     ],
 
@@ -203,6 +204,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'PDF' => 'Barryvdh\DomPDF\Facade',
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+
     ],
 
 ];
