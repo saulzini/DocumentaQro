@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -20,6 +21,33 @@ class PatrocinadoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function  __construct()
+    {
+        //se valida que no este logueado
+        if(!Auth::check() ){
+
+            $this->middleware('auth');
+        }
+        else {
+            //Si esta logueado entonces se revisa el permiso
+            if (Auth::user()->can('patrocinadores'))
+            {
+
+
+            }
+            else {
+                //Si no tiene el permiso entonces cierra la sesion y manda un error 404
+                //Auth::logout();
+                abort('404');
+
+            }
+        }
+
+
+    }
+
+
+
     public function index()
     {
         //
