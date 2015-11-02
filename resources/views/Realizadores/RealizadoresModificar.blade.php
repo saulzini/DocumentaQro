@@ -37,14 +37,14 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('realizadores')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('realizadores')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.buscar')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
                               @include('Partials.Mensajes.mensajes')
-                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar realizador</h4>
+                              <h4><i class="fa fa-angle-right"></i>{{trans('validation.attributes.modificarRealizador')}}</h4>
                                @if( isset($realizadoresItem))
 
 

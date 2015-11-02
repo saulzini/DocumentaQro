@@ -104,6 +104,29 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'peliculas' => 'Movies',
+
+
+
+
+        'buscar' => 'Search',
+        'realizadores' => 'Makers',
+        'nombre' => 'Name',
+        'vinculo' => 'Linkage',
+        'busqueda' => 'Search',
+        'agregarRealizador' => 'Add maker',
+
+
+        'camposObligatorios' => 'Required Fields',
+        'nombredelRealizador' => 'Name of the maker',
+        'telefono' => 'Telephone',
+        'agregar' => 'Add',
+        'modificar' => 'Update',
+        'modificarRealizador' => 'Update maker',
+        'exportar' => 'Export',
+        'consultarRealizador' => 'Consult Maker'
+
+    ],
 
 ];

@@ -52,19 +52,19 @@
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>Realizadores</h3>
+                <h3><i class="fa fa-angle-right"></i> {{ trans('validation.attributes.buscar')  }} </h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4><i class="fa fa-angle-right"></i>Búsqueda</h4>
+                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.realizadores')  }}</h4>
 
                             @include('Partials.Mensajes.mensajes')
 
                             <div class="form-group" align="right">
-                               <a href="{{route('realizadoresAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="Agregar"><i class="fa fa-plus"></i></button></a>
+                               <a href="{{route('realizadoresAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="{{ trans('validation.attributes.agregar')  }}"><i class="fa fa-plus"></i></button></a>
                             </div>
 
                             <div class="row">
@@ -97,8 +97,8 @@
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Nombre </th>
-                                    <th><i class="fa fa-user"></i> Vínculo </th>
+                                    <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.nombre')  }} </th>
+                                    <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.vinculo')  }} </th>
 
 
 
