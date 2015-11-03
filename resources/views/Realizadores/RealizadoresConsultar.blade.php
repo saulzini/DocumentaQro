@@ -48,7 +48,7 @@
 
                                           <td>
                                               {!! Form::open(['action'=>['RealizadoresController@eliminarRealizadores'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el realizador?")'><i class="fa fa-trash-o "></i></button>
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarRealizador')  }}")'><i class="fa fa-trash-o "></i></button>
                                               <input type="hidden" name="realizadoresID" value={{$realizadoresItem->id}}>
                                               {!! Form::close() !!}
 
