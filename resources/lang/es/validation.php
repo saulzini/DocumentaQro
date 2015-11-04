@@ -106,6 +106,33 @@ return [
     */
 
     'attributes' => [
+
+        'Peliculas' => 'Películas',
+        'Pelicula' => 'Película',
+        'Realizadores' => 'Realizadores',
+        'Trafico' => 'Tráfico',
+
+        'Funcion' => 'Función',
+        'Programa' => 'Programa',
+        'Festival' => 'Festival',
+        'Sedes' => 'Sedes',
+        'Integrantes' => 'Integrantes',
+
+        'Patrocinios' => 'Patrocinios',
+        'Caracteristicas' => 'Características',
+        'Paquetes' => 'Paquetes',
+        'Patrocinadores' => 'Patrocinadores',
+
+        'Reportes' => 'Reportes',
+        'ReportesFunciones' => 'Reportes Funciones',
+        'ReportesPaises' => 'Reportes Países',
+        'ReportesProgramas' => 'Reportes Programas',
+        'ReportesFestivales' => 'Reportes Festivales',
+        'ReportesSedes' => 'Reportes Sedes',
+
+
+        'Configuracion' => 'Configuración',
+
         'Anio'=>'año',
         'material'=>'El material',
         'buscar' => 'Buscar',
@@ -114,15 +141,49 @@ return [
         'vinculo' => 'Vínculo',
         'busqueda' => 'Búsqueda',
         'agregarRealizador' => 'Agregar realizador',
+        'agregarPatrocinador' => 'Agregar patrocinador',
+        'puesto' => 'Puesto',
+        'tipo' => 'Tipo',
+        'paquete' => 'Paquete',
+        'notas' => 'Notas',
 
         'camposObligatorios' => 'Campos obligatorios',
         'nombredelRealizador' => 'Nombre del realizador',
+        'nombredelPatrocinador' => 'Nombre del patrocinador',
+        'placeNotas' => 'Aquí puede añadir sus notas',
         'telefono' => 'Teléfono',
         'agregar' => 'Agregar',
         'modificar' => 'Modificar',
+        'eliminar' => 'Eliminar',
+        'consultar' => 'Consultar',
         'modificarRealizador' => 'Modificar realizador',
+        'modificarPatrocinador' => 'Modificar patrocinador',
         'exportar' => 'Exportar',
-        'consultarRealizador' => 'Consultar Realizador'
+        'consultarRealizador' => 'Consultar Realizador',
+        'consultarPatrocinador' => 'Consultar Patrocinador',
+        'mensajePaquete' => 'No tiene paquete',
+
+        'mensajeEliminarRealizador' => '¿Seguro que desea eliminar el realizador?',
+        'mensajeModificarRealizador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
+
+        'mensajeEliminarPatrocinador'=>'¿Seguro que desea eliminar el patrocinador',
+        'mensajeModificarPatrocinador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
+
+
+        'contrasena' => 'Contraseña',
+        'ingresar' => 'Ingresar',
+        'enviar' => 'Enviar',
+        'recuerdame' => 'Recuérdame',
+        'olvidastecontrasena' => '¿Olvidaste tu contraseña?',
+        'Configuracion' => 'Configuración',
+        'contrasenaActual' => 'Contraseña actual',
+        'contrasenaNueva' => 'Contraseña nueva',
+        'contrasenaConfirmar' => 'Confirmar nueva contraseña ',
+        'recuperarContrasena' => 'Recuperar contraseña ',
+        'recordarContrasena' => 'Recordar contraseña',
+        'guardar' => 'Guardar',
+        'mensajeModificarContrasena' => 'return confirm(“¿Seguro que desea modificar contraseña?")',
+        'errores' => 'Existen algunos problemas con los valores ingresados.',
 
     ],
 

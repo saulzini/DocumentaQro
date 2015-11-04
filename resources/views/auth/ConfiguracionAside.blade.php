@@ -66,7 +66,7 @@
             </li>
 
             <li class="sub-menu">
-                <a  href="#" class="active">
+                <a  href="#" >
                     <i class="fa fa-thumbs-o-up "></i>
                     <span>{{ trans('validation.attributes.Patrocinios')  }}  &nbsp;</span>
                     <i class="fa fa-caret-down"></i>
@@ -83,7 +83,7 @@
                             <span>{{ trans('validation.attributes.Paquetes')  }} </span>
                         </a></li>
 
-                    <li><a href="{{route('patrocinadores')}}" class="active">
+                    <li><a href="{{route('patrocinadores')}}" >
                             <i class="fa fa-thumbs-o-up"></i>
                             <span>{{ trans('validation.attributes.Patrocinadores')  }} </span>
                         </a></li>
@@ -127,7 +127,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="#" >
+                <a href="#" class="active" >
                     <i class="fa fa-cog"></i>
                     <span>{{ trans('validation.attributes.Configuracion')  }} </span>
                 </a>

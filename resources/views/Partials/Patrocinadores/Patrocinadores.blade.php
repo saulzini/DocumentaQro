@@ -7,29 +7,29 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
-        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+        <p align="left" class="help-block"> (*) {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="patrocinador" class="col-lg-2 control-label"><strong>*</strong>Nombre</label>
+            <label for="patrocinador" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.nombre')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($patrocinadoresItem))
 
-                    {!!Form::text('Nombre' ,$patrocinadoresItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Nombre del patrocinador'])!!}
+                    {!!Form::text('Nombre' ,$patrocinadoresItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>trans('validation.attributes.nombredelPatrocinador') ])!!}
                 @else
-                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>'Nombre del patrocinador'])!!}
+                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>trans('validation.attributes.nombredelPatrocinador')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Puesto</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{ trans('validation.attributes.puesto')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($patrocinadoresItem))
 
-                    {!!Form::text('Puesto' ,$patrocinadoresItem->puesto,['class'=>'form-control','id'=>'Puesto','placeholder'=>'Puesto'])!!}
+                    {!!Form::text('Puesto' ,$patrocinadoresItem->puesto,['class'=>'form-control','id'=>'Puesto','placeholder'=>trans('validation.attributes.puesto')])!!}
                 @else
-                    {!!Form::text('Puesto' ,null,['class'=>'form-control','id'=>'Puesto','placeholder'=>'Puesto'])!!}
+                    {!!Form::text('Puesto' ,null,['class'=>'form-control','id'=>'Puesto','placeholder'=>trans('validation.attributes.puesto')])!!}
                 @endif
             </div>
         </div>
@@ -54,7 +54,7 @@
 
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label">Teléfono</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label">{{ trans('validation.attributes.telefono')  }}</label>
             <div class="col-lg-10">
                 @if( isset($patrocinadoresItem))
                     {!!Form::text('Telefono' ,$patrocinadoresItem->telefono,['class'=>'form-control','id'=>'telefono','placeholder'=>'442200726'])!!}
@@ -66,7 +66,7 @@
 
 
         <div class="form-group">
-            <label for="SedeS" class="col-lg-2 control-label">Tipo</label>
+            <label for="SedeS" class="col-lg-2 control-label">{{ trans('validation.attributes.tipo')  }}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Tipo" name="Tipo">
@@ -91,7 +91,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Paquete" class="col-lg-2 control-label">Paquete</label>
+            <label for="Paquete" class="col-lg-2 control-label">{{ trans('validation.attributes.paquete')  }}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Paquete" name="Paquete">
@@ -117,14 +117,14 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Notas</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{ trans('validation.attributes.notas')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($patrocinadoresItem))
 
-                    {!!Form::textArea('Notas' ,$patrocinadoresItem->notas,['class'=>'form-control','id'=>'Notas','placeholder'=>'Aquí puede añadir sus notas'])!!}
+                    {!!Form::textArea('Notas' ,$patrocinadoresItem->notas,['class'=>'form-control','id'=>'Notas','placeholder'=>trans('validation.attributes.placeNotas')])!!}
                 @else
-                    {!!Form::textArea('Notas' ,null,['class'=>'form-control','id'=>'Notas','placeholder'=>'Aquí puede añadir sus notas'])!!}
+                    {!!Form::textArea('Notas' ,null,['class'=>'form-control','id'=>'Notas','placeholder'=>trans('validation.attributes.placeNotas')])!!}
                 @endif
             </div>
         </div>
@@ -137,9 +137,9 @@
         <div class="form-group" align="center">
             @if( isset($patrocinadoresItem))
 
-                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el patrocinador?")'])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>trans('validation.attributes.mensajeModificarPatrocinador')])!!}
             @else
-                {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
             @endif
         </div>
 
