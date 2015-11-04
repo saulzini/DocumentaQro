@@ -1,6 +1,5 @@
 @include('Partials.ScriptsGenerales.scriptsPartials')
 <head>
-<title>DocumentaQro</title>
     <link rel="stylesheet" href="{{ asset('assets/css/app.css')  }}">
 </head>
 	<nav class="navbar navbar-default">

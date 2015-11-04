@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class ContrasenaController extends Controller
@@ -105,9 +106,9 @@ class ContrasenaController extends Controller
 
     public function cambiarContrasena(CambiarContrasenaRequest $request)
     {
-        dd("sdas");
-        $Contrasena = User::where('id',Auth::id())->update(array('password'=> bcrypt($request->contrasena)));
-        Session::flash('message', 'La contraseña fue modificada');
-        return redirect('auth/Ajustes');
+
+        $Contrasena = User::where('id',Auth::id())->update(array('password'=> Hash::make($request->contrasena)));
+        Session::flash('message', 'La contrasena ha sido modificada');
+        return redirect('configuracion');
     }
 }
