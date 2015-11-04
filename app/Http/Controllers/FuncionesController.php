@@ -466,5 +466,23 @@ class FuncionesController extends Controller
         ]);
     }
 
+    public function exportarFunciones($id){
 
+        $funcionesItem = Funcion::findOrFail($id);
+        $peliculas = $funcionesItem->peliculas;
+        $programas = $funcionesItem->programas;
+        $festivales = $funcionesItem->festivales;
+        $patrocinadores = $funcionesItem->patrocinadores;
+
+        if($peliculas->isEmpty())
+            $peliculas=null;
+
+        if($patrocinadores->isEmpty())
+            $patrocinadores=null;
+
+        $view =  \View::make('Funciones.PDFFunciones',compact('funcionesItem', 'peliculas','programas','festivales','patrocinadores'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+    }
 }
