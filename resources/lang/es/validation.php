@@ -74,7 +74,7 @@ return [
     "timezone"         => "El :attribute debe ser una zona válida.",
     "unique"           => ":attribute ya ha sido registrado.",
     "url"              => "El formato :attribute es inválido.",
-
+    "current_password" => "Contraseña actual equivocada",
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -171,11 +171,12 @@ return [
 
 
         'contrasena' => 'Contraseña',
+
         'ingresar' => 'Ingresar',
         'enviar' => 'Enviar',
         'recuerdame' => 'Recuérdame',
         'olvidastecontrasena' => '¿Olvidaste tu contraseña?',
-        'Configuracion' => 'Configuración',
+
         'contrasenaActual' => 'Contraseña actual',
         'contrasenaNueva' => 'Contraseña nueva',
         'contrasenaConfirmar' => 'Confirmar nueva contraseña ',

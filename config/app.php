@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -154,7 +154,7 @@ return [
          * Third Party Service Providers...
          */
         Bican\Roles\RolesServiceProvider::class,
-
+        App\Providers\ValidatorServiceProvider::class,
     ],
 
     /*
@@ -209,6 +209,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'PDF' => 'Barryvdh\DomPDF\Facade',
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+
+
     ],
 
 ];

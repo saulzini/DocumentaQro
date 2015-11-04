@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 use App\User;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
 class CambiarContrasenaRequest extends Request
@@ -25,17 +26,15 @@ class CambiarContrasenaRequest extends Request
      */
     public function rules()
     {
-        $password = User::select('password')->where('id','=',Auth::id())->get();
-        $password= bcrypt($password);
         return [
-            'contrasenaActual' => 'required|min:6|same:sssd|required',
+            'contrasenaActual' => 'required|min:6|current_password',
             'contrasena' => 'confirmed|min:6|required',
-            'contrasena_confirmation' => 'required|min:6'
+            'contrasena_confirmation' => 'required'
         ];
     }
-
     public function sanitize()
     {
         return $this->only('password');
     }
+
 }
