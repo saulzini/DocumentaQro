@@ -5,10 +5,10 @@ body{background:#35DDB3; font-family: 'Source Sans Pro', sans-serif}
 .headerIS h4{height:14px; line-height:44px; color:#fff; text-align:center}
 .login{padding:0 20px}
 .login span.un{width:10%; text-align:center; color:#ED5162; border-radius:3px 0 0 3px}
-.text{background:#12192C; width:90%; border-radius:0 3px 3px 0; border:none; outline:none; color:#999; font-family: 'Source Sans Pro', sans-serif}
-.text,.login span.un{display:inline-block; vertical-align:top; height:40px; line-height:40px; background:#574A4D}
+.text{background:#12192C; width:90%; border-radius:0 3px 3px 0; border:none; outline:none; color:#000000; font-family: 'Source Sans Pro', sans-serif}
+.text,.login span.un{display:inline-block; vertical-align:top; height:40px; line-height:40px; background:#ffffff}
 .btn:hover{background:#da4453;color:#ffffff}
-.btn{height:40px; border:none; background:#ED5162; outline:none; font-family: 'Source Sans Pro', sans-serif; font-size:20px; font-weight:bold; color:#eee; border-bottom:solid 3px #ffffff; border-radius:3px;}
+.btn{height:40px; border:none; background:#ED5162; outline:none; font-family: 'Source Sans Pro', sans-serif; font-size:20px; font-weight:bold; color:#eee; border-bottom:solid 3px #da4453; border-radius:3px;}
 ul li{height:40px; margin:15px 0; list-style:none}
 .letras:hover{color:#da4453}
 .span{display:table; width:100%; font-size:14px;}
