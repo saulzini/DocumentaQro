@@ -867,4 +867,16 @@ Route::get('programasExport/item/{id?}',[
         'uses' =>'ProgramasController@exportarProgramas',
         'as' =>'programasExport/item/']
 
-);
+// Authentication routes...
+Route::get('configuracion',[
+    'uses' => 'ContrasenaController@index',
+    'as' => 'configuracion'
+
+]);
+
+
+Route::post('configuracion/actualizar','ContrasenaController@cambiarContrasena',array('before' => 'csrf', function()
+{
+    //
+}));
+
