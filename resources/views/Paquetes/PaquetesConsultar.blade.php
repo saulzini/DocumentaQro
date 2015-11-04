@@ -89,6 +89,10 @@ MAIN SIDEBAR MENU
                                                       </div>
                                                   </div>
                                                </dl>
+                                              <div class="form-group" align="center">
+                                                  <a href="{{ route('paquetesExport/item/',$PaqueteItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                              </div>
+
                                       </div>
 
                                   </div>

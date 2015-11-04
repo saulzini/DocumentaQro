@@ -169,6 +169,24 @@ class PaquetesController extends Controller
         return redirect('paquetes/modificar/item/'.$Paquetes->id);
     }
 
+    public function exportarPaquetes($id){
+
+        $PaqueteItem = Paquete::findOrFail($id);
+        $Caracteristicas = $PaqueteItem->caracteristicas;
+
+        if($Caracteristicas->isEmpty())
+            $Caracteristicas=null;
+
+        $view =  \View::make('Paquetes.PDFPaquetes',compact('PaqueteItem', 'Caracteristicas'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+    }
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
