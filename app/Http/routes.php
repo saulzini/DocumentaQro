@@ -865,8 +865,7 @@ Route::get('paquetesExport/item/{id?}',[
 
 Route::get('programasExport/item/{id?}',[
         'uses' =>'ProgramasController@exportarProgramas',
-        'as' =>'programasExport/item/']
-
+        'as' =>'programasExport/item/']);
 // Authentication routes...
 Route::get('configuracion',[
     'uses' => 'ContrasenaController@index',
@@ -879,4 +878,6 @@ Route::post('configuracion/actualizar','ContrasenaController@cambiarContrasena',
 {
     //
 }));
+
+
 
