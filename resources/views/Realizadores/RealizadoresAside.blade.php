@@ -127,7 +127,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="#" >
+                <a href="{{route('configuracion')}}" >
                     <i class="fa fa-cog"></i>
                     <span>{{ trans('validation.attributes.Configuracion')  }} </span>
                 </a>
