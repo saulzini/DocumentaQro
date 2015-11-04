@@ -54,13 +54,6 @@ Route::get('funcionesLista/item/{id?}',[
 
 );
 
-Route::get('funcionesExport/item/{id?}',[
-        'uses' =>'PdfController@exportar',
-        'as' =>'funcionesExport/item/']
-
-);
-
-
 
 Route::get('funciones/modificar/item/{id}',[
     'uses' => 'FuncionesController@pagModificar',
@@ -634,11 +627,6 @@ Route::get('paquetesLista/item/{id?}',[
 
 );
 
-Route::get('paquetesExport/item/{id?}',[
-        'uses' =>'PdfController@exportar',
-        'as' =>'paquetesExport/item/']
-
-);
 
 Route::get('paquetes/modificar/item/{id}',[
     'uses' => 'PaquetesController@pagModificar',
@@ -699,11 +687,6 @@ Route::get('programasLista/item/{id?}',[
 
 );
 
-Route::get('programasExport/item/{id?}',[
-        'uses' =>'PdfController@exportar',
-        'as' =>'programasExport/item/']
-
-);
 
 Route::get('programas/modificar/item/{id}',[
     'uses' => 'ProgramasController@pagModificar',
@@ -864,5 +847,24 @@ Route::get('patrocinadoresExport/item/{id?}',[
 Route::get('realizadoresExport/item/{id?}',[
         'uses' =>'RealizadoresController@exportarRealizadores',
         'as' =>'realizadoresExport/item/']
+
+);
+
+Route::get('funcionesExport/item/{id?}',[
+        'uses' =>'FuncionesController@exportarFunciones',
+        'as' =>'funcionesExport/item/']
+
+);
+
+
+Route::get('paquetesExport/item/{id?}',[
+        'uses' =>'PaquetesController@exportarPaquetes',
+        'as' =>'paquetesExport/item/']
+
+);
+
+Route::get('programasExport/item/{id?}',[
+        'uses' =>'ProgramasController@exportarProgramas',
+        'as' =>'programasExport/item/']
 
 );
