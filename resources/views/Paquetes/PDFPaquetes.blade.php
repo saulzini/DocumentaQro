@@ -142,13 +142,8 @@ dd {
     <div id="rosa"></div>
 
 <br>
-<table  style="width: 100%" >
 
-    <tr>
-
-
-
-    <td  align="center">
+    <div  align="center">
                 <dl class="dl-horizontal">
                     @if (isset($PaqueteItem ))
                     <dt>Nombre</dt><dd>{{ $PaqueteItem->descripcion }}</dd><br>
@@ -166,9 +161,7 @@ dd {
 
                     @endif
                 </dl>
-    </td>
-    </tr>
-</table>
+    </div>
 
     <div id="footer"> 
            <img id ="estiloBottom" src="assets/img/reportes_bottom.png">

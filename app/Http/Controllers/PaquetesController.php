@@ -169,8 +169,6 @@ class PaquetesController extends Controller
         return redirect('paquetes/modificar/item/'.$Paquetes->id);
     }
 
-
-
     /**
      * Show the form for creating a new resource.
      *
