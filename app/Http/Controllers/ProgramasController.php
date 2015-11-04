@@ -221,6 +221,26 @@ class ProgramasController extends Controller
     }
 
 
+    public function exportarProgramas($id){
+
+        $ProgramaItem = Programa::findOrFail($id);
+        $Festivales = $ProgramaItem->festivales;
+        $Patrocinadores = $ProgramaItem->patrocinadores;
+
+        if($Festivales->isEmpty())
+            $Festivales=null;
+
+        if($Patrocinadores->isEmpty())
+            $Patrocinadores=null;
+
+        $view =  \View::make('Programas.PDFProgramas',compact('ProgramaItem', 'Festivales','Patrocinadores'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
