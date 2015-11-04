@@ -117,16 +117,16 @@
                                             <td><span>{{ $realizador->vinculo}}</span></td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('realizadoresLista/item',$realizador->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
+                                                <a href="{{ route('realizadoresLista/item',$realizador->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('realizadores/modificar/item',$realizador->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="{{ route('realizadores/modificar/item',$realizador->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.modificar')  }}"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
                                                 {!! Form::open(['action'=>['RealizadoresController@eliminarRealizadores'],'role'=>'form'] )  !!}
-                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar el realizador?")'><i class="fa fa-trash-o "></i></button>
+                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarRealizador')  }}")'><i class="fa fa-trash-o "></i></button>
 
                                                 <input type="hidden" name="realizadoresID" value={{$realizador->id}}>
                                                 {!! Form::close() !!}

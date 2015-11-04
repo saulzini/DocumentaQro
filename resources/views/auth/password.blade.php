@@ -5,7 +5,7 @@
 <html lang="en-us">
 <meta charset="utf-8" />
 <head>
-    <title>Recuperar contraseña | DocumentaQro</title>
+    <title>{{trans('validation.attributes.recuperarContrasena')}}| DocumentaQro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href=" {{ asset('assets/css/login.css') }}">
@@ -22,7 +22,7 @@
 
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<strong>Error! </strong>{{ trans('validation.attributes.errores')  }}<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -33,7 +33,7 @@
 
                    <div>
                     <div style="width:40%; margin:0 auto; background:#221E1F; margin-top:25px">
-                        <div class="headerIS"><h4>Recordar contraseña</h4></div>
+                        <div class="headerIS"><h4>{{ trans('validation.attributes.recuperarContrasena')  }}</h4></div>
                         <div class="login">
 
                             <form class="form-horizontal"  role="form" method="POST" action="{{ url('/password/email') }}">
@@ -43,12 +43,12 @@
                                 <ul>
                                     <li>
                                         <div class="col-md-12"  style="text-align: center">
-                                            <span class="un"><i class="fa fa-envelope-o fa-lg"></i></span><input placeholder="Correo electrónico" type="email" class="text" name="email" value="{{ old('email') }}">
+                                            <span class="un"><i class="fa fa-envelope-o fa-lg"></i></span><input placeholder="documentaqro@gmail.com" type="email" class="text" name="email" value="{{ old('email') }}">
                                         </div>
                                     </li>
 
                                     <li style="text-align: center">
-                                        <button type="submit" class="btn" style="width:95%;">Enviar</button>
+                                        <button type="submit" class="btn" style="width:95%;">{{ trans('validation.attributes.enviar')  }}</button>
                                     </li>
                                 </ul>
                                 <li></li>
