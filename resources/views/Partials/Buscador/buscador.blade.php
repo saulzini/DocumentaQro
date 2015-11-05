@@ -5,11 +5,11 @@
 
 
         <span class="input-group-btn">
-                       {!! Form::submit('Buscar',['class'=>'btn btn-default']) !!}
+                       {!! Form::submit(trans('validation.attributes.buscar') ,['class'=>'btn btn-default']) !!}
                 </span>
 
 
-        {!! Form::text('buscador', null, ['class' => 'form-control','placeholder'=>'Buscar']) !!}
+        {!! Form::text('buscador', null, ['class' => 'form-control','placeholder'=>trans('validation.attributes.buscar')  ]) !!}
 
     </div><!-- /input-group -->
 </div><!-- /.col-lg-6 -->
