@@ -70,7 +70,7 @@
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Tipo" name="Tipo">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
 
                     @if( isset($patrocinadoresItem))
 
@@ -95,7 +95,7 @@
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Paquete" name="Paquete">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
 
                     @if( isset($patrocinadoresItem->paquetes))
 
