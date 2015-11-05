@@ -58,7 +58,7 @@
 
                                     <td>
                                       {!! Form::open(['action'=>['PatrocinadoresController@eliminarPatrocinadores'],'role'=>'form'] )  !!}
-                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el patrocinador?")'><i class="fa fa-trash-o "></i></button>
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarPatrocinador')  }}")'><i class="fa fa-trash-o "></i></button>
                                       <input type="hidden" name="patrocinadoresID" value={{$patrocinadoresItem->id}}>
                                       {!! Form::close() !!}
 
