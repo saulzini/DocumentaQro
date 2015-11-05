@@ -147,6 +147,7 @@ return [
         'paquete' => 'Paquete',
         'notas' => 'Notas',
 
+        'validatorRealizadorNombre'=>'El nombre es requerido',
         'camposObligatorios' => 'Campos obligatorios',
         'nombredelRealizador' => 'Nombre del realizador',
         'nombredelPatrocinador' => 'Nombre del patrocinador',
@@ -206,6 +207,9 @@ return [
 
         'validatorSedeRequerido'=>'El nombre de la sede es requerido',
         'validatorLongitudNombre'=>'El nombre debe tener como máximo 255 caracteres',
+        'validatorLongitudVinculo'=>'El vinculo debe tener como máximo 255 caracteres',
+        'validatorEmail'=>'El e-mail no es válido',
+        'validatorNumeroTelefono'=>'El teléfono sólo puede tener números',
         'consultarSede'=>'Consultar sede',
         'modificarSede'=>'Modificar sede',
         'nombreSede'=>'Nombre de la sede',

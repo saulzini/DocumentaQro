@@ -62,11 +62,11 @@
                     Nombre: {
                         validators: {
                             notEmpty: {
-                                message: 'El nombre es requerido'
+                                message: '{{trans("validation.attributes.validatorRealizadorNombre")}}'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El nombre debe tener como máximo 255 caracteres'
+                                message: '{{trans("validation.attributes.validatorLongitudNombre")}}'
                             }
                         }
                     },
@@ -76,7 +76,7 @@
 
                             stringLength: {
                                 max: 255,
-                                message: 'El vinculo debe tener como máximo 255 caracteres'
+                                message: '{{trans("validation.attributes.validatorLongitudVinculo")}}'
                             }
                         }
                     },
@@ -84,7 +84,7 @@
                     Email:{
                         validators: {
                             emailAddress: {
-                                message: 'El email no es válido'
+                                message: '{{trans("validation.attributes.validatorEmail")}}'
                             }
                         }
                     },
@@ -92,7 +92,7 @@
                     Telefono:{
                         validators: {
                             numeric:{
-                                message: 'El télefono solo debe tener números'
+                                message: '{{trans("validation.attributes.validatorNumeroTelefono")}}'
                             }
                         }
                     }

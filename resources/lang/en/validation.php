@@ -105,7 +105,34 @@ return [
     */
 
     'attributes' => [
+        'Peliculas' => 'Movies',
+        'Pelicula' => 'Movie',
+        'Realizadores' => 'Makers',
+        'Trafico' => 'Traffic',
+
+        'Funcion' => 'Function',
+        'Programa' => 'Program',
+        'Festival' => 'Festival',
+        'Sedes' => 'Places',
+        'Integrantes' => 'Members',
+
+        'Patrocinios' => 'Sponsorships',
+        'Caracteristicas' => 'Characteristics',
+        'Paquetes' => 'Packages',
+        'Patrocinadores' => 'Sponsors',
+
+        'Reportes' => 'Reports',
+        'ReportesFunciones' => 'Functions reports',
+        'ReportesPaises' => 'Countries reports',
+        'ReportesProgramas' => 'Programs reportes',
+        'ReportesFestivales' => 'Festivals reports',
+        'ReportesSedes' => 'Places reports',
+
+
+        'Configuracion' => 'Settings',
         'peliculas' => 'Movies',
+
+
 
 
 
@@ -125,7 +152,19 @@ return [
         'modificar' => 'Update',
         'modificarRealizador' => 'Update maker',
         'exportar' => 'Export',
-        'consultarRealizador' => 'Consult Maker'
+        'consultarRealizador' => 'Consult Maker',
+
+         'eliminar' => 'Delete',
+        'consultar' => 'Consult',
+        'mensajeEliminarRealizador' => 'Are you sure want to delete the maker?',
+        'mensajeModificarRealizador' => 'return confirm ("Are you sure want to modify the maker?")',
+
+        'validatorRealizadorNombre'=>'The name is required',
+        'validatorLongitudNombre'=>'The maximum length for name are 255 characters',
+        'validatorLongitudVinculo'=>'The maximum length for linkage are 255 characters',
+        'validatorEmail'=>'El e-mail no es válido',
+        'validatorNumeroTelefono'=>'The telephone only can contain numbers',
+        'validatorEmail'=>'The e-mail is invalid',
 
     ],
 
