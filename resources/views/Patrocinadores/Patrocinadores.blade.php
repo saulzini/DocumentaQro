@@ -109,7 +109,8 @@
                                 </tbody>
                             </table>
                             @if (isset($Patrocinadores))
-                                {!! $Patrocinadores->setPath('')->render()!!}
+
+                                {!! $Patrocinadores->setPath('')->appends(Input::query())->render()!!}
                             @endif
                         </div>
                     </div>
