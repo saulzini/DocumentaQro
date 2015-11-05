@@ -78,10 +78,9 @@ class AuthController extends Controller
         return route('funciones');
     }
 
-
-    protected  function getFailedLoginMessage(){
-        return  'Usuario o Contraseña incorrectos';
-
+    protected function getFailedLoginMessage()
+    {
+        return 'Usuario o Contrasena equivocados.';
     }
 
 }

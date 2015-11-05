@@ -33,7 +33,7 @@
 
                             {!! Form::open(['action'=>['RealizadoresController@agregarRealizadores'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarRealizadores'])!!}
 
-                                <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.agregarRealizador')  }}</h4>
+                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.agregarRealizador')  }}</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
                                 @include('Partials.Realizadores.Realizadores')
 

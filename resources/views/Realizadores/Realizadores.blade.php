@@ -52,14 +52,14 @@
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><i class="fa fa-angle-right"></i> {{ trans('validation.attributes.buscar')  }} </h3>
+                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i> {{ trans('validation.attributes.realizadores')  }}  </h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.realizadores')  }}</h4>
+                            <h4 ><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.busqueda')  }}</h4>
 
                             @include('Partials.Mensajes.mensajes')
 
@@ -98,7 +98,7 @@
                                 <thead>
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.nombre')  }} </th>
-                                    <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.vinculo')  }} </th>
+                                    <th><i class="fa fa-check-square-o"></i> {{ trans('validation.attributes.vinculo')  }} </th>
 
 
 
@@ -142,7 +142,8 @@
                                 </tbody>
                             </table>
                             @if (isset($Realizadores))
-                                {!! $Realizadores->setPath('')->render()!!}
+
+                                {!! $Realizadores->setPath('')->appends(Input::query())->render()!!}
                             @endif
                         </div>
                     </div>
