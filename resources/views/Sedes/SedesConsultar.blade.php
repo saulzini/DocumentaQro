@@ -20,7 +20,7 @@ MAIN SIDEBAR MENU
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i>  {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
@@ -29,7 +29,7 @@ MAIN SIDEBAR MENU
 
 
 
-                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar sede</h4>
+                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i> {{ trans('validation.attributes.consultarSede')  }}</h4>
 
 
 
@@ -47,7 +47,7 @@ MAIN SIDEBAR MENU
 
                                           <td>
                                               {!! Form::open(['action'=>['SedesController@eliminarSedes'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la sede?")'><i class="fa fa-trash-o "></i></button>
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarSede')  }}")'><i class="fa fa-trash-o "></i></button>
                                               <input type="hidden" name="sedeID" value={{$sedeItem->id}}>
                                               {!! Form::close() !!}
 
@@ -66,14 +66,14 @@ MAIN SIDEBAR MENU
                                           <dl class="dl-horizontal">
 
 
-                                              <dt>Nombre</dt><dd>{{ $sedeItem->descripcion}}</dd>
+                                              <dt>{{trans('validation.attributes.nombre')}}</dt><dd>{{ $sedeItem->descripcion}}</dd>
 
                                               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                                   <div class="panel panel-default">
                                                       <div class="panel-heading" role="tab" id="headingOne">
                                                           <h4 class="panel-title">
                                                               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                                  Funciones <i class="fa fa-angle-down"></i>
+                                                                  {{trans('validation.attributes.Funciones')}} <i class="fa fa-angle-down"></i>
                                                               </a>
                                                           </h4>
                                                       </div>
@@ -83,18 +83,18 @@ MAIN SIDEBAR MENU
 
                                                               @foreach( $funciones as $funcion)
 
-                                                                  <li class="list-group-item"><strong>Titulo:</strong>{{$funcion->titulo}}&nbsp;<strong>Fecha:</strong>{{$funcion->fecha}}</li>
+                                                                  <li class="list-group-item"><strong>{{trans('validation.attributes.Título')}}:</strong>{{$funcion->titulo}}&nbsp;<strong>{{trans('validation.attributes.Fecha')}}:</strong>{{$funcion->fecha}}</li>
 
                                                               @endforeach
                                                           @else
-                                                              <li class="list-group-item">No tiene funciones</li>
+                                                              <li class="list-group-item">{{trans('validation.attributes.NoFunciones')}}</li>
                                                           @endif
                                                       </div>
                                                   </div>
                                               </div>
 
                                               <div class="form-group" align="center">
-                                                  <a href="{{ route('sedesExport/item/',$sedeItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                                  <a href="{{ route('sedesExport/item/',$sedeItem->id) }}">  <button type="button"  class="btn btn-success">{{trans('validation.attributes.exportar')}}</button></a>
                                               </div>
 
                                           </dl>

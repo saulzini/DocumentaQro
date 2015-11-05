@@ -19,14 +19,14 @@ MAIN SIDEBAR MENU
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
                               @include('Partials.Mensajes.mensajes')
-                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar sede</h4>
+                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i> {{ trans('validation.attributes.modificarSede')  }}</h4>
                                @if( isset($sedesItem))
 
 
@@ -41,7 +41,7 @@ MAIN SIDEBAR MENU
 
                                     <td>
                                       {!! Form::open(['action'=>['SedesController@eliminarSedes'],'role'=>'form'] )  !!}
-                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la sede?")'><i class="fa fa-trash-o "></i></button>
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarSede')  }}")'><i class="fa fa-trash-o "></i></button>
                                       <input type="hidden" name="sedeID" value={{$sedesItem->id}}>
                                       {!! Form::close() !!}
 
@@ -84,11 +84,11 @@ MAIN SIDEBAR MENU
                       Descripcion: {
                           validators: {
                               notEmpty: {
-                                  message: 'El nombre de la sede es requerido'
+                                  message: '{{trans("validation.attributes.validatorSedeRequerido")}}'
                               },
                               stringLength: {
                                   max: 255,
-                                  message: 'El nombre debe tener como máximo 255 caracteres'
+                                  message: '{{trans("validation.attributes.validatorLongitudNombre")}}'
                               }
                           }
                       }

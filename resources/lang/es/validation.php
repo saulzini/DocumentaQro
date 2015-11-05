@@ -199,7 +199,18 @@ return [
         'NoProgramas'=>'No tiene programas',
         'NoPatrocinadores'=>'No tiene patrocinadores',
         'modificarFestival'=>'Modificar festival',
+        'tituloFestival'=>'Título del festival',
 
+        'mensajeEliminarSede'=>'¿Seguro que desea eliminar la sede?',
+        'agregarSede' => 'Agregar sede',
+
+        'validatorSedeRequerido'=>'El nombre de la sede es requerido',
+        'validatorLongitudNombre'=>'El nombre debe tener como máximo 255 caracteres',
+        'consultarSede'=>'Consultar sede',
+        'modificarSede'=>'Modificar sede',
+        'nombreSede'=>'Nombre de la sede',
+        'Selecciona'=>'Selecciona',
+        'mensajeModificarSede' => 'return confirm ("¿Seguro que desea modificar la sede?")',
     ],
 
 ];

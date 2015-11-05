@@ -23,9 +23,9 @@
 
                 @if( isset($festivalesItem))
 
-                 {!!Form::text('Titulo' ,$festivalesItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título del festival'])!!}
+                 {!!Form::text('Titulo' ,$festivalesItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloFestival')])!!}
                 @else
-                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título del festival'])!!}
+                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloFestival')])!!}
                 @endif
             </div>
         </div>
@@ -58,7 +58,7 @@
 
         <div class="form-group" align="center">
             @if( isset($festivalesItem))
-                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el festival?")'])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>trans('validation.attributes.mensajeModificarFestival')])!!}
             @else
                 {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
             @endif
