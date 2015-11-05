@@ -15,29 +15,29 @@
     </div>
 
     <div class="col-md-7">
-        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+        <p align="left" class="help-block"> (*)  {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Título</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong> {{ trans('validation.attributes.Título')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
 
-                 {!!Form::text('Titulo' ,$peliculasItem->titulo,['class'=>'form-control','id'=>'Título','placeholder'=>'Titulo de la película'])!!}
+                 {!!Form::text('Titulo' ,$peliculasItem->titulo,['class'=>'form-control','id'=>'Título','placeholder'=> trans('validation.attributes.tituloPeliculaPlace')  ])!!}
                 @else
-                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título de la película'])!!}
+                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloPeliculaPlace') ])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Director</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Director')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
 
-                    {!!Form::text('Director' ,$peliculasItem->director,['class'=>'form-control','id'=>'Director','placeholder'=>'Nombre del director'])!!}
+                    {!!Form::text('Director' ,$peliculasItem->director,['class'=>'form-control','id'=>'Director','placeholder'=>trans('validation.attributes.directorPeliculaPlace')])!!}
                 @else
-                    {!!Form::text('Director' ,null,['class'=>'form-control','id'=>'Director','placeholder'=>'Nombre del director'])!!}
+                    {!!Form::text('Director' ,null,['class'=>'form-control','id'=>'Director','placeholder'=>trans('validation.attributes.directorPeliculaPlace')])!!}
                 @endif
             </div>
         </div>
@@ -45,11 +45,11 @@
 
 
         <div class="form-group">
-            <label for="SedeS" class="col-lg-2 control-label"><strong>*</strong>País</label>
+            <label for="SedeS" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Pais')  }}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Pais" name="Pais">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
 
                     @if( isset($peliculasItem))
 
@@ -73,33 +73,33 @@
 
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>Año</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Anno')  }}</label>
             <div class="col-lg-10">
                 @if( isset($peliculasItem))
-                {!!Form::text('Anio' ,$peliculasItem->anio,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la película'])!!}
+                {!!Form::text('Anio' ,$peliculasItem->anio,['class'=>'form-control','id'=>'Anio','placeholder'=>trans('validation.attributes.annoPeliculaPlace') ])!!}
                 @else
-                    {!!Form::text('Anio' ,null,['class'=>'form-control','id'=>'Anio','placeholder'=>'Año de la película'])!!}
+                    {!!Form::text('Anio' ,null,['class'=>'form-control','id'=>'Anio','placeholder'=>trans('validation.attributes.annoPeliculaPlace')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>Duración</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>{{trans('validation.attributes.Duracion')}}</label>
             <div class="col-lg-10">
                 @if( isset($peliculasItem))
-                    {!!Form::text('Duracion' ,$peliculasItem->duracion,['class'=>'form-control','id'=>'Duracion','placeholder'=>'Duración en minutos'])!!}
+                    {!!Form::text('Duracion' ,$peliculasItem->duracion,['class'=>'form-control','id'=>'Duracion','placeholder'=>trans('validation.attributes.duracionPeliculaPlace')])!!}
                 @else
-                    {!!Form::text('Duracion' ,null,['class'=>'form-control','id'=>'Duracion','placeholder'=>'Duración en minutos'])!!}
+                    {!!Form::text('Duracion' ,null,['class'=>'form-control','id'=>'Duracion','placeholder'=>trans('validation.attributes.duracionPeliculaPlace')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>Subtítulos</label>
+            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>{{trans('validation.attributes.Subtitulos')}}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="subtitulos" name="Subtitulos">
-                    <option value="">Selecciona</option>
+                    <option value="">{{trans('validation.attributes.Selecciona')}}</option>
 
                     @if( isset($peliculasItem))
 
@@ -120,11 +120,11 @@
         </div>
 
         <div class="form-group">
-            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>Tipo</label>
+            <label for="Subtitulos" class="col-lg-2 control-label"><strong>*</strong>{{trans('validation.attributes.Tipo')}}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Tipo" name="Tipo">
-                    <option value="">Selecciona</option>
+                    <option value="">{{trans('validation.attributes.Selecciona')}}</option>
 
                     @if( isset($peliculasItem))
 
@@ -145,24 +145,24 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Trailer</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{trans('validation.attributes.Trailer')}}</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
 
-                    {!!Form::text('Trailer' ,$peliculasItem->trailer,['class'=>'form-control','id'=>'Trailer','placeholder'=>'URL del trailer'])!!}
+                    {!!Form::text('Trailer' ,$peliculasItem->trailer,['class'=>'form-control','id'=>'Trailer','placeholder'=>trans('validation.attributes.trailerPeliculaPlace')])!!}
                 @else
-                    {!!Form::text('Trailer' ,null,['class'=>'form-control','id'=>'Trailer','placeholder'=>'URL del trailer'])!!}
+                    {!!Form::text('Trailer' ,null,['class'=>'form-control','id'=>'Trailer','placeholder'=>trans('validation.attributes.trailerPeliculaPlace')])!!}
                 @endif
             </div>
         </div>
         @if( isset($peliculasItem)&&$peliculasItem->material!="")
             <div class="form-group">
-                <label for="Titulo" class="col-lg-2 control-label">Material actual</label>
+                <label for="Titulo" class="col-lg-2 control-label">{{trans('validation.attributes.materialActual')}}</label>
                 <div class="col-lg-10">
                     <br>
 
-                        <a height="20px" href="{{asset($peliculasItem->material)}}"><strong>Click aquí para descargar</strong></a>
+                        <a height="20px" href="{{asset($peliculasItem->material)}}"><strong>{{trans('validation.attributes.clickDescargar')}}</strong></a>
 
                 </div>
             </div>
@@ -170,7 +170,7 @@
         @endif
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">  @if( isset($peliculasItem)&&$peliculasItem->material!="")Remplazar @endif Material</label>
+            <label for="Titulo" class="col-lg-2 control-label">  @if( isset($peliculasItem)&&$peliculasItem->material!=""){{trans('validation.attributes.reemplazarMaterial')}} @endif {{trans('validation.attributes.Material')}}</label>
             <div class="col-lg-10">
 
                     {!!  Form::file('material',['id'=>'material','align'=>'center','type'=>'file'] )  !!}
@@ -178,27 +178,27 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Sinopsis</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{trans('validation.attributes.Sinopsis')}}</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
 
-                    {!!Form::textArea('Sinopsis' ,$peliculasItem->sinopsis,['class'=>'form-control','id'=>'Trailer','placeholder'=>'Ingrese sinopsis'])!!}
+                    {!!Form::textArea('Sinopsis' ,$peliculasItem->sinopsis,['class'=>'form-control','id'=>'Trailer','placeholder'=>trans('validation.attributes.sinopsisPeliculaPlace')])!!}
                 @else
-                    {!!Form::textArea('Sinopsis' ,null,['class'=>'form-control','id'=>'Trailer','placeholder'=>'Ingrese sinopsis'])!!}
+                    {!!Form::textArea('Sinopsis' ,null,['class'=>'form-control','id'=>'Trailer','placeholder'=>trans('validation.attributes.sinopsisPeliculaPlace')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Notas</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{trans('validation.attributes.notas')}}</label>
             <div class="col-lg-10">
 
                 @if( isset($peliculasItem))
 
-                    {!!Form::textArea('Notas' ,$peliculasItem->notas,['class'=>'form-control','id'=>'Notas','placeholder'=>'Aquí puede añadir sus notas'])!!}
+                    {!!Form::textArea('Notas' ,$peliculasItem->notas,['class'=>'form-control','id'=>'Notas','placeholder'=>trans('validation.attributes.placeNotas')])!!}
                 @else
-                    {!!Form::textArea('Notas' ,null,['class'=>'form-control','id'=>'Notas','placeholder'=>'Aquí puede añadir sus notas'])!!}
+                    {!!Form::textArea('Notas' ,null,['class'=>'form-control','id'=>'Notas','placeholder'=>trans('validation.attributes.placeNotas')])!!}
                 @endif
             </div>
         </div>
@@ -208,9 +208,9 @@
         <div class="form-group" align="center">
             @if( isset($peliculasItem))
 
-                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la película?")'])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la película?")'])!!}
             @else
-                {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
             @endif
         </div>
 

@@ -19,7 +19,7 @@ MAIN SIDEBAR MENU
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('peliculas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('peliculas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
@@ -28,7 +28,7 @@ MAIN SIDEBAR MENU
 
 
 
-                                  <h4  style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar película</h4>
+                                  <h4  style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.consultarPelicula')  }}</h4>
 
 
 
@@ -46,7 +46,7 @@ MAIN SIDEBAR MENU
 
                                           <td>
                                               {!! Form::open(['action'=>['PeliculasController@eliminarPeliculas'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la película?")'><i class="fa fa-trash-o "></i></button>
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarPelicula')  }}")'><i class="fa fa-trash-o "></i></button>
                                               <input type="hidden" name="peliculasID" value={{$peliculaItem->id}}>
                                               {!! Form::close() !!}
 
@@ -72,25 +72,25 @@ MAIN SIDEBAR MENU
                                           <dl class="dl-horizontal">
 
 
-                                              <dt>Título</dt><dd>{{ $titulo }}</dd>
-                                              <dt>Director</dt><dd>{{ $director }}</dd>
-                                              <dt>País</dt><dd>{{ $pais}}</dd>
+                                              <dt>{{ trans('validation.attributes.Título')}}</dt><dd>{{ $titulo }}</dd>
+                                              <dt>{{ trans('validation.attributes.Director')}}</dt><dd>{{ $director }}</dd>
+                                              <dt>{{ trans('validation.attributes.Pais')}}</dt><dd>{{ $pais}}</dd>
 
-                                              <dt>Año</dt><dd>{{ $anio}}</dd>
+                                              <dt>{{ trans('validation.attributes.Anno')}}</dt><dd>{{ $anio}}</dd>
 
-                                              <dt>Duración</dt><dd>{{ $duracion }}</dd>
+                                              <dt>{{ trans('validation.attributes.Duracion')}}</dt><dd>{{ $duracion }}</dd>
 
-                                              <dt>Tipo</dt><dd>{{ $tipo}}</dd>
-                                              <dt>Subtítulos</dt><dd>{{ $subtitulos }}</dd>
-                                              <dt>Trailer</dt><dd>@if($trailer!=""){{ $trailer}}@else No tiene @endif</dd>
-                                              <dt>Material</dt><dd>@if($material!="")<a href="{{ asset($material)}}">Click para descargar</a>@else No tiene @endif</dd>
+                                              <dt>{{ trans('validation.attributes.Tipo')}}</dt><dd>{{ $tipo}}</dd>
+                                              <dt>{{ trans('validation.attributes.Subtitulos')}}</dt><dd>{{ $subtitulos }}</dd>
+                                              <dt>{{ trans('validation.attributes.Trailer')}}</dt><dd>@if($trailer!=""){{ $trailer}}@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>
+                                              <dt>{{ trans('validation.attributes.Material')}}</dt><dd>@if($material!="")<a href="{{ asset($material)}}">Click para descargar</a>@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>
                                               <br>
-                                              <dt>Sinopsis</dt><dd>@if($sinopsis!=""){{ $sinopsis}}@else No tiene @endif</dd>
+                                              <dt>{{ trans('validation.attributes.Sinopsis')}}</dt><dd>@if($sinopsis!=""){{ $sinopsis}}@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>
                                               <br>
-                                              <dt>Notas</dt><dd>@if($notas!=""){{ $notas}}@else No tiene @endif</dd>
+                                              <dt>{{ trans('validation.attributes.notas')}}</dt><dd>@if($notas!=""){{ $notas}}@else {{ trans('validation.attributes.NoTiene')}}@endif</dd>
 
                                               <div class="form-group" align="center">
-                                                  <a href="{{ route('peliculasExport/item/',$peliculaItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                                  <a href="{{ route('peliculasExport/item/',$peliculaItem->id) }}">  <button type="button"  class="btn btn-success">{{ trans('validation.attributes.exportar')}}</button></a>
                                               </div>
 
                                           </dl>
