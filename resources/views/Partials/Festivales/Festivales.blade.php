@@ -16,9 +16,9 @@
     </div>
 
     <div class="col-md-7">
-        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+        <p align="left" class="help-block"> (*) {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Título</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Título')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($festivalesItem))
@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Patrocinadores</label>
+            <label class="col-lg-2 control-label">{{ trans('validation.attributes.Patrocinadores')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Patrocinador" name="Patrocinadores[]" multiple="multiple">
                     @if(isset($festivalesPatrocinadores))
@@ -58,9 +58,9 @@
 
         <div class="form-group" align="center">
             @if( isset($festivalesItem))
-                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el festival?")'])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el festival?")'])!!}
             @else
-                {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
             @endif
         </div>
 

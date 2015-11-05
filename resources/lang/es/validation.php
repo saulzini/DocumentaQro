@@ -166,7 +166,7 @@ return [
         'mensajeEliminarRealizador' => '¿Seguro que desea eliminar el realizador?',
         'mensajeModificarRealizador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
 
-        'mensajeEliminarPatrocinador'=>'¿Seguro que desea eliminar el patrocinador',
+        'mensajeEliminarPatrocinador'=>'¿Seguro que desea eliminar el patrocinador?',
         'mensajeModificarPatrocinador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
 
 
@@ -183,8 +183,22 @@ return [
         'recuperarContrasena' => 'Recuperar contraseña ',
         'recordarContrasena' => 'Recordar contraseña',
         'guardar' => 'Guardar',
-        'mensajeModificarContrasena' => 'return confirm(“¿Seguro que desea modificar contraseña?")',
+        'mensajeModificarContrasena' => 'return confirm("¿Seguro que desea modificar contraseña?")',
         'errores' => 'Existen algunos problemas con los valores ingresados.',
+
+        'Festivales'=>'Festivales',
+        'Título'=>'Título',
+        'mensajeEliminarFestival'=>'¿Seguro que desea eliminar el festival?',
+        'mensajeModificarFestival' => 'return confirm ("¿Seguro que desea modificar el festival?")',
+        'agregarFestival' => 'Agregar festival',
+        'consultarFestival' => 'Consultar festival',
+        'Fecha'=>'Fecha',
+        'Funciones'=>'Funciones',
+        'Programas'=>'Programas',
+        'NoFunciones'=>'No tiene funciones',
+        'NoProgramas'=>'No tiene programas',
+        'NoPatrocinadores'=>'No tiene patrocinadores',
+        'modificarFestival'=>'Modificar festival',
 
     ],
 
