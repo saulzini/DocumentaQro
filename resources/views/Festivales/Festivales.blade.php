@@ -109,7 +109,7 @@
                                 </tbody>
                             </table>
                          @if (isset($Festivales))
-                            {!! $Festivales->setPath('')->render()!!}
+                                {!! $Festivales->setPath('')->appends(Input::query())->render()!!}
                             @endif
                         </div>
                     </div>

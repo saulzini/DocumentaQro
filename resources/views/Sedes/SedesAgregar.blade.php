@@ -20,7 +20,7 @@ MAIN SIDEBAR MENU
 
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                <h3><a href="{{route('sedes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR FUNCIONES -->
@@ -32,7 +32,7 @@ MAIN SIDEBAR MENU
 
                             {!! Form::open(['action'=>['SedesController@agregarSedes'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarSede'])!!}
 
-                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Agregar sede</h4>
+                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.agregarSede')  }}</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
                                 @include('Partials.Sedes.Sedes')
 
@@ -60,11 +60,11 @@ MAIN SIDEBAR MENU
                     Descripcion: {
                         validators: {
                             notEmpty: {
-                                message: 'El nombre de la sede es requerido'
+                                message: '{{trans("validation.attributes.validatorSedeRequerido")}}'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El nombre debe tener como máximo 255 caracteres'
+                                message: '{{trans("validation.attributes.validatorLongitudNombre")}}'
                             }
                         }
                     }
