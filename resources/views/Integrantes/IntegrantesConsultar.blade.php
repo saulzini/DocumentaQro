@@ -75,6 +75,10 @@
                                               <dt>E-mail</dt><dd>{{ $email}}</dd>
                                           </dl>
 
+                                          <div class="form-group" align="center">
+                                              <a href="{{ route('integrantesExport/item/',$integranteItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                          </div>
+
 
                                       </div>
 

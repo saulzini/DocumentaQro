@@ -219,4 +219,15 @@ class IntegrantesController extends Controller
         ]);
     }
 
+    public function exportarIntegrantes($id){
+
+        $integranteItem = Integrante::findOrFail($id);
+
+
+        $view =  \View::make('Integrantes.PDFIntegrantes',compact('integranteItem'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+    }
+
 }

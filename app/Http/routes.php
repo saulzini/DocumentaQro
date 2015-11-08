@@ -873,6 +873,23 @@ Route::get('configuracion',[
 
 ]);
 
+Route::get('integrantesExport/item/{id?}',[
+        'uses' =>'IntegrantesController@exportarIntegrantes',
+        'as' =>'integrantesExport/item/']
+);
+
+Route::get('traficosExport/item/{id?}',[
+        'uses' =>'TraficosController@exportarTraficos',
+        'as' =>'traficosExport/item/']
+);
+
+Route::get('caracteristicasExport/item/{id?}',[
+        'uses' =>'CaracteristicasController@exportarCaracteristicas',
+        'as' =>'caracteristicasExport/item/']
+);
+
+
+
 
 Route::post('configuracion/actualizar','ContrasenaController@cambiarContrasena',array('before' => 'csrf', function()
 {
