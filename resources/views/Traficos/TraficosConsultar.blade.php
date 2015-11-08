@@ -83,6 +83,9 @@ MAIN SIDEBAR MENU
                                       </div>
 
                                   </div>
+                              <div class="form-group" align="center">
+                                  <a href="{{ route('traficosExport/item/',$traficoItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                              </div>
                                   <br>
 
                           </div>

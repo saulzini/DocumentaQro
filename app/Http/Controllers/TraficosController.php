@@ -277,4 +277,15 @@ class TraficosController extends Controller
 
         ]);
     }
+
+    public function exportarTraficos($id){
+
+        $traficoItem = Trafico::findOrFail($id);
+
+
+        $view =  \View::make('Traficos.PDFTraficos',compact('traficoItem'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+    }
 }
