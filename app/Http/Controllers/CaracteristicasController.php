@@ -207,4 +207,16 @@ class CaracteristicasController extends Controller
         ]);
     }
 
+    public function exportarCaracteristicas($id){
+
+        $caracteristicaItem = Caracteristica::findOrFail($id);
+
+
+        $view =  \View::make('Caracteristicas.PDFCaracteristicas',compact('caracteristicaItem'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('invoice.pdf');
+    }
+
+
 }
