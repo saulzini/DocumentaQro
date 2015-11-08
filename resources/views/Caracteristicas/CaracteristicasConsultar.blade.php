@@ -71,6 +71,10 @@
                                               <dt>Característica</dt><dd>{{ $nombre }}</dd>
 
                                           </dl>
+                                          <div class="form-group" align="center">
+                                              <a href="{{ route('caracteristicasExport/item/',$caracteristicaItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                          </div>
+
 
 
                                       </div>
