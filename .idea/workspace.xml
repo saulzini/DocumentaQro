@@ -22,41 +22,100 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IntegrantesConsultar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Integrantes/IntegrantesConsultar.blade.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-9.769231">
               <caret line="77" column="42" selection-start-line="77" selection-start-column="42" selection-end-line="79" selection-end-column="48" />
+=======
+            <state vertical-scroll-proportion="-20.884615">
+              <caret line="886" column="56" selection-start-line="886" selection-start-column="56" selection-end-line="886" selection-end-column="56" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="TraficosConsultar.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Traficos/TraficosConsultar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.076923">
               <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
+=======
+      <file leaf-file-name="CaracteristicasController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CaracteristicasController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.923077">
+              <caret line="215" column="44" selection-start-line="215" selection-start-column="44" selection-end-line="215" selection-end-column="44" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="TraficosController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TraficosController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-21.538462">
               <caret line="288" column="43" selection-start-line="288" selection-start-column="43" selection-end-line="288" selection-end-column="43" />
+=======
+      <file leaf-file-name="Caracteristica.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Caracteristica.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="15.076923">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="PDFCaracteristicas.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Caracteristicas/PDFCaracteristicas.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.5">
+              <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="159" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntegrantesConsultar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Integrantes/IntegrantesConsultar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.038462">
+              <caret line="77" column="36" selection-start-line="77" selection-start-column="36" selection-end-line="80" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaracteristicasConsultar.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Caracteristicas/CaracteristicasConsultar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="PDFTraficos.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Traficos/PDFTraficos.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.86059743">
               <caret line="156" column="69" selection-start-line="156" selection-start-column="69" selection-end-line="156" selection-end-column="69" />
+=======
+      <file leaf-file-name="IntegrantesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IntegrantesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.653846">
+              <caret line="221" column="4" selection-start-line="221" selection-start-column="4" selection-end-line="231" selection-end-column="0" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
               <folding />
             </state>
           </provider>
@@ -108,9 +167,15 @@
         <option value="$PROJECT_DIR$/resources/views/Integrantes/IntegrantesConsultar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IntegrantesController.php" />
         <option value="$PROJECT_DIR$/resources/views/Integrantes/PDFIntegrantes.blade.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/Http/Controllers/TraficosController.php" />
         <option value="$PROJECT_DIR$/resources/views/Traficos/TraficosConsultar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Traficos/PDFTraficos.blade.php" />
+=======
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CaracteristicasController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Caracteristicas/PDFCaracteristicas.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Caracteristicas/CaracteristicasConsultar.blade.php" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
       </list>
     </option>
   </component>
@@ -238,7 +303,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="Integrantes" />
+=======
+              <option name="myItemId" value="Caracteristicas" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -338,7 +407,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\xampp\htdocs\proyectoLDAW\DocumentaQro\resources\views\Traficos" />
+=======
+      <recent name="C:\xampp\htdocs\proyectoLDAW\DocumentaQro\resources\views\Caracteristicas" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
       <recent name="C:\xampp\htdocs\proyectoLDAW\DocumentaQro\resources\views\Integrantes" />
       <recent name="C:\xampp\htdocs\Docu\resources\views\Reportes" />
       <recent name="C:\xampp\htdocs\Docu\resources\views\Peliculas" />
@@ -394,8 +467,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-6" y="2" width="1612" height="866" extended-state="6" />
     <editor active="false" />
+=======
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2518797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -457,6 +535,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PeliculasController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.0384617">
@@ -464,6 +543,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
     <entry file="file://$PROJECT_DIR$/resources/views/Peliculas/PeliculasConsultar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -674,14 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CaracteristicasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.171108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/FuncionesRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.14446002">
@@ -770,6 +843,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Funciones/FuncionesConsultar.blade.php">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61851335">
           <caret line="152" column="54" selection-start-line="152" selection-start-column="54" selection-end-line="154" selection-end-column="60" />
@@ -789,42 +863,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35624123">
           <caret line="879" column="0" selection-start-line="879" selection-start-column="0" selection-end-line="879" selection-end-column="0" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61851335">
+          <caret line="152" column="54" selection-start-line="152" selection-start-column="54" selection-end-line="154" selection-end-column="60" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/Integrantes/PDFIntegrantes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6900421">
           <caret line="155" column="10" selection-start-line="155" selection-start-column="10" selection-end-line="155" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/Funciones/PDFFunciones.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.840112">
+          <caret line="203" column="20" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="26" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IntegrantesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47545582">
           <caret line="217" column="30" selection-start-line="217" selection-start-column="30" selection-end-line="217" selection-end-column="30" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/Integrantes/PDFIntegrantes.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5231417">
+          <caret line="147" column="42" selection-start-line="147" selection-start-column="42" selection-end-line="147" selection-end-column="42" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TraficosController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.538462">
           <caret line="288" column="43" selection-start-line="288" selection-start-column="43" selection-end-line="288" selection-end-column="43" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.884615">
+          <caret line="886" column="56" selection-start-line="886" selection-start-column="56" selection-end-line="886" selection-end-column="56" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Integrantes/IntegrantesConsultar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-9.769231">
           <caret line="77" column="42" selection-start-line="77" selection-start-column="42" selection-end-line="79" selection-end-column="48" />
+=======
+        <state vertical-scroll-proportion="-15.653846">
+          <caret line="221" column="4" selection-start-line="221" selection-start-column="4" selection-end-line="231" selection-end-column="0" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/Traficos/TraficosConsultar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.076923">
@@ -837,6 +943,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.86059743">
           <caret line="156" column="69" selection-start-line="156" selection-start-column="69" selection-end-line="156" selection-end-column="69" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CaracteristicasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.923077">
+          <caret line="215" column="44" selection-start-line="215" selection-start-column="44" selection-end-line="215" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Caracteristica.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="15.076923">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Caracteristicas/PDFCaracteristicas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.5">
+          <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="159" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Integrantes/IntegrantesConsultar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.038462">
+          <caret line="77" column="36" selection-start-line="77" selection-start-column="36" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Caracteristicas/CaracteristicasConsultar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+>>>>>>> 5c993ff847f1f046cda82c2a351bd4405576e4c1
           <folding />
         </state>
       </provider>
