@@ -20,7 +20,7 @@ MAIN SIDEBAR MENU
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('traficos')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}a</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR TRAFICOS -->
@@ -29,7 +29,7 @@ MAIN SIDEBAR MENU
 
 
 
-                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar tráfico</h4>
+                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.consultarTrafico')  }}</h4>
 
 
 
@@ -47,7 +47,7 @@ MAIN SIDEBAR MENU
 
                                           <td>
                                               {!! Form::open(['action'=>['TraficosController@eliminarTraficos'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el tráfico?")'><i class="fa fa-trash-o "></i></button>
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarTrafico')  }}")'><i class="fa fa-trash-o "></i></button>
                                               <input type="hidden" name="traficosID" value={{$traficoItem->id}}>
                                               {!! Form::close() !!}
 
@@ -67,16 +67,16 @@ MAIN SIDEBAR MENU
                                           <dl class="dl-horizontal">
 
 
-                                              <dt>Título</dt><dd>{{ $titulo }}</dd>
-                                              <dt>Ubicación</dt><dd>{{ $ubicacion }}</dd>
-                                              <dt>Status</dt><dd>{{ $status}}</dd>
+                                              <dt>{{ trans('validation.attributes.Título')}}</dt><dd>{{ $titulo }}</dd>
+                                              <dt>{{ trans('validation.attributes.ubicacion')}}</dt><dd>{{ $ubicacion }}</dd>
+                                              <dt>{{ trans('validation.attributes.status')}}</dt><dd>{{ $status}}</dd>
 
-                                              <dt>Formato material</dt><dd>{{ $formato_material}}</dd>
+                                              <dt>{{ trans('validation.attributes.formatoMaterial')}}</dt><dd>{{ $formato_material}}</dd>
 
-                                              <dt>Costo</dt><dd>{{ $costo }}</dd>
-                                              <dt>Tipo</dt><dd>{{ $tipo }}</dd>
-                                              <dt>Integrante</dt><dd>{{ $integrante->nombre }}</dd>
-                                              <dt>Realizador</dt><dd>{{ $realizador->nombre }}</dd>
+                                              <dt>{{ trans('validation.attributes.costo')}}</dt><dd>{{ $costo }}</dd>
+                                              <dt>{{ trans('validation.attributes.tipo')}}</dt><dd>{{ $tipo }}</dd>
+                                              <dt>{{ trans('validation.attributes.integrante')}}</dt><dd>{{ $integrante->nombre }}</dd>
+                                              <dt>{{ trans('validation.attributes.realizador')}}</dt><dd>{{ $realizador->nombre }}</dd>
                                           </dl>
 
 
@@ -84,7 +84,7 @@ MAIN SIDEBAR MENU
 
                                   </div>
                               <div class="form-group" align="center">
-                                  <a href="{{ route('traficosExport/item/',$traficoItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                  <a href="{{ route('traficosExport/item/',$traficoItem->id) }}">  <button type="button"  class="btn btn-success">{{ trans('validation.attributes.exportar')}}</button></a>
                               </div>
                                   <br>
 

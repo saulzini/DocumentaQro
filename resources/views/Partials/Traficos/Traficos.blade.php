@@ -7,9 +7,9 @@
     </div>
 
     <div class="col-md-7">
-        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+        <p align="left" class="help-block"> (*) {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Película</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Pelicula')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Pelicula" name="Pelicula">
                     <option value="">Selecciona</option>
@@ -32,24 +32,24 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label">Ubicación</label>
+            <label for="Titulo" class="col-lg-2 control-label">{{ trans('validation.attributes.ubicacion')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($traficosItem))
 
-                    {!!Form::text('Ubicacion' ,$traficosItem->ubicacion,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>'Lugar de ubicación'])!!}
+                    {!!Form::text('Ubicacion' ,$traficosItem->ubicacion,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>('validation.attributes.lugarUbicacion')])!!}
                 @else
-                    {!!Form::text('Ubicacion' ,null,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>'Lugar de ubicación'])!!}
+                    {!!Form::text('Ubicacion' ,null,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>('validation.attributes.lugarUbicacion')])!!}
                 @endif
             </div>
         </div>
 
 
         <div class="form-group">
-            <label for="Status" class="col-lg-2 control-label"><strong>*</strong>Status</label>
+            <label for="Status" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.status')  }}</label>
             <div class="col-lg-10">
                 <select  class="form-control" id="Status" name="Status">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
                     @if( isset($traficosItem))
 
                         @foreach($Status as $statu)
@@ -69,38 +69,38 @@
         </div>
 
         <div class="form-group">
-            <label for="Formato" class="col-lg-2 control-label"><strong>*</strong>Formato material</label>
+            <label for="Formato" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.formatoMaterial')  }}</label>
             <div class="col-lg-10">
                 @if( isset($traficosItem))
-                    {!!Form::text('Formato' ,$traficosItem->formato_material,['class'=>'form-control','id'=>'Formato','placeholder'=>'Formato del material'])!!}
+                    {!!Form::text('Formato' ,$traficosItem->formato_material,['class'=>'form-control','id'=>'Formato','placeholder'=>('validation.attributes.formatoMaterial')])!!}
                 @else
-                    {!!Form::text('Formato' ,null,['class'=>'form-control','id'=>'Formato','placeholder'=>'Formato el material'])!!}
+                    {!!Form::text('Formato' ,null,['class'=>'form-control','id'=>'Formato','placeholder'=>('validation.attributes.formatoMaterial')])!!}
                 @endif
             </div>
         </div>
 
 
         <div class="form-group">
-            <label for="Costo" class="col-lg-2 control-label"><strong>*</strong>Costo</label>
+            <label for="Costo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.costo')}}</label>
             <div class="col-lg-10">
                 <div class="input-group">
                     <div class="input-group-addon">$</div>
 
                 @if( isset($traficosItem))
 
-                    {!!Form::text('Costo' ,$traficosItem->costo,['class'=>'form-control','id'=>'Costo','placeholder'=>'Costo del material'])!!}
+                    {!!Form::text('Costo' ,$traficosItem->costo,['class'=>'form-control','id'=>'Costo','placeholder'=>('validation.attributes.costoMaterial')])!!}
                 @else
-                    {!!Form::text('Costo' ,null,['class'=>'form-control','id'=>'Costo','placeholder'=>'Costo del material'])!!}
+                    {!!Form::text('Costo' ,null,['class'=>'form-control','id'=>'Costo','placeholder'=>('validation.attributes.costoMaterial')])!!}
                 @endif
                     </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Tipo" class="col-lg-2 control-label"><strong>*</strong>Tipo</label>
+            <label for="Tipo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.tipo')}}</label>
             <div class="col-lg-10">
                 <select  class="form-control" id="Tipo" name="Tipo">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')}}</option>
                     @if( isset($traficosItem))
 
                         @foreach($Tipos as $tipo)
@@ -120,7 +120,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Status" class="col-lg-2 control-label">Integrante</label>
+            <label for="Status" class="col-lg-2 control-label">{{ trans('validation.attributes.integrante')}}</label>
             <div class="col-lg-10">
                 <select  class="form-control" id="Integrante" name="Integrante">
                     <option value="">Selecciona</option>
@@ -143,7 +143,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Status" class="col-lg-2 control-label">Realizador</label>
+            <label for="Status" class="col-lg-2 control-label">{{ trans('validation.attributes.realizador')}}</label>
             <div class="col-lg-10">
                 <select  class="form-control" id="Realizador" name="Realizador">
                     <option value="">Selecciona</option>
