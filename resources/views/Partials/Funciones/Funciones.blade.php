@@ -1,3 +1,53 @@
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Pelicula').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+
+        $('#Patrocinador').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+
+        $('#Sede').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+
+        $('#Programa').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+
+        $('#Festival').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+
+        $('#ProgramadoPor').change(function() {
+            //Para obtener de que grupo es
+            var selected = $(':selected', this);
+            // alert(selected.parent().attr('label'));
+            $('#Tipo').val(selected.parent().attr('label'));
+            //   alert($('#Tipo').val());
+            //   alert(selected.closest('optgroup').attr('label'));
+        });
+
+    });
+</script>
+
 
 <div class="row">
     <div class="col-md-5">
@@ -15,22 +65,22 @@
     </div>
 
     <div class="col-md-7">
-    <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+    <p align="left" class="help-block"> (*) {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Título</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong> {{ trans('validation.attributes.Titulo')  }}</label>
             <div class="col-lg-10">
 
                 @if( isset($funcionesItem))
 
-                 {!!Form::text('Titulo' ,$funcionesItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Titulo de la película'])!!}
+                 {!!Form::text('Titulo' ,$funcionesItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloFuncion')])!!}
                 @else
-                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título de la función'])!!}
+                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloFuncion')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Fecha</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Fecha')  }}</label>
             <div class="col-lg-10">
                 <div class="input-group date" id="fechaDP">
                                                  <span class="input-group-addon">
@@ -46,11 +96,11 @@
         </div>
 
         <div class="form-group">
-            <label for="SedeS" class="col-lg-2 control-label"><strong>*</strong>Sede</label>
+            <label for="SedeS" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.sede')  }}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="Sede" name="Sede">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
 
                     @if( isset($funcionesItem))
 
@@ -72,22 +122,22 @@
 
 
         <div class="form-group">
-            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>Asistencia</label>
+            <label for="AsistenciasS" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.asistencia')  }}</label>
             <div class="col-lg-10">
                 @if( isset($funcionesItem))
-                {!!Form::text('Asistencia' ,$funcionesItem->asistencia,['class'=>'form-control','id'=>'AsistenciasS','placeholder'=>'Número de personas que asistieron'])!!}
+                {!!Form::text('Asistencia' ,$funcionesItem->asistencia,['class'=>'form-control','id'=>'AsistenciasS','placeholder'=>trans('validation.attributes.asistenciaMensaje')])!!}
                 @else
-                    {!!Form::text('Asistencia' ,null,['class'=>'form-control','id'=>'AsistenciasS','placeholder'=>'Numero de personas que asistieron'])!!}
+                    {!!Form::text('Asistencia' ,null,['class'=>'form-control','id'=>'AsistenciasS','placeholder'=>trans('validation.attributes.asistenciaMensaje')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label for="StatusS" class="col-lg-2 control-label"><strong>*</strong>Status</label>
+            <label for="StatusS" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.status')  }}</label>
             <div class="col-lg-10">
 
                 <select  class="form-control" id="StatusS" name="Status">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
 
                     @if( isset($funcionesItem))
 
@@ -106,13 +156,11 @@
 
                      @endif
                     </select>
-
-
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label"><strong>*</strong>Películas</label>
+            <label class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Peliculas')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Pelicula" name="Pelicula[]" multiple="multiple">
                     @if(isset($funcionesPeliculas) && !$funcionesPeliculas->isEmpty())
@@ -139,12 +187,12 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Programa</label>
+            <label class="col-lg-2 control-label">{{ trans('validation.attributes.Programa')  }}</label>
             <div class="col-lg-10">
 
 
                 <select class="form-control" id="Programa" name="Programa">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
                     @if( isset($funcionesProgramas))
                         @foreach($Programas as $Programa)
                             @if($funcionesProgramas->id== $Programa->id )
@@ -164,10 +212,10 @@
 
 
         <div class="form-group">
-            <label class="col-lg-2 control-label"><strong>*</strong>Festival</label>
+            <label class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Festival')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Festival" name="Festival">
-                    <option value="">Selecciona</option>
+                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
                     @if( isset($funcionesFestivales))
                         @foreach($Festivales as $Festival)
                             @if($funcionesFestivales->id== $Festival->id )
@@ -189,7 +237,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Patrocinadores</label>
+            <label class="col-lg-2 control-label">{{ trans('validation.attributes.Patrocinadores')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Patrocinador" name="Patrocinadores[]" multiple="multiple">
                     @if(isset($funcionesPatrocinadores) && !$funcionesPatrocinadores->isEmpty())
@@ -216,12 +264,12 @@
 
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Programado por</label>
+            <label class="col-lg-2 control-label">{{ trans('validation.attributes.programadoPor')  }}</label>
             <div class="col-lg-10">
                 @if (isset($funcionesItem))
-                 {!!Form::text('Programado' ,$funcionesItem->programadopor,['class'=>'form-control','placeholder'=>'Programado por'])!!}
+                 {!!Form::text('Programado' ,$funcionesItem->programadopor,['class'=>'form-control','placeholder'=>trans('validation.attributes.programadoPor')])!!}
                 @else
-                    {!!Form::text('Programado' ,null,['class'=>'form-control','placeholder'=>'Programado por'])!!}
+                    {!!Form::text('Programado' ,null,['class'=>'form-control','placeholder'=>trans('validation.attributes.programadoPor')])!!}
                 @endif
 
             </div>
@@ -230,12 +278,41 @@
         <div class="form-group" align="center">
             @if( isset($funcionesItem))
 
-            {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la función?")'])!!}
+            {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs', 'style'=>'width:20%', 'onclick'=>trans('validation.attributes.mensajeModificarFuncion')])!!}
             @else
-                {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs', 'style'=>'width:20%'])!!}
             @endif
         </div>
 
     </div>
 
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#fechaDP').datetimepicker({
+            format:'DD/MM/YYYY HH:mm'
+
+        });
+
+    });
+
+    $('#fechaDP').keypress(function(event) {event.preventDefault();});
+
+    $("#imagenDocumentaQro").fileinput({
+        overwriteInitial: true,
+        showClose: false,
+        showCaption: false,
+        browseLabel: '',
+        removeLabel: '',
+        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+        removeTitle: 'Cancel or reset changes',
+        elErrorContainer: '#kv-avatar-errors',
+        msgErrorClass: 'alert alert-block alert-danger',
+        defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="{{ trans("validation.attributes.imagenFuncion")  }}" style="height:400px" class="img-thumbnail"/>',
+        layoutTemplates: {main2: '{preview} {remove} {browse}'},
+    allowedFileExtensions: ["jpg","png","bmp","jpeg"]
+    });
+
+</script>
