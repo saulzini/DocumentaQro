@@ -142,6 +142,7 @@ return [
         'busqueda' => 'Búsqueda',
         'agregarRealizador' => 'Agregar realizador',
         'agregarPatrocinador' => 'Agregar patrocinador',
+        'agregarTrafico' => 'Agregar trafico',
         'puesto' => 'Puesto',
         'tipo' => 'Tipo',
         'paquete' => 'Paquete',
@@ -159,14 +160,16 @@ return [
         'consultar' => 'Consultar',
         'modificarRealizador' => 'Modificar realizador',
         'modificarPatrocinador' => 'Modificar patrocinador',
+        'modificarTrafico' => 'Modificar trafico',
         'exportar' => 'Exportar',
         'consultarRealizador' => 'Consultar Realizador',
         'consultarPatrocinador' => 'Consultar Patrocinador',
+        'consultarTrafico' => 'Consultar Trafico',
         'mensajePaquete' => 'No tiene paquete',
 
         'mensajeEliminarRealizador' => '¿Seguro que desea eliminar el realizador?',
         'mensajeModificarRealizador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
-
+        'mensajeModificarTrafico' => 'return confirm ("¿Seguro que desea modificar el trafico?")',
         'mensajeEliminarPatrocinador'=>'¿Seguro que desea eliminar el patrocinador?',
         'mensajeModificarPatrocinador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
         'mensajeEliminarTrafico'=>'¿Seguro que desea eliminar el trafico?',
@@ -243,6 +246,14 @@ return [
         'clickDescargar'=>'Click aquí para descargar',
         'trafico'=>'Tráfico',
         'status'=>'Status',
+        'ubicacion'=>'Ubicación',
+        'formatoMaterial'=>'Formato Material',
+        'costo'=>'Costo',
+        'integrante'=>'Integrante',
+        'realizador'=>'Realizador',
+        'lugarUbicacion'=>'Lugar de Ubicación',
+        'costoMaterial'=>'Costo del Material',
+
 
 
 
