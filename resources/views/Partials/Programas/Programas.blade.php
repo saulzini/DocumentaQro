@@ -15,20 +15,20 @@
     </div>
 
     <div class="col-md-7">
-        <p align="left" class="help-block"> (*) Campos obligatorios</p><br>
+        <p align="left" class="help-block"> (*) {{ trans('validation.attributes.camposObligatorios')  }}</p><br>
         <div class="form-group">
-            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>Título</label>
+            <label for="Titulo" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.Titulo')  }}</label>
             <div class="col-lg-10">
                 @if( isset($ProgramasItem))
-                    {!!Form::text('Titulo' ,$ProgramasItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título del programa'])!!}
+                    {!!Form::text('Titulo' ,$ProgramasItem->titulo,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloPrograma')])!!}
                 @else
-                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>'Título del programa'])!!}
+                    {!!Form::text('Titulo' ,null,['class'=>'form-control','id'=>'Titulo','placeholder'=>trans('validation.attributes.tituloPrograma')])!!}
                 @endif
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Festivales</label>
+            <label class="col-lg-2 control-label"> {{ trans('validation.attributes.Festivales')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Festivales" name="Festivales[]" multiple="multiple">
                     @if(isset($ProgramasFestivales) && !$ProgramasFestivales->isEmpty())
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Patrocinadores</label>
+            <label class="col-lg-2 control-label"> {{ trans('validation.attributes.Patrocinadores')  }}</label>
             <div class="col-lg-10">
                 <select class="form-control" id="Patrocinadores" name="Patrocinadores[]" multiple="multiple">
                     @if(isset($ProgramasPatrocinadores) && !$ProgramasPatrocinadores->isEmpty())
@@ -81,11 +81,48 @@
 
         <div class="form-group" align="center">
             @if( isset($ProgramasItem))
-                {!! Form::submit('Modificar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Modificar', 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar el programa?")'])!!}
+            {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs','style'=>'width:20%', 'onclick'=>trans('validation.attributes.mensajeModificarPrograma')])!!}
             @else
-                {!! Form::submit('Agregar',['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>'Agregar', 'style'=>'width:20%'])!!}
+            {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs', 'style'=>'width:20%'])!!}
             @endif
         </div>
     </div>
 </div>
 
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Festivales').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+
+        $('#Patrocinadores').multiselect({
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: '300',
+            enableFiltering: true,
+            buttonWidth: '100%'
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $("#imagenDocumentaQro").fileinput({
+        overwriteInitial: true,
+        showClose: false,
+        showCaption: false,
+        browseLabel: '',
+        removeLabel: '',
+        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+        removeTitle: 'Cancel or reset changes',
+        elErrorContainer: '#kv-avatar-errors',
+        msgErrorClass: 'alert alert-block alert-danger',
+        defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="{{ trans("validation.attributes.imagenPrograma")  }}" style="height:400px" class="img-thumbnail"/>',
+        layoutTemplates: {main2: '{preview} {remove} {browse}'},
+    allowedFileExtensions: ["jpg","png","bmp","jpeg"]
+    });
+</script>
