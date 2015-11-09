@@ -169,7 +169,7 @@ return [
 
         'mensajeEliminarPatrocinador'=>'¿Seguro que desea eliminar el patrocinador?',
         'mensajeModificarPatrocinador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
-
+        'mensajeEliminarTrafico'=>'¿Seguro que desea eliminar el trafico?',
 
         'contrasena' => 'Contraseña',
 
@@ -241,6 +241,9 @@ return [
         'trailerPeliculaPlace'=>'URL del tráiler',
         'materialActual'=>'Material actual',
         'clickDescargar'=>'Click aquí para descargar',
+        'trafico'=>'Tráfico',
+        'status'=>'Status',
+
 
 
     ],

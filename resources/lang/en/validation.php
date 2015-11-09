@@ -158,6 +158,7 @@ return [
         'consultar' => 'Consult',
         'mensajeEliminarRealizador' => 'Are you sure want to delete the maker?',
         'mensajeModificarRealizador' => 'return confirm ("Are you sure want to modify the maker?")',
+        'mensajeEliminarTrafico'=> 'Are you sure want to delete the traffic?',
 
         'validatorRealizadorNombre'=>'The name is required',
         'validatorLongitudNombre'=>'The maximum length for name are 255 characters',
@@ -165,6 +166,8 @@ return [
         'validatorEmail'=>'El e-mail no es válido',
         'validatorNumeroTelefono'=>'The telephone only can contain numbers',
         'validatorEmail'=>'The e-mail is invalid',
+        'trafico'=>'Traffic',
+        'status'=>'Status',
 
     ],
 

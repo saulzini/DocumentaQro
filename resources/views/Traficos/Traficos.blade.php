@@ -53,19 +53,19 @@
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>Tráficos</h3>
+                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.trafico')  }}</h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4><i class="fa fa-angle-right"></i> Búsqueda</h4>
+                            <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.busqueda')  }}</h4>
 
                             @include('Partials.Mensajes.mensajes')
 
                             <div class="form-group" align="right">
-                               <a href="{{route('traficosAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="Agregar"><i class="fa fa-plus"></i></button></a>
+                               <a href="{{route('traficosAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="{{ trans('validation.attributes.agregar')  }}"><i class="fa fa-plus"></i></button></a>
                             </div>
 
                             <div class="row">
@@ -95,9 +95,9 @@
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Título </th>
-                                    <th><i class=" fa fa-edit"></i> Status </th>
-                                    <th><i class="fa fa-archive"></i> Tipo </th>
+                                    <th><i class="fa fa-thumb-tack"></i>{{ trans('validation.attributes.Título')  }} </th>
+                                    <th><i class=" fa fa-edit"></i>{{ trans('validation.attributes.status')  }}</th>
+                                    <th><i class="fa fa-archive"></i> {{ trans('validation.attributes.tipo')  }}</th>
 
 
                                     <th></th>
@@ -115,16 +115,16 @@
                                             <td><span>{{ $trafico->status}}</span></td>
                                             <td><span>{{ $trafico->tipo }}</span></td>
                                             <td style="width: 5px">
-                                                <a href="{{ route('traficosLista/item',$trafico->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
+                                                <a href="{{ route('traficosLista/item',$trafico->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('traficos/modificar/item',$trafico->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="{{ route('traficos/modificar/item',$trafico->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.modificar')  }}"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
                                                 {!! Form::open(['action'=>['TraficosController@eliminarTraficos'],'role'=>'form'] )  !!}
-                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar el tráfico?")'><i class="fa fa-trash-o "></i></button>
+                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarTrafico')  }}")'><i class="fa fa-trash-o "></i></button>
 
                                                 <input type="hidden" name="traficosID" value={{$trafico->id}}>
                                                 {!! Form::close() !!}
