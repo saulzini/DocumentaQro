@@ -21,7 +21,7 @@ MAIN SIDEBAR MENU
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('paquetes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('paquetes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda') }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
@@ -30,7 +30,7 @@ MAIN SIDEBAR MENU
 
 
 
-                    <h4  style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar paquete</h4>
+                    <h4  style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.consultarPaquete') }}</h4>
 
 
                               @if( isset($PaqueteItem))
@@ -40,13 +40,13 @@ MAIN SIDEBAR MENU
                                       <tr>
                                           <td>
                                               <a href="{{ route('paquetes/modificar/item',$PaqueteItem->id) }}">
-                                                  <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                                  <button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.modificar')  }}"><i class="fa fa-pencil"></i></button>
                                               </a> &nbsp
                                           </td>
 
                                           <td>
                                               {!! Form::open(['action'=>['PaquetesController@eliminarPaquetes'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el paquete?")'><i class="fa fa-trash-o "></i></button>
+                                              <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarPaquete')  }}")'><i class="fa fa-trash-o "></i></button>
                                               <input type="hidden" name="paqueteId" value={{$PaqueteItem->id}}>
                                               {!! Form::close() !!}
 
@@ -64,8 +64,8 @@ MAIN SIDEBAR MENU
                                       <div class="col-md-7">
                                           <dl class="dl-horizontal">
 
-                                              <dt>Nombre</dt><dd>{{ $PaqueteItem->descripcion }}</dd>
-                                              <dt>Costo</dt><dd>$ {{ $PaqueteItem->costo }}</dd>
+                                              <dt>{{ trans('validation.attributes.nombre') }}</dt><dd>{{ $PaqueteItem->descripcion }}</dd>
+                                              <dt>{{ trans('validation.attributes.costo') }}</dt><dd>$ {{ $PaqueteItem->costo }}</dd>
 
                                               <dl>
                                                   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -73,7 +73,7 @@ MAIN SIDEBAR MENU
                                                           <div class="panel-heading" role="tab" id="headingOne">
                                                               <h4 class="panel-title">
                                                                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                                      Características <i class="fa fa-angle-down"></i>
+                                                                      {{ trans('validation.attributes.Caracteristicas') }} <i class="fa fa-angle-down"></i>
                                                                   </a>
                                                               </h4>
                                                           </div>
@@ -82,15 +82,16 @@ MAIN SIDEBAR MENU
                                                               @if ( isset( $PaquetesCaracteristicas))
                                                                   @foreach( $PaquetesCaracteristicas as $Caracteristica)
                                                                       <li class="list-group-item">{{ $Caracteristica->nombre }}</li>
-
                                                                   @endforeach
+                                                              @else
+                                                              <li class="list-group-item">{{ trans('validation.attributes.noCaracteristica') }}</li>
                                                               @endif
                                                           </div>
                                                       </div>
                                                   </div>
                                                </dl>
                                               <div class="form-group" align="center">
-                                                  <a href="{{ route('paquetesExport/item/',$PaqueteItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                                  <a href="{{ route('paquetesExport/item/',$PaqueteItem->id) }}">  <button type="button"  class="btn btn-success">{{ trans('validation.attributes.exportar') }}</button></a>
                                               </div>
 
                                       </div>
