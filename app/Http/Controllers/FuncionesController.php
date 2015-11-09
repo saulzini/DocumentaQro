@@ -131,7 +131,6 @@ class FuncionesController extends Controller
         $aux=end($funcionesPatrocinadores);
         $ultimoPatrocinador=end($aux);
 
-
         return view('Funciones/FuncionesModificar')->with([
 
             'funcionesItem'=>$funcionesItem,
@@ -367,8 +366,6 @@ class FuncionesController extends Controller
         $funciones->programadopor= $request->Programado;
 
 
-
-
         $date = str_replace('/', '-', $request->Fecha);
 
         $funciones->fecha=Carbon::createFromFormat('d-m-Y H:i', $date)->toDateTimeString();
@@ -452,6 +449,9 @@ class FuncionesController extends Controller
         $funcionesProgramas = $funcionesItem->programas;
         $funcionesFestivales = $funcionesItem->festivales;
         $funcionesPatrocinadores = $funcionesItem->patrocinadores;
+
+        if($funcionesPatrocinadores->isEmpty())
+            $funcionesPatrocinadores = null;
 
 
         return view('Funciones/FuncionesConsultar')->with([

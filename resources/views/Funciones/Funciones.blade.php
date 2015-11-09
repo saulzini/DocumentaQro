@@ -51,19 +51,19 @@ MAIN SIDEBAR MENU
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>Funciones</h3>
+                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.Funciones')  }}</h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4><i class="fa fa-angle-right"></i>Búsqueda</h4>
+                            <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.busqueda')  }}</h4>
 
                             @include('Partials.Mensajes.mensajes')
 
                             <div class="form-group" align="right">
-                               <a href="{{route('funcionesAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="Agregar"><i class="fa fa-plus"></i></i></button></a>
+                               <a href="{{route('funcionesAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="{{ trans('validation.attributes.agregar')  }}"><i class="fa fa-plus"></i></i></button></a>
                             </div>
 
                             <div class="row">
@@ -86,12 +86,12 @@ MAIN SIDEBAR MENU
                                     <div id="defaultForm">
                                         <div class="col-xs-3">
                                             <div class="form-group">
-                                                <div class="input-group date tooltips" id="fechaInicioDP" data-placement="top" data-original-title="Fecha inicio">
+                                                <div class="input-group date tooltips" id="fechaInicioDP" data-placement="top" data-original-title="{{ trans('validation.attributes.fechaInicio')  }}">
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                         </span>
 
-                                                    {!!Form::text('FechaInicio' ,null,['class'=>'form-control','placeholder'=>'Fecha Inicio'])!!}
+                                                    {!!Form::text('FechaInicio' ,null,['class'=>'form-control','placeholder'=>trans('validation.attributes.fechaInicio')])!!}
 
                                                 </div>
                                             </div>
@@ -99,11 +99,11 @@ MAIN SIDEBAR MENU
 
                                         <div class="col-xs-3">
                                             <div class="form-group">
-                                                <div class="input-group date tooltips" id='fechaFinDP' data-placement="top" data-original-title="Fecha fin">
+                                                <div class="input-group date tooltips" id='fechaFinDP' data-placement="top" data-original-title="{{ trans('validation.attributes.fechaFin')  }}">
                                                           <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                           </span>
-                                                    {!!Form::text('FechaFinal' ,null,['class'=>'form-control','placeholder'=>'Fecha Final'])!!}
+                                                    {!!Form::text('FechaFinal' ,null,['class'=>'form-control','placeholder'=>trans('validation.attributes.fechaFin')])!!}
 
                                                 </div>
                                             </div>
@@ -115,12 +115,13 @@ MAIN SIDEBAR MENU
                             </div>
                             <hr>
 
+                        <div class="table-responsive">
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Título </th>
-                                    <th class="hidden-phone"><i class="fa fa-calendar-o"></i> Fecha </th>
-                                    <th><i class=" fa fa-edit"></i>Status</th>
+                                    <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.Titulo')  }} </th>
+                                    <th class="hidden-phone"><i class="fa fa-calendar-o"></i> {{ trans('validation.attributes.Fecha')  }} </th>
+                                    <th><i class=" fa fa-edit"></i>{{ trans('validation.attributes.status')  }}</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -136,17 +137,16 @@ MAIN SIDEBAR MENU
                                             <td><span >{{ $funcion->status }}</span></td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('funcionesLista/item',$funcion->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
+                                                <a href="{{ route('funcionesLista/item',$funcion->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('funciones/modificar/item',$funcion->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="{{ route('funciones/modificar/item',$funcion->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.modificar')  }}"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
                                                 {!! Form::open(['action'=>['FuncionesController@eliminarFunciones'],'role'=>'form'] )  !!}
-                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar la función?")'><i class="fa fa-trash-o "></i></button>
-
+                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarFuncion')  }}")'><i class="fa fa-trash-o "></i></button>
                                                 <input type="hidden" name="funcionId" value={{$funcion->id}}>
                                                 {!! Form::close() !!}
                                             </td>
@@ -160,8 +160,9 @@ MAIN SIDEBAR MENU
 
                                 </tbody>
                             </table>
+                          </div>
                          @if (isset($Funciones))
-                            {!! $Funciones->setPath('')->render()!!}
+                            {!! $Funciones->setPath('')->appends(Input::query())->render()!!}
                             @endif
                         </div>
                     </div>
@@ -188,22 +189,22 @@ MAIN SIDEBAR MENU
                       FechaInicio: {
                           validators: {
                               notEmpty: {
-                                  message: 'Ingresa la fecha de inicio'
+                                  message: '{{ trans("validation.attributes.validatorFechaInicio")  }}'
                               },
                               date: {
                                   format: 'DD/MM/YYYY',
-                                  message: 'El formato debe ser DD/MM/YYYY'
+                                  message: '{{ trans("validation.attributes.validatorDateFormat")  }}'
                               }
                           }
                       },
                       FechaFinal: {
                           validators: {
                               notEmpty: {
-                                  message: 'Ingresa la fecha final'
+                                  message: '{{ trans("validation.attributes.validatorFechaFin")  }}'
                               },
                               date: {
                                   format: 'DD/MM/YYYY',
-                                  message: 'El formato debe ser DD/MM/YYYY'
+                                  message: '{{ trans("validation.attributes.validatorDateFormat")  }}'
                               }
                           }
                       }
