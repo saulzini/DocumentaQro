@@ -20,7 +20,7 @@ MAIN SIDEBAR MENU
     <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('paquetes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                <h3><a href="{{route('paquetes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR PAQUETES -->
@@ -28,7 +28,7 @@ MAIN SIDEBAR MENU
                         <div class="form-panel">
 
                             @include('Partials.Mensajes.mensajes')
-                            <h4  style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar paquete</h4>
+                            <h4  style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.modificarPaquete')  }}</h4>
 
                             @if( isset($PaquetesItem))
 
@@ -36,14 +36,14 @@ MAIN SIDEBAR MENU
                                 <tr>
                                     <td>
                                         <a href="{{ route('paquetesLista/item',$PaquetesItem->id) }}">
-                                            <button class="btn btn-success btn-xs">
+                                            <button  class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}">
                                                 <i class="fa fa-eye"></i></button>
                                         </a> &nbsp
                                     </td>
 
                                     <td>
                                         {!! Form::open(['action'=>['PaquetesController@eliminarPaquetes'],'role'=>'form'] )  !!}
-                                        <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el paquete?")'><i class="fa fa-trash-o "></i></button>
+                                        <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarPaquete')  }}")'><i class="fa fa-trash-o "></i></button>
                                         <input type="hidden" name="paqueteId" value={{$PaquetesItem->id}}>
                                         {!! Form::close() !!}
 
@@ -83,34 +83,22 @@ MAIN SIDEBAR MENU
                     Nombre: {
                         validators: {
                             notEmpty: {
-                                message: 'El nombre es requerido'
+                                message: '{{ trans("validation.attributes.validatorPaqueteNombre")  }}'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El nombre debe tener como máximo 255 caracteres'
+                                message: '{{ trans("validation.attributes.validatorPaqueteNombreLength")  }}'
                             }
                         }
                     },
                     Costo: {
                         validators: {
                             numeric: {
-                                message: 'El costo debe ser numérico'
+                                message: '{{ trans("validation.attributes.validatorPaqueteCosto")  }}'
                             }
                         }
                     }
                 }
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $('#Caracteristica').multiselect({
-                enableCaseInsensitiveFiltering: true,
-                maxHeight: '300',
-                enableFiltering: true,
-                buttonWidth: '100%'
             });
         });
     </script>
