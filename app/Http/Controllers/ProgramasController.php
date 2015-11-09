@@ -24,6 +24,7 @@ use App\Http\Requests\FuncionesRequest;
 use App\Sede;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProgramasController extends Controller
@@ -33,6 +34,32 @@ class ProgramasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function  __construct()
+    {
+        //se valida que no este logueado
+        if(!Auth::check() ){
+
+            $this->middleware('auth');
+        }
+        else {
+            //Si esta logueado entonces se revisa el permiso
+            if (Auth::user()->can('programas'))
+            {
+
+
+            }
+            else {
+                //Si no tiene el permiso entonces cierra la sesion y manda un error 404
+                //Auth::logout();
+                abort('404');
+
+            }
+        }
+
+
+    }
+
     public function index()
     {
         $now= Carbon::now()->toDateTimeString();
@@ -131,6 +158,12 @@ class ProgramasController extends Controller
         $ProgramasItem = Programa::findOrFail($id);
         $ProgramasFestivales = $ProgramasItem->festivales;
         $ProgramasPatrocinadores = $ProgramasItem->patrocinadores;
+
+        if( $ProgramasFestivales->isEmpty())
+            $ProgramasFestivales = null;
+
+        if( $ProgramasPatrocinadores->isEmpty())
+            $ProgramasPatrocinadores = null;
 
         return view('Programas/ProgramasConsultar')->with([
             'ProgramasItem'=>$ProgramasItem,

@@ -17,7 +17,7 @@ MAIN SIDEBAR MENU
     <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('programas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                <h3><a href="{{route('programas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR PAQUETES -->
@@ -25,7 +25,7 @@ MAIN SIDEBAR MENU
                         <div class="form-panel">
 
                             @include('Partials.Mensajes.mensajes')
-                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar programa</h4>
+                            <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.modificarPrograma')  }}</h4>
 
                             @if( isset($ProgramasItem))
 
@@ -33,14 +33,14 @@ MAIN SIDEBAR MENU
                                 <tr>
                                     <td>
                                         <a href="{{ route('programasLista/item',$ProgramasItem->id) }}">
-                                            <button class="btn btn-success btn-xs">
+                                            <button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}">
                                                 <i class="fa fa-eye"></i></button>
                                         </a> &nbsp
                                     </td>
 
                                     <td>
                                         {!! Form::open(['action'=>['ProgramasController@eliminarProgramas'],'role'=>'form'] )  !!}
-                                        <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la función?")'><i class="fa fa-trash-o "></i></button>
+                                        <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarPrograma')  }}")'><i class="fa fa-trash-o "></i></button>
                                         <input type="hidden" name="programaId" value={{$ProgramasItem->id}}>
                                         {!! Form::close() !!}
 
@@ -64,44 +64,7 @@ MAIN SIDEBAR MENU
             </section>
         </section>
     </section>
-    <script type="text/javascript">
 
-        $(document).ready(function() {
-            $('#Festivales').multiselect({
-                enableCaseInsensitiveFiltering: true,
-                maxHeight: '300',
-                enableFiltering: true,
-                buttonWidth: '100%'
-            });
-
-            $('#Patrocinadores').multiselect({
-                enableCaseInsensitiveFiltering: true,
-                maxHeight: '300',
-                enableFiltering: true,
-                buttonWidth: '100%'
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        ///////////////AGREGAR///////////////////
-        $("#imagenDocumentaQro").fileinput({
-            overwriteInitial: true,
-            maxFileSize: 1500,
-            showClose: false,
-            showCaption: false,
-            browseLabel: '',
-            removeLabel: '',
-            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
-            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-            removeTitle: 'Cancel or reset changes',
-            elErrorContainer: '#kv-avatar-errors',
-            msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="{{ asset($ProgramasItem->poster) }}" alt="Imagen de función" style="height:400px" class="img-thumbnail"/>',
-            layoutTemplates: {main2: '{preview} {remove} {browse}'},
-        allowedFileExtensions: ["jpg","png","bmp","jpeg"]
-        });
-    </script>
     <script type="text/javascript">
 
         $(document).ready(function() {
@@ -116,11 +79,11 @@ MAIN SIDEBAR MENU
                     Titulo: {
                         validators: {
                             notEmpty: {
-                                message: 'El título es requerido'
+                                message: '{{ trans("validation.attributes.validatorProgramaTitulo")  }}'
                             },
                             stringLength: {
                                 max: 255,
-                                message: 'El título debe tener como máximo 255 caracteres'
+                                message: '{{ trans("validation.attributes.validatorProgramaTituloLenght")  }}'
                             }
                         }
                     }
