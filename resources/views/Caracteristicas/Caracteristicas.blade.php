@@ -50,18 +50,18 @@
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>Características</h3>
+                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.caracteristicas')  }}</h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4><i class="fa fa-angle-right"></i>Búsqueda</h4>
+                            <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.busqueda')  }}</h4>
                             @include('Partials.Mensajes.mensajes')
 
                             <div class="form-group" align="right">
-                               <a href="{{route('caracteristicasAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="Agregar"><i class="fa fa-plus"></i></button></a>
+                               <a href="{{route('caracteristicasAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="{{ trans('validation.attributes.agregar')  }}"><i class="fa fa-plus"></i></button></a>
                             </div>
 
                             <div class="row">
@@ -94,7 +94,7 @@
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Característica </th>
+                                    <th><i class="fa fa-thumb-tack"></i>{{ trans('validation.attributes.caracteristica')  }}</th>
 
                                     <th></th>
                                 </tr>
@@ -110,16 +110,16 @@
 
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('caracteristicasLista/item',$caracteristica->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
+                                                <a href="{{ route('caracteristicasLista/item',$caracteristica->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('caracteristicas/modificar/item',$caracteristica->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="{{ route('caracteristicas/modificar/item',$caracteristica->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.modificar')  }}"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
                                                 {!! Form::open(['action'=>['CaracteristicasController@eliminarCaracteristicas'],'role'=>'form'] )  !!}
-                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar la característica?")'><i class="fa fa-trash-o "></i></button>
+                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarCaracteristica')  }}")'><i class="fa fa-trash-o "></i></button>
 
                                                 <input type="hidden" name="caracteristicasID" value={{$caracteristica->id}}>
                                                 {!! Form::close() !!}
