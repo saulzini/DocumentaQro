@@ -208,9 +208,9 @@
         <div class="form-group" align="center">
             @if( isset($peliculasItem))
 
-                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la película?")'])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','style'=>'width:20%','onclick'=>'return confirm ("¿Seguro que desea modificar la película?")'])!!}
             @else
-                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top', 'style'=>'width:20%'])!!}
             @endif
         </div>
 

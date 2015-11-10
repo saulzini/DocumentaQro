@@ -61,8 +61,8 @@
                                     </div>
                             </div>
                             <hr>
-
-                            <table class="table table-striped table-advance table-hover">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.nombre')  }} </th>
@@ -107,6 +107,7 @@
 
                                 </tbody>
                             </table>
+                                <div>
                          @if (isset($Sedes))
                                 {!! $Sedes->setPath('')->appends(Input::query())->render()!!}
                             @endif

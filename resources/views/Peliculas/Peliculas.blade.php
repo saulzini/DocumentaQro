@@ -91,8 +91,11 @@ MAIN SIDEBAR MENU
                                     </div>
                             </div>
                             <hr>
+                            <div class="table-responsive">
 
-                            <table class="table table-striped table-advance table-hover">
+
+
+                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.Título')  }} </th>
@@ -139,6 +142,7 @@ MAIN SIDEBAR MENU
 
                                 </tbody>
                             </table>
+                            </div>
                          @if (isset($Peliculas))
                                 {!! $Peliculas->setPath('')->appends(Input::query())->render()!!}
                             @endif

@@ -27,9 +27,9 @@
         <div class="form-group" align="center">
             @if( isset($sedesItem))
 
-                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>trans('validation.attributes.mensajeModificarSede')])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','style'=>'width:20%','onclick'=>trans('validation.attributes.mensajeModificarSede')])!!}
             @else
-                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top', 'style'=>'width:20%'])!!}
             @endif
         </div>
     </div>

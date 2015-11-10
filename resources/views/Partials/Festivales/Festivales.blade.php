@@ -58,9 +58,9 @@
 
         <div class="form-group" align="center">
             @if( isset($festivalesItem))
-                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.modificar'), 'style'=>'width:20%','onclick'=>trans('validation.attributes.mensajeModificarFestival')])!!}
+                {!! Form::submit(trans('validation.attributes.modificar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top', 'style'=>'width:20%','onclick'=>trans('validation.attributes.mensajeModificarFestival')])!!}
             @else
-                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top','data-original-title'=>trans('validation.attributes.agregar'), 'style'=>'width:20%'])!!}
+                {!! Form::submit(trans('validation.attributes.agregar'),['class'=>'btn btn-success btn-xs tooltips','data-placement'=>'top', 'style'=>'width:20%'])!!}
             @endif
         </div>
 
