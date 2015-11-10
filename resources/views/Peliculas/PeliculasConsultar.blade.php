@@ -61,7 +61,8 @@ MAIN SIDEBAR MENU
                                       <div class="col-md-4">
                                           <div class="form-group">
                                               <div class="col-lg-12">
-                                                  <img src="{{asset($poster)}}" class="img-thumbnail img-responsive">
+                                                  <img src="{{asset($poster)}}" style="height:400px" class="img-thumbnail "/>
+
                                               </div>
                                           </div>
 
