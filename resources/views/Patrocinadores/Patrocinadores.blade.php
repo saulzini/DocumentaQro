@@ -60,7 +60,7 @@
                                     </div>
                             </div>
                             <hr>
-
+                            <div class="table-responsive">
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
@@ -108,6 +108,7 @@
 
                                 </tbody>
                             </table>
+                            </div>
                             @if (isset($Patrocinadores))
 
                                 {!! $Patrocinadores->setPath('')->appends(Input::query())->render()!!}
