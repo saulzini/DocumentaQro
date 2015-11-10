@@ -34,14 +34,14 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('caracteristicas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('caracteristicas')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i>{{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
                               @include('Partials.Mensajes.mensajes')
-                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar característica</h4>
+                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.modificarCaracteristica')  }}</h4>
                                @if( isset($caracteristicasItem))
 
 
@@ -56,7 +56,7 @@
 
                                     <td>
                                       {!! Form::open(['action'=>['CaracteristicasController@eliminarCaracteristicas'],'role'=>'form'] )  !!}
-                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar la característica?")'><i class="fa fa-trash-o "></i></button>
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarCaracteristica')  }}")'><i class="fa fa-trash-o "></i></button>
                                       <input type="hidden" name="caracteristicasID" value={{$caracteristicasItem->id}}>
                                       {!! Form::close() !!}
 
