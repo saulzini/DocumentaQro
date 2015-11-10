@@ -21,7 +21,7 @@
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i>{{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR TRAFICOS -->
@@ -30,7 +30,7 @@
 
 
 
-                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Consultar integrante</h4>
+                                  <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.consultarIntegrante')  }}</h4>
 
 
 
@@ -48,7 +48,7 @@
 
                                           <td>
                                               {!! Form::open(['action'=>['IntegrantesController@eliminarIntegrantes'],'role'=>'form'] )  !!}
-                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el integrante?")'><i class="fa fa-trash-o "></i></button>
+                                              <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarIntegrante')  }}")'><i class="fa fa-trash-o "></i></button>
                                               <input type="hidden" name="integrantesID" value={{$integranteItem->id}}>
                                               {!! Form::close() !!}
 
@@ -68,15 +68,15 @@
                                           <dl class="dl-horizontal">
 
 
-                                              <dt>Nombre</dt><dd>{{ $nombre }}</dd>
-                                              <dt>Teléfono</dt><dd>{{ $telefono }}</dd>
-                                              <dt>Puesto</dt><dd>{{ $puesto}}</dd>
+                                              <dt>{{ trans('validation.attributes.nombre')}}</dt><dd>{{ $nombre }}</dd>
+                                              <dt>{{ trans('validation.attributes.telefono')}}</dt><dd>{{ $telefono }}</dd>
+                                              <dt>{{ trans('validation.attributes.puesto')}}</dt><dd>{{ $puesto}}</dd>
 
-                                              <dt>E-mail</dt><dd>{{ $email}}</dd>
+                                              <dt>{{ trans('validation.attributes.e-mail')}}</dt><dd>{{ $email}}</dd>
                                           </dl>
 
                                           <div class="form-group" align="center">
-                                              <a href="{{ route('integrantesExport/item/',$integranteItem->id) }}">  <button type="button"  class="btn btn-success">Exportar</button></a>
+                                              <a href="{{ route('integrantesExport/item/',$integranteItem->id) }}">  <button type="button"  class="btn btn-success">{{ trans('validation.attributes.exportar')}}</button></a>
                                           </div>
 
 

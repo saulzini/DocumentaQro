@@ -51,19 +51,19 @@ MAIN SIDEBAR MENU
       <section id="container">
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>Integrantes</h3>
+                <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.integrantes')  }}</h3>
                 <div class="row mt">
 
 
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4><i class="fa fa-angle-right"></i>Búsqueda</h4>
+                            <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.busqueda')  }}</h4>
 
                             @include('Partials.Mensajes.mensajes')
 
                             <div class="form-group" align="right">
-                               <a href="{{route('integrantesAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="Agregar"><i class="fa fa-plus"></i></button></a>
+                               <a href="{{route('integrantesAgregar')}}"> <button class="btn agregar tooltips" data-placement="left" data-original-title="{{ trans('validation.attributes.agregar')  }}"><i class="fa fa-plus"></i></button></a>
                             </div>
 
                             <div class="row">
@@ -96,8 +96,8 @@ MAIN SIDEBAR MENU
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Nombre </th>
-                                    <th><i class="fa fa-child"></i> Puesto </th>
+                                    <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.nombre')  }} </th>
+                                    <th><i class="fa fa-child"></i>{{ trans('validation.attributes.puesto')  }} </th>
 
                                     <th></th>
                                 </tr>
@@ -114,16 +114,16 @@ MAIN SIDEBAR MENU
                                             <td><span>{{ $integrante->puesto}}</span></td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('integrantesLista/item',$integrante->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="Consultar"><i class="fa fa-eye"></i></button></a>
+                                                <a href="{{ route('integrantesLista/item',$integrante->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}"><i class="fa fa-eye"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
-                                                <a href="{{ route('integrantes/modificar/item',$integrante->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="Modificar"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="{{ route('integrantes/modificar/item',$integrante->id) }}"><button class="btn btn-primary btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.modificar')  }}"><i class="fa fa-pencil"></i></button></a>
                                             </td>
 
                                             <td style="width: 5px">
                                                 {!! Form::open(['action'=>['IntegrantesController@eliminarIntegrantes'],'role'=>'form'] )  !!}
-                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="Eliminar" onclick='return confirm("¿Seguro que desea eliminar al integrante?")'><i class="fa fa-trash-o "></i></button>
+                                                <button class="btn btn-danger btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.eliminar')  }}" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarIntegrante')  }}")'><i class="fa fa-trash-o "></i></button>
 
                                                 <input type="hidden" name="integrantesID" value={{$integrante->id}}>
                                                 {!! Form::close() !!}

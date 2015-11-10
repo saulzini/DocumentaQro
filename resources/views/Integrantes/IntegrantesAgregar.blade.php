@@ -29,7 +29,7 @@
 
         <section id="main-content">
             <section class="wrapper site-min-height">
-                <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i>{{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                 <div class="row mt">
 
                     <!-- INICIO CONSULTAR FUNCIONES -->
@@ -41,7 +41,7 @@
 
                             {!! Form::open(['action'=>['IntegrantesController@agregarIntegrantes'],'class'=>'form-horizontal','role'=>'form','files'=>true,'id'=>'formAgregarIntegrante'])!!}
 
-                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Agregar integrante</h4>
+                                <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.agregarIntegrante')  }}</h4>
                             <div id="kv-avatar-errors" class="center-block" style="display:none"></div>
                                 @include('Partials.Integrantes.Integrantes')
 
