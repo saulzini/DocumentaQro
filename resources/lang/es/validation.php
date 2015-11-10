@@ -147,6 +147,7 @@ return [
         'tipo' => 'Tipo',
         'paquete' => 'Paquete',
         'notas' => 'Notas',
+        'nombreIntegrante' => 'Nombre del integrante',
 
         'validatorRealizadorNombre'=>'El nombre es requerido',
         'camposObligatorios' => 'Campos obligatorios',
@@ -170,9 +171,11 @@ return [
         'mensajeEliminarRealizador' => '¿Seguro que desea eliminar el realizador?',
         'mensajeModificarRealizador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
         'mensajeModificarTrafico' => 'return confirm ("¿Seguro que desea modificar el trafico?")',
+        'mensajeModificarIntegrante' => 'return confirm ("¿Seguro que desea modificar al integrante?")',
         'mensajeEliminarPatrocinador'=>'¿Seguro que desea eliminar el patrocinador?',
         'mensajeModificarPatrocinador' => 'return confirm ("¿Seguro que desea modificar el realizador?")',
         'mensajeEliminarTrafico'=>'¿Seguro que desea eliminar el trafico?',
+        'mensajeEliminarIntegrante'=>'¿Seguro que desea eliminar el integrante?',
 
         'contrasena' => 'Contraseña',
 
@@ -207,6 +210,8 @@ return [
 
         'mensajeEliminarSede'=>'¿Seguro que desea eliminar la sede?',
         'agregarSede' => 'Agregar sede',
+        'agregarIntegrante' => 'Agregar integrante',
+        'agregarCaracteristica' => 'Agregar caracteristica',
 
         'validatorSedeRequerido'=>'El nombre de la sede es requerido',
         'validatorLongitudNombre'=>'El nombre debe tener como máximo 255 caracteres',
@@ -214,6 +219,7 @@ return [
         'validatorEmail'=>'El e-mail no es válido',
         'validatorNumeroTelefono'=>'El teléfono sólo puede tener números',
         'consultarSede'=>'Consultar sede',
+        'consultarIntegrante'=>'Consultar integrante',
         'modificarSede'=>'Modificar sede',
         'nombreSede'=>'Nombre de la sede',
         'Selecciona'=>'Selecciona',
@@ -222,6 +228,7 @@ return [
         'Pais'=>'País',
         'Anno'=>'Año',
         'mensajeEliminarPelicula'=>'¿Seguro que desea eliminar la película?',
+        'mensajeEliminarIntegrante'=>'¿Seguro que desea eliminar el integrante?',
         'mensajeModificarPelicula' => 'return confirm ("¿Seguro que desea modificar la película?")',
         'agregarPelicula'=>'Agregar película',
         'consultarPelicula'=>'Consultar película',
@@ -289,12 +296,15 @@ return [
         'fechaInicio' => 'Fecha inicial',
         'fechaFin'=> 'Fecha final',
         'costo'=>'Costo',
+        'integrantes'=>'Integrantes',
+        'e-mail'=>'Email',
 
         'validatorPaqueteNombre'=>'El nombre es requerido',
         'validatorPaqueteNombreLength'=>'El nombre debe tener como máximo 255 caracteres',
         'validatorPaqueteCosto'=>'El costo debe ser numérico',
         'consultarPaquete'=>'Consultar paquete',
         'modificarPaquete'=>'Modificar paquete',
+        'modificarIntegrante'=>'Modificar integrante',
         'nombrePaquete'=>'Nombre del paquete',
         'mensajeModificarPaquete'=> 'return confirm ("¿Seguro que desea modificar el paquete?")',
         'mensajeEliminarPrograma'=>'¿Seguro que desea eliminar el programa?',
@@ -307,6 +317,8 @@ return [
         'mensajeModificarPrograma'=> 'return confirm ("¿Seguro que desea modificar el programa?")',
         'imagenPrograma'=>'Imagen del programa',
         'noCaracteristica'=>'No hay características seleccionadas',
+
+
     ],
 
 ];

@@ -33,14 +33,14 @@ MAIN SIDEBAR MENU
       <section id="container">
           <section id="main-content">
               <section class="wrapper site-min-height">
-                  <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Búsqueda</button></a></h3>
+                  <h3><a href="{{route('integrantes')}}"><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> {{ trans('validation.attributes.busqueda')  }}</button></a></h3>
                   <div class="row mt">
 
                       <!-- INICIO CONSULTAR FUNCIONES -->
                       <div class="col-lg-12">
                           <div class="form-panel">
                               @include('Partials.Mensajes.mensajes')
-                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>Modificar integrante</h4>
+                              <h4 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.modificarIntegrante')  }}</h4>
                                @if( isset($integrantesItem))
 
 
@@ -55,7 +55,7 @@ MAIN SIDEBAR MENU
 
                                     <td>
                                       {!! Form::open(['action'=>['IntegrantesController@eliminarIntegrantes'],'role'=>'form'] )  !!}
-                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Seguro que desea eliminar el integrante")'><i class="fa fa-trash-o "></i></button>
+                                      <button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("{{ trans('validation.attributes.mensajeEliminarIntegrante')  }}")'><i class="fa fa-trash-o "></i></button>
                                       <input type="hidden" name="integrantesID" value={{$integrantesItem->id}}>
                                       {!! Form::close() !!}
 
