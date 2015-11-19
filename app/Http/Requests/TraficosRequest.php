@@ -27,13 +27,10 @@ class TraficosRequest extends Request
         return [
             //
             'Pelicula'=>'required',
-            'Status'=>'required|in:Buscando contacto,Por enviar correo,Mail enviado,Mail respondido,
-            Ya con permiso,Ya con material,Por pagar,Pagado,En revision,Revisado',
+            'Status'=>'required|in:Buscando contacto,Por enviar correo,Mail enviado,Mail respondido,Ya con permiso,Ya con material,Por pagar,Pagado,En revision,Revisado',
             'Formato' =>'required',
             'Costo' => 'required',
             'Tipo' => 'required|in:Entrante,Saliente',
-            'Integrante' => 'required',
-            'Realizador' => 'required'
         ];
     }
 }
