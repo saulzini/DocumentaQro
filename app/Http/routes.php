@@ -252,7 +252,7 @@ Route::get('festivales/agregar',[
 ]);
 
 
-Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array('before' => 'csrf', function()
+Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array( function()
 {
 
 }));
