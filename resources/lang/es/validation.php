@@ -324,6 +324,10 @@ return [
         'imagenPrograma'=>'Imagen del programa',
         'noCaracteristica'=>'No hay características seleccionadas',
 
+        'resetearContrasena'=>'Resetear Contraseña',
+        'confirmarContrasena'=>'Confirmar Contraseña',
+
+
 
     ],
 
