@@ -83,7 +83,7 @@ MAIN SIDEBAR MENU
 
                                               <dt>{{ trans('validation.attributes.Tipo')}}</dt><dd>{{ $tipo}}</dd>
                                               <dt>{{ trans('validation.attributes.Subtitulos')}}</dt><dd>{{ $subtitulos }}</dd>
-                                              <dt>{{ trans('validation.attributes.Trailer')}}</dt><dd>@if($trailer!=""){{ $trailer}}@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>
+                                              <dt>{{ trans('validation.attributes.Trailer')}}</dt><dd>@if($trailer!="")<a href="{{ $trailer}}">{{$trailer}}</a>@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>
                                               <dt>{{ trans('validation.attributes.Material')}}</dt><dd>@if($material!="")<a href="{{ asset($material)}}">Click para descargar</a>@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>
                                               <br>
                                               <dt>{{ trans('validation.attributes.Sinopsis')}}</dt><dd>@if($sinopsis!=""){{ $sinopsis}}@else {{ trans('validation.attributes.NoTiene')}} @endif</dd>

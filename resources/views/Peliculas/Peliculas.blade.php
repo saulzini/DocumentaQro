@@ -99,8 +99,10 @@ MAIN SIDEBAR MENU
                                 <thead>
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.Título')  }} </th>
+                                    <th><i class="fa fa-thumb-tack"></i> {{ trans('validation.attributes.Director')  }} </th>
+                                    <th><i class="fa fa-clock-o"></i> {{ trans('validation.attributes.Duracion')  }} </th>
                                     <th><i class="fa fa-calendar-o"></i> {{ trans('validation.attributes.Anno')  }} </th>
-                                    <th><i class="fa fa-globe"></i>  {{ trans('validation.attributes.Pais')  }}</th>
+
 
 
                                     <th></th>
@@ -112,11 +114,11 @@ MAIN SIDEBAR MENU
 
                                     @foreach( $Peliculas as $pelicula)
 
-                                        <tr>
+                                        <tr >
                                             <td><a href="{{ route('peliculasLista/item',$pelicula->id) }}">{{ $pelicula->titulo }}</a></td>
-
-                                            <td><span>{{ $pelicula->anio}}</span></td>
-                                            <td><span>{{ $pelicula->pais }}</span></td>
+                                            <td><span>{{ $pelicula->director }}</span></td>
+                                            <td ><span>{{ $pelicula->duracion }}</span></td>
+                                            <td><span>{{ $pelicula->anio }}</span></td>
                                             <td style="width: 5px">
                                                 <a href="{{ route('peliculasLista/item',$pelicula->id) }}"><button class="btn btn-success btn-xs tooltips" data-placement="top" data-original-title="{{ trans('validation.attributes.consultar')  }}"><i class="fa fa-eye"></i></button></a>
                                             </td>
