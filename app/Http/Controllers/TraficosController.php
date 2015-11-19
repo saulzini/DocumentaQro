@@ -60,10 +60,13 @@ class TraficosController extends Controller
         $Traficos= Trafico::whereBetween('updated_at',[ $now2,$now])->orderBy('titulo', 'asc')->paginate(15);
         //$this->castFunctionsDate($Funciones);
         // dd($Funciones);
-
+        $status = ['Buscando contacto','Por enviar correo','Mail enviado','Mail respondido',
+            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado',
+            'Devuelto','Perdido','Almacenado'];
 
         return view ('Traficos/Traficos')->with([
             'Traficos' => $Traficos,
+            'Status'=>$status,
         ]);
     }
 
@@ -141,7 +144,8 @@ class TraficosController extends Controller
 
         $tipo = ['Entrante','Saliente'];
         $status = ['Buscando contacto','Por enviar correo','Mail enviado','Mail respondido',
-            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado'];
+            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado',
+            'Devuelto','Perdido','Almacenado'];
 
         $Peliculas = Pelicula::select('id','titulo','anio')->orderBy('titulo', 'asc')->get();
 
@@ -214,11 +218,17 @@ class TraficosController extends Controller
     }
 
     public  function buscador(Request $request){
+       // dd($request->get('Status'));
 
-        $Traficos= Trafico::titulo($request->get('buscador'))->orderBy('titulo', 'asc')->paginate(15);
+
+        $Traficos= Trafico::titulo($request->get('buscador'),$request->get('Status'))->orderBy('titulo', 'asc')->paginate(15);
+        $status = ['Buscando contacto','Por enviar correo','Mail enviado','Mail respondido',
+            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado',
+            'Devuelto','Perdido','Almacenado'];
 
         return view ('Traficos/Traficos')->with([
             'Traficos' => $Traficos,
+            'Status'=>$status,
 
         ]);
     }
@@ -229,7 +239,8 @@ class TraficosController extends Controller
         $traficosItem = Trafico::find($id);
         $tipo = ['Entrante','Saliente'];
         $status = ['Buscando contacto','Por enviar correo','Mail enviado','Mail respondido',
-            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado'];
+            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado',
+            'Devuelto','Perdido','Almacenado'];
 
         $Peliculas = Pelicula::select('id','titulo','anio')->orderBy('titulo', 'asc')->get();
 

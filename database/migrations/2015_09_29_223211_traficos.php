@@ -17,7 +17,8 @@ class Traficos extends Migration
             $table->string('ubicacion');
 
             $table->enum('status',['Buscando contacto','Por enviar correo','Mail enviado','Mail respondido',
-            'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado']);
+                'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado',
+                'Devuelto','Perdido','Almacenado']);
 
             $table->string('formato_material');
             $table->double('costo');

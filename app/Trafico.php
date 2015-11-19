@@ -36,11 +36,20 @@ class Trafico extends Model
         return $this->belongsToMany('App\Trafico', 'pelicula_trafico','id_trafico','id_pelicula');
     }
 
-    public function scopeTitulo($query ,$titulo)
+    public function scopeTitulo($query ,$titulo,$status)
     {//
         //
-        if(trim($titulo) != ""){
+
+        if (trim($titulo) != "" && trim($status) != "" ){
+            $query->where('Titulo',"LIKE","%$titulo%")->where('status',"LIKE","%$status%");
+        }
+
+        if(trim($titulo) != "" && trim($status) == ""  ){
             $query->where('Titulo',"LIKE","%$titulo%");
+        }
+
+        if(trim($status) != "" && trim($titulo) == "" ){
+            $query->where('status',"LIKE","%$status%");
         }
     }
 
