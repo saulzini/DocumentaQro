@@ -40,10 +40,10 @@
       <!--header start-->
       @include('Partials.ScriptsGenerales.headerPartials')
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
+     MAIN SIDEBAR MENU
+     *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
@@ -145,37 +145,37 @@
                       </a>
 
                       <ul class="sub">
-                          <li><a href="{{route('reportesFuncion')}}">
+                          <li><a href="{{route('reportesFuncion')}}" >
                                   <i class="fa fa-video-camera"></i>
-                                  <span>Funciones</span>
+                                  <span>Reportes Funciones</span>
                               </a></li>
 
                           <li><a href="{{route('reportesPais')}}">
                                   <i class="fa fa-globe"></i>
-                                  <span>Países</span>
+                                  <span>Reportes Países</span>
                               </a></li>
 
                           <li><a href="{{route('reportesSede')}}" class="active">
                                   <i class="fa fa-map-marker"></i>
-                                  <span>Sedes</span>
+                                  <span>Reportes Sedes</span>
                               </a></li>
 
                           <li><a href="{{route('reportesPrograma')}}">
                                   <i class="fa fa-tasks"></i>
-                                  <span>Programas</span>
+                                  <span>Reportes Programas</span>
                               </a></li>
 
-                          <li><a href="{{route('reportesFestival')}}">
+                          <li><a href="{{route('reportesFestival')}}" >
                                   <i class="fa fa-ticket"></i>
-                                  <span>Festivales</span>
+                                  <span>Reportes Festivales</span>
                               </a></li>
                       </ul>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="#" >
+                      <a href="{{route('configuracion')}}" >
                           <i class="fa fa-cog"></i>
-                          <span>Configuración</span>
+                          <span>{{ trans('validation.attributes.Configuracion')  }} </span>
                       </a>
                   </li>
               </ul>
