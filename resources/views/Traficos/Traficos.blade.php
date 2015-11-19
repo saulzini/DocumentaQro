@@ -62,6 +62,7 @@
                         <div class="form-panel">
                             <h4><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.busqueda')  }}</h4>
 
+
                             @include('Partials.Mensajes.mensajes')
 
                             <div class="form-group" align="right">
@@ -78,7 +79,44 @@
                                             {!! Form::open(['route' => 'traficosLista' ,'method'=>'GET']) !!}
 
 
-                                                @include('Partials.Buscador.buscador')
+                                            <div class="col-lg-14">
+
+                                                <div class="input-group">
+
+
+                                                        <span class="input-group-btn">
+                                                                       {!! Form::submit(trans('validation.attributes.buscar') ,['class'=>'btn btn-default']) !!}
+                                                                </span>
+
+
+                                                    {!! Form::text('buscador', null, ['class' => 'form-control','placeholder'=>trans('validation.attributes.buscar')  ]) !!}
+                                                </div><!-- /input-group -->
+                                                
+                                                <div class="form-group">
+                                                    <label for="Status" class="col-lg-2 control-label">{{ trans('validation.attributes.status')  }}</label>
+                                                    <div class="col-lg-10">
+                                                        <select  class="form-control" id="Status" name="Status">
+                                                            <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
+                                                            @if( isset($traficosItem))
+
+                                                                @foreach($Status as $statu)
+                                                                    @if($traficosItem->status == $statu)
+                                                                        <option value="{{ $statu }}" selected > {{ $statu}}  </option>
+                                                                    @else
+                                                                        <option value="{{ $statu }}" > {{ $statu}}  </option>
+                                                                    @endif
+                                                                @endforeach
+                                                            @else
+                                                                @foreach($Status as $statu)
+                                                                    <option value="{{  $statu }}" > {{ $statu }}  </option>
+                                                                @endforeach
+                                                            @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- /.col-lg-6 -->
+
                                         </div>
                                     </div>
 

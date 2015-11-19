@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'saulzini@gmail.com', 'name' => 'Saul'],
+    'from' => ['address' => 'documentanoreply@gmail.com', 'name' => 'DocumentaQro'],
 
     /*
     |--------------------------------------------------------------------------
