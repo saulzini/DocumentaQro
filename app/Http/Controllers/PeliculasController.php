@@ -295,7 +295,10 @@ class PeliculasController extends Controller
             Session::flash('error', $peliculas->titulo. ' no pudo ser eliminado, una función o tráfico está relacionado a él');
             return redirect('peliculas');
         }
-        unlink($peliculas->material);
+        if($peliculas->material!="")
+            unlink($peliculas->material);
+        if($peliculas->poster!="assets/img/default.png")
+           unlink($peliculas->poster);
         //El registro se ha eliminado
         Session::flash('message', $peliculas->titulo. ' ha sido eliminado');
         return redirect('peliculas');

@@ -155,7 +155,7 @@ class FestivalesController extends Controller
     }
 
     public function agregarFestivales(FestivalesRequest $request){
-        dd($request);
+
         //Llamar adaptarPelicula para pasar los valores correctos
         $festival= $this->adaptarFestival($request);
         //guardar el arreglo de peliculas
@@ -264,7 +264,8 @@ class FestivalesController extends Controller
             return redirect('festivales');
         }
         //El registro se ha eliminado
-
+        if($festival->poster!="assets/img/default.png")
+              unlink($festival->poster);
         Session::flash('message', $festival->titulo. ' ha sido eliminado');
         return redirect('festivales');
     }
