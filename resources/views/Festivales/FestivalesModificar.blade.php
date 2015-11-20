@@ -99,7 +99,7 @@ MAIN SIDEBAR MENU
           ///////////////AGREGAR///////////////////
           $("#imagenDocumentaQro").fileinput({
               overwriteInitial: true,
-              maxFileSize: 20000,
+              maxFileSize: 50000,
               showClose: false,
               showCaption: false,
               browseLabel: '',
