@@ -155,7 +155,7 @@ class FestivalesController extends Controller
     }
 
     public function agregarFestivales(FestivalesRequest $request){
-
+        dd($request);
         //Llamar adaptarPelicula para pasar los valores correctos
         $festival= $this->adaptarFestival($request);
         //guardar el arreglo de peliculas

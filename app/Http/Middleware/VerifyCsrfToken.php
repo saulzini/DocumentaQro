@@ -12,10 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'http://localhost/Documenta/public/festivales/agregar/crear',
-        'http://localhost/festivales/agregar/crear',
-        'http://localhost/public/festivales/agregar/crear',
-        'http://104.131.127.247/festivales/agregar/crear',
-        'http://104.131.127.247/public/festivales/agregar/crear'
+
+
     ];
 }
