@@ -122,7 +122,7 @@ Route::get('peliculas/agregar',[
 ]);
 
 
-Route::post('peliculas/agregar/crear','PeliculasController@agregarPeliculas',array('before' => 'csrf', function()
+Route::post('peliculas/agregar/crear','PeliculasController@agregarPeliculas',array( function()
 {
 
 }));
@@ -134,7 +134,7 @@ Route::get('peliculas/modificar/item/{id}',[
 ]);
 
 
-Route::post('peliculas/modificar/peliculas','PeliculasController@modificarPeliculas',array('before' => 'csrf', function()
+Route::post('peliculas/modificar/peliculas','PeliculasController@modificarPeliculas',array(function()
 {
     // dd("modificar");
 }));
@@ -252,9 +252,9 @@ Route::get('festivales/agregar',[
 ]);
 
 
-Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array( function()
+Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array( 'before' => 'csrf',function()
 {
-
+  dd("adf");
 }));
 
 Route::get('festivales/modificar/item/{id}',[

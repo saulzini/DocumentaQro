@@ -255,7 +255,7 @@
                                 <thead >
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> Programa </th>
-                                    <th><i class="fa fa-film"></i> Peliculas </th>
+                                    <th><i class="fa fa-film"></i> Películas </th>
                                     <th class="hidden-phone"><i class="fa fa-users"></i> Asistentes </th>
                                     <th><i class="fa fa-clock-o"></i> Minutos</th>
 
@@ -288,7 +288,7 @@
                                     <div class="form-group">
                                         <div class="col-lg-2">
                                    <dl class="dl-horizontal">
-                                        <dt>Peliculas</dt><dd>{{$resultados[0]['Total Peliculas']}}</dd><br>
+                                        <dt>Películas</dt><dd>{{$resultados[0]['Total Peliculas']}}</dd><br>
                                         <dt>Largometrajes</dt><dd>{{$resultados[0]['Largometrajes']}}</dd><br>
                                         <dt>Cortometrajes</dt><dd>{{$resultados[0]['Cortometrajes']}}</dd><br>
                                     </dl>

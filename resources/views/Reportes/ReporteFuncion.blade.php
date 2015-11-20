@@ -284,7 +284,7 @@
                                     <div class="form-group">
                                         <div class="col-lg-2">
                                    <dl class="dl-horizontal">
-                                        <dt>Peliculas</dt><dd>{{$resultados[0]['Peliculas']}}</dd><br>
+                                        <dt>Películas</dt><dd>{{$resultados[0]['Peliculas']}}</dd><br>
                                         <dt>Largometrajes</dt><dd>{{$resultados[0]['Largometrajes']}}</dd><br>
                                         <dt>Cortometrajes</dt><dd>{{$resultados[0]['Cortometrajes']}}</dd><br>
                                     </dl>

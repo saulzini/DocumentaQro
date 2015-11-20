@@ -75,7 +75,7 @@ MAIN SIDEBAR MENU
         ///////////////AGREGAR///////////////////
         $("#imagenDocumentaQro").fileinput({
             overwriteInitial: true,
-            maxFileSize: 1500,
+            maxFileSize: 20000,
             showClose: false,
             showCaption: false,
             browseLabel: '',

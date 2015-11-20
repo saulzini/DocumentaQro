@@ -199,7 +199,7 @@
                     <!-- INICIO CONTENIDO -->
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4><i class="fa fa-angle-right"></i>Paises</h4>
+                            <h4><i class="fa fa-angle-right"></i>Países</h4>
                             @include('Partials.Mensajes.mensajes')
                             <br>
                             <div class="row">
@@ -258,8 +258,8 @@
                             <table  class="table table-striped table-advance table-hover table_sort"  >
                                 <thead >
                                 <tr>
-                                    <th><i class="fa fa-thumb-tack"></i> Pais </th>
-                                    <th><i class="fa fa-film"></i> Peliculas </th>
+                                    <th><i class="fa fa-thumb-tack"></i> País </th>
+                                    <th><i class="fa fa-film"></i> Películas </th>
                                     <th class="hidden-phone"><i class="fa fa-users"></i> Asistentes </th>
                                     <th><i class="fa fa-clock-o"></i> Minutos</th>
 
@@ -292,7 +292,7 @@
                                     <div class="form-group">
                                         <div class="col-lg-2">
                                    <dl class="dl-horizontal">
-                                        <dt>Peliculas</dt><dd>{{$resultados[0]['Total Peliculas']}}</dd><br>
+                                        <dt>Películas</dt><dd>{{$resultados[0]['Total Peliculas']}}</dd><br>
                                         <dt>Mexicanas</dt><dd>{{$resultados[0]['Mexicanas']}}</dd><br>
                                         <dt>Extranjeras</dt><dd>{{$resultados[0]['Extranjeras']}}</dd><br>
                                     </dl>
@@ -305,7 +305,7 @@
                                     <div class="form-group">
                                         <div class="col-lg-2">
                                             <dl class="dl-horizontal">
-                                                <dt>Paises</dt><dd>{{$resultados[0]['Paises']}}</dd><br>
+                                                <dt>Países</dt><dd>{{$resultados[0]['Paises']}}</dd><br>
                                                 <dt>Total espectadores</dt><dd>{{$resultados[0]['Total espectadores']}}</dd><br>
                                                 <dt>Total minutos</dt><dd>{{$resultados[0]['Total minutos']}}</dd><br>
                                             </dl>

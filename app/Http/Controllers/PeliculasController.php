@@ -288,12 +288,14 @@ class PeliculasController extends Controller
         try
         {
             $peliculas->delete();
+
         }
         catch(PDOException  $e)
         {
             Session::flash('error', $peliculas->titulo. ' no pudo ser eliminado, una función o tráfico está relacionado a él');
             return redirect('peliculas');
         }
+        unlink($peliculas->material);
         //El registro se ha eliminado
         Session::flash('message', $peliculas->titulo. ' ha sido eliminado');
         return redirect('peliculas');
