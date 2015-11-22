@@ -65,7 +65,7 @@
 
                           <li><a href="{{route('realizadores')}}">
                                   <i class="fa fa-hand-o-up fa-lg"></i>
-                                  <span>Realizadores</span>
+                                  <span>Contactos</span>
                               </a></li>
 
                           <li><a href="{{route('traficos')}}" >
@@ -249,11 +249,12 @@
 
                             <h5><i class="fa fa-angle-right"></i>Historial</h5>
                            <div align="center">
+                               <div class="table-responsive">
                             <table  class="table table-striped table-advance table-hover table_sort"  >
                                 <thead >
                                 <tr>
                                     <th><i class="fa fa-thumb-tack"></i> Función </th>
-                                    <th class="hidden-phone"><i class="fa fa-users"></i> Asistentes </th>
+                                    <th><i class="fa fa-users"></i> Asistentes </th>
                                     <th><i class="fa fa-clock-o"></i> Minutos</th>
 
                                 </tr>
@@ -269,6 +270,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                               </div>
                                </div>
 
 
