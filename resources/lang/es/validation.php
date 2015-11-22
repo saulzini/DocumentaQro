@@ -49,7 +49,7 @@ return [
     ],
     "mimes"            => ":attribute debe ser un archivo con formato: :values.",
     "min"              => [
-        "numeric" => "El tamaño de :attribute debe ser de al menos :min.",
+        "numeric" => "El valor de :attribute debe ser de al menos :min.",
         "file"    => "El tamaño de :attribute debe ser de al menos :min kilobytes.",
         "string"  => ":attribute debe contener al menos :min caracteres.",
         "array"   => ":attribute debe tener al menos :min elementos.",
