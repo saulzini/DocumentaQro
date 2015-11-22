@@ -85,6 +85,9 @@ class ProgramasController extends Controller
             $Programas->delete();
         });
 
+        if($Programas->poster!="assets/img/default.png")
+            unlink($Programas->poster);
+
         Session::flash('message', $Programas->titulo. ' ha sido eliminado');
         return redirect('programas');
     }

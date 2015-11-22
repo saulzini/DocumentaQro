@@ -287,6 +287,8 @@ class FuncionesController extends Controller
 
 
         //El registro se ha eliminado
+        if($funciones->poster!="assets/img/default.png")
+            unlink($funciones->poster);
         Session::flash('message', $funciones->titulo. ' ha sido eliminado');
         return redirect('funciones');
 
