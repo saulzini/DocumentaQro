@@ -87,7 +87,7 @@ MAIN SIDEBAR MENU
             msgErrorClass: 'alert alert-block alert-danger',
             defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="Imagen de festival" style="height:400px" class="img-thumbnail"/>',
             layoutTemplates: {main2: '{preview} {remove} {browse}'},
-            allowedFileExtensions: ["jpg","png","bmp","jpeg"]
+            allowedFileExtensions: ["jpeg","bmp","png","jpg"]
         });
         ////////////////////////////////////////
     </script>

@@ -111,7 +111,7 @@ MAIN SIDEBAR MENU
               msgErrorClass: 'alert alert-block alert-danger',
               defaultPreviewContent: '<img src="{{ asset($festivalesItem->poster) }}"  style="height:400px" alt="Imagen de pelicula" class="img-thumbnail"/>',
               layoutTemplates: {main2: '{preview} {remove} {browse}'},
-              allowedFileExtensions: ["jpg", "png", "gif"]
+              allowedFileExtensions: ["jpeg","bmp","png","jpg"]
           });
           ////////////////////////////////////////
       </script>
