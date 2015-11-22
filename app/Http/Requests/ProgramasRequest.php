@@ -26,7 +26,8 @@ class ProgramasRequest extends Request
         return [
             'Titulo'=>'required',
             'Patrocinadores'=>'exists:patrocinadores,id',
-            'Festivales'=>'exists:festivales,id'
+            'Festivales'=>'exists:festivales,id',
+            'image' =>'mimes:jpeg,bmp,png,jpg'
         ];
     }
 }
