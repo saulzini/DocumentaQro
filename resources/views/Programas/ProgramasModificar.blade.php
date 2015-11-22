@@ -91,4 +91,45 @@ MAIN SIDEBAR MENU
             });
         });
     </script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#Festivales').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+            });
+
+            $('#Patrocinadores').multiselect({
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                enableFiltering: true,
+                buttonWidth: '100%'
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $("#imagenDocumentaQro").fileinput({
+            overwriteInitial: true,
+            maxFileSize: 50000,
+            showClose: false,
+            showCaption: false,
+            browseLabel: '',
+            removeLabel: '',
+            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+            removeTitle: 'Cancel or reset changes',
+            elErrorContainer: '#kv-avatar-errors',
+            msgErrorClass: 'alert alert-block alert-danger',
+            defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="{{ trans("validation.attributes.imagenPrograma")  }}" style="height:400px" class="img-thumbnail"/>',
+            layoutTemplates: {main2: '{preview} {remove} {browse}'},
+        allowedFileExtensions: ["jpg","png","bmp","jpeg"]
+        });
+    </script>
+
     @include('Partials.ScriptsGenerales.scriptsPartialsAbajo')

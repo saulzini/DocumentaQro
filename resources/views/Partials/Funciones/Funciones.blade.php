@@ -287,32 +287,3 @@
     </div>
 
 </div>
-
-<script type="text/javascript">
-    $(function () {
-        $('#fechaDP').datetimepicker({
-            format:'DD/MM/YYYY HH:mm'
-
-        });
-
-    });
-
-    $('#fechaDP').keypress(function(event) {event.preventDefault();});
-
-    $("#imagenDocumentaQro").fileinput({
-        overwriteInitial: true,
-        showClose: false,
-        showCaption: false,
-        browseLabel: '',
-        removeLabel: '',
-        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
-        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-        removeTitle: 'Cancel or reset changes',
-        elErrorContainer: '#kv-avatar-errors',
-        msgErrorClass: 'alert alert-block alert-danger',
-        defaultPreviewContent: '<img src="{{ asset('assets/img/default.png') }}" alt="{{ trans("validation.attributes.imagenFuncion")  }}" style="height:400px" class="img-thumbnail"/>',
-        layoutTemplates: {main2: '{preview} {remove} {browse}'},
-    allowedFileExtensions: ["jpg","png","bmp","jpeg"]
-    });
-
-</script>
