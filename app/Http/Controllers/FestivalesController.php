@@ -260,7 +260,7 @@ class FestivalesController extends Controller
         }
         catch(PDOException  $e)
         {
-            Session::flash('error', $festival->titulo. ' no pudo ser eliminado, una función o programa está relacionado a él');
+            Session::flash('error', $festival->titulo. ' no pudo ser eliminado, una función está relacionado a él');
             return redirect('festivales');
         }
         //El registro se ha eliminado
