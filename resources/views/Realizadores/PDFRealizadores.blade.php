@@ -151,7 +151,7 @@ dd {
     <td  align="center">
                 <dl class="dl-horizontal">
                     @if (isset($realizadoresItem ))
-                        <dt>Nombre del realizador</dt><dd>{{ $realizadoresItem->nombre}}</dd>
+                        <dt>Nombre del contacto</dt><dd>{{ $realizadoresItem->nombre}}</dd>
                         <dt>Vínculo</dt><dd>{{ $realizadoresItem->vinculo }}</dd>
                         <dt>E-mail</dt><dd>{{ $realizadoresItem->email }}</dd>
 
