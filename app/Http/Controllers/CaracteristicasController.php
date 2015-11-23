@@ -223,7 +223,7 @@ class CaracteristicasController extends Controller
         //obtener funcion
         //CAMBIAR EL FIND
 
-        $caracteristicaItem = Caracteristica::find($id);
+        $caracteristicaItem = Caracteristica::findOrFail($id);
         $nombre = $caracteristicaItem->nombre;
 
 
