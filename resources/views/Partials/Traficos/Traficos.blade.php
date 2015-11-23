@@ -37,9 +37,9 @@
 
                 @if( isset($traficosItem))
 
-                    {!!Form::text('Ubicacion' ,$traficosItem->ubicacion,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>('validation.attributes.lugarUbicacion')])!!}
+                    {!!Form::text('Ubicacion' ,$traficosItem->ubicacion,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>trans('validation.attributes.ubicacion')])!!}
                 @else
-                    {!!Form::text('Ubicacion' ,null,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>('validation.attributes.lugarUbicacion')])!!}
+                    {!!Form::text('Ubicacion' ,null,['class'=>'form-control','id'=>'Ubicacion','placeholder'=>trans('validation.attributes.ubicacion')])!!}
                 @endif
             </div>
         </div>
@@ -72,9 +72,9 @@
             <label for="Formato" class="col-lg-2 control-label"><strong>*</strong>{{ trans('validation.attributes.formatoMaterial')  }}</label>
             <div class="col-lg-10">
                 @if( isset($traficosItem))
-                    {!!Form::text('Formato' ,$traficosItem->formato_material,['class'=>'form-control','id'=>'Formato','placeholder'=>('validation.attributes.formatoMaterial')])!!}
+                    {!!Form::text('Formato' ,$traficosItem->formato_material,['class'=>'form-control','id'=>'Formato','placeholder'=>trans('validation.attributes.formatoMaterial')])!!}
                 @else
-                    {!!Form::text('Formato' ,null,['class'=>'form-control','id'=>'Formato','placeholder'=>('validation.attributes.formatoMaterial')])!!}
+                    {!!Form::text('Formato' ,null,['class'=>'form-control','id'=>'Formato','placeholder'=>trans('validation.attributes.formatoMaterial')])!!}
                 @endif
             </div>
         </div>
@@ -88,9 +88,9 @@
 
                 @if( isset($traficosItem))
 
-                    {!!Form::text('Costo' ,$traficosItem->costo,['class'=>'form-control','id'=>'Costo','placeholder'=>('validation.attributes.costoMaterial')])!!}
+                    {!!Form::text('Costo' ,$traficosItem->costo,['class'=>'form-control','id'=>'Costo','placeholder'=>trans('validation.attributes.costoMaterial')])!!}
                 @else
-                    {!!Form::text('Costo' ,null,['class'=>'form-control','id'=>'Costo','placeholder'=>('validation.attributes.costoMaterial')])!!}
+                    {!!Form::text('Costo' ,null,['class'=>'form-control','id'=>'Costo','placeholder'=>trans('validation.attributes.costoMaterial')])!!}
                 @endif
                     </div>
             </div>
