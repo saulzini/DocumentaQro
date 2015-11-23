@@ -92,7 +92,7 @@ MAIN SIDEBAR MENU
                                     </div>
                             </div>
                             <hr>
-
+                            <div class="table-responsive">
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
@@ -138,6 +138,7 @@ MAIN SIDEBAR MENU
 
                                 </tbody>
                             </table>
+                            </div>
                          @if (isset($Integrantes))
                             {!! $Integrantes->setPath('')->render()!!}
                             @endif

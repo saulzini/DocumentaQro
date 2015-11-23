@@ -124,7 +124,7 @@
                                     </div>
                             </div>
                             <hr>
-
+                            <div class="table-responsive">
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
                                 <tr>
@@ -172,6 +172,8 @@
 
                                 </tbody>
                             </table>
+                            </div>
+
                          @if (isset($Traficos))
                             {!! $Traficos->setPath('')->render()!!}
                             @endif
