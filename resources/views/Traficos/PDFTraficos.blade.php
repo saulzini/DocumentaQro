@@ -153,8 +153,8 @@ dd {
                     <dt>Formato del material</dt><dd>{{ $traficoItem->formato_material }}</dd><br>
                         <dt>Costo</dt><dd>{{ $traficoItem->costo }}</dd><br>
                         <dt>Tipo</dt><dd>{{ $traficoItem->tipo }}</dd><br>
-                        <dt>Integrante</dt><dd>{{ $traficoItem->integrante }}</dd><br>
-                        <dt>Realizador</dt><dd>{{ $traficoItem->realizador }}</dd><br>
+                        <dt>Integrante</dt><dd>{{ $traficoItem->integrantes->nombre }}</dd><br>
+                        <dt>Contacto</dt><dd>{{ $traficoItem->realizadores->nombre }}</dd><br>
                     @endif
                 </dl>
     </div>
