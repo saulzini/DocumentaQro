@@ -20,16 +20,23 @@
         <section id="main-content">
             <section class="wrapper site-min-height">
                 <h3 style="color:#F10687"><i class="fa fa-angle-right"></i>{{ trans('validation.attributes.Configuracion')  }}</h3>
-                <div class="row mt">
 
-
+                <div class="row">
                     <!-- INICIO CONTENIDO -->
+
                     <div class="col-lg-12">
 
                         @include('Partials.Mensajes.mensajes')
 
                         <div class="form-panel">
+
                             <h4 class="mb"><i class="fa fa-angle-right"></i>{{trans('validation.attributes.contrasena')}}</h4>
+
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-8">
+
+
 
                             <div style="text-align: center">
                                 {!! Form::open(['action'=>['ContrasenaController@cambiarContrasena'],'class'=>'form-horizontal style-form'])!!}
@@ -55,11 +62,13 @@
                                     </div>
                                 </div>
 
-                                {!! Form::submit('Guardar',['class'=>'btn btn-theme','onclick'=>trans('validation.attributes.mensajeModificarContrasena')])!!}
+                                {!! Form::submit('Guardar',['class'=>'btn btn-success btn-xs tooltips','onclick'=>trans('validation.attributes.mensajeModificarContrasena')])!!}
 
                                 {!! Form::close() !!}
                             </div>
-                        </div>
+
+                        </div></div></div>
+
 
                     </div>
                     <!-- FIN CONTENIDO -->
