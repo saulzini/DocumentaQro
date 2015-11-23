@@ -97,7 +97,7 @@
                                             <label for="Status" class="col-lg-2 control-label">{{ trans('validation.attributes.status')  }}</label>
                                             <div class="col-lg-10">
                                                 <select  class="form-control" id="Status" name="Status">
-                                                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
+                                                    <option value="">Todos</option>
                                                     @if( isset($traficosItem))
 
                                                     @foreach($Status as $statu)
