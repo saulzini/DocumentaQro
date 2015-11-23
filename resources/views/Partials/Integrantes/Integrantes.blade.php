@@ -14,9 +14,9 @@
 
                 @if( isset($integrantesItem))
 
-                    {!!Form::text('Nombre' ,$integrantesItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>('validation.attributes.nombreIntegrante')])!!}
+                    {!!Form::text('Nombre' ,$integrantesItem->nombre,['class'=>'form-control','id'=>'Nombre','placeholder'=>trans('validation.attributes.nombreIntegrante')])!!}
                 @else
-                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>('validation.attributes.nombreIntegrante')])!!}
+                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Nombre','placeholder'=>trans('validation.attributes.nombreIntegrante')])!!}
                 @endif
             </div>
         </div>
@@ -28,9 +28,9 @@
 
                 @if( isset($integrantesItem))
 
-                    {!!Form::text('Telefono' ,$integrantesItem->telefono,['class'=>'form-control','id'=>'Telefono','placeholder'=>('validation.attributes.telefono')])!!}
+                    {!!Form::text('Telefono' ,$integrantesItem->telefono,['class'=>'form-control','id'=>'Telefono','placeholder'=>trans('validation.attributes.telefono')])!!}
                 @else
-                    {!!Form::text('Telefono' ,null,['class'=>'form-control','id'=>'Telefono','placeholder'=>('validation.attributes.telefono')])!!}
+                    {!!Form::text('Telefono' ,null,['class'=>'form-control','id'=>'Telefono','placeholder'=>trans('validation.attributes.telefono')])!!}
                 @endif
             </div>
         </div>
@@ -41,9 +41,9 @@
 
                 @if( isset($integrantesItem))
 
-                    {!!Form::text('Puesto' ,$integrantesItem->puesto,['class'=>'form-control','id'=>'Puesto','placeholder'=>('validation.attributes.puesto')])!!}
+                    {!!Form::text('Puesto' ,$integrantesItem->puesto,['class'=>'form-control','id'=>'Puesto','placeholder'=>trans('validation.attributes.puesto')])!!}
                 @else
-                    {!!Form::text('Puesto' ,null,['class'=>'form-control','id'=>'Puesto','placeholder'=>('validation.attributes.puesto')])!!}
+                    {!!Form::text('Puesto' ,null,['class'=>'form-control','id'=>'Puesto','placeholder'=>trans('validation.attributes.puesto')])!!}
                 @endif
             </div>
         </div>
@@ -54,9 +54,9 @@
 
                 @if( isset($integrantesItem))
 
-                    {!!Form::text('Email' ,$integrantesItem->email,['class'=>'form-control','id'=>'Email','placeholder'=>('validation.attributes.e-mail')])!!}
+                    {!!Form::text('Email' ,$integrantesItem->email,['class'=>'form-control','id'=>'Email','placeholder'=>trans('validation.attributes.e-mail')])!!}
                 @else
-                    {!!Form::text('Email' ,null,['class'=>'form-control','id'=>'Email','placeholder'=>('validation.attributes.e-mail')])!!}
+                    {!!Form::text('Email' ,null,['class'=>'form-control','id'=>'Email','placeholder'=>trans('validation.attributes.e-mail')])!!}
                 @endif
             </div>
         </div>
