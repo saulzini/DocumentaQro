@@ -5,19 +5,19 @@
         <ul class="sidebar-menu" id="nav-accordion">
 
             <li class="sub-menu">
-                <a href="#" class="active">
+                <a href="#">
                     <i class="fa fa-film"></i>
                     <span>{{ trans('validation.attributes.Peliculas')  }} &nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <i class="fa fa-caret-down"></i>
                 </a>
 
                 <ul class="sub">
-                    <li><a href="{{route('peliculas')}}" class="active">
+                    <li><a href="{{route('peliculas')}}">
                             <i class="fa fa-film"></i>
                             <span>{{ trans('validation.attributes.Pelicula')  }} </span>
                         </a></li>
 
-                    <li><a href="{{route('realizadores')}}" >
+                    <li><a href="{{route('realizadores')}}">
                             <i class="fa fa-hand-o-up fa-lg"></i>
                             <span>{{ trans('validation.attributes.Realizadores')  }} </span>
                         </a></li>
@@ -31,7 +31,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('funciones')}}" >
+                <a href="{{route('funciones')}}">
                     <i class="fa fa-video-camera"></i>
                     <span>{{ trans('validation.attributes.Funcion')  }} </span>
                 </a>
@@ -59,7 +59,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="{{route('integrantes')}}">
+                <a href="{{route('integrantes')}}" class="active">
                     <i class="fa fa-users"></i>
                     <span>{{ trans('validation.attributes.Integrantes')  }} </span>
                 </a>
