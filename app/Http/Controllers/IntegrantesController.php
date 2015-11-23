@@ -229,7 +229,7 @@ class IntegrantesController extends Controller
         //obtener funcion
         //CAMBIAR EL FIND
 
-        $integranteItem = Integrante::find($id);
+        $integranteItem = Integrante::findOrFail($id);
         $nombre = $integranteItem->nombre;
 
         $telefono = $integranteItem->telefono;

@@ -236,7 +236,7 @@ class TraficosController extends Controller
     public function pagModificar($id)
     {
 
-        $traficosItem = Trafico::find($id);
+        $traficosItem = Trafico::findOrFail($id);
         $tipo = ['Entrante','Saliente'];
         $status = ['Buscando contacto','Por enviar correo','Mail enviado','Mail respondido',
             'Ya con permiso','Ya con material','Por pagar','Pagado','En revision','Revisado',
@@ -291,7 +291,7 @@ class TraficosController extends Controller
         //obtener funcion
         //CAMBIAR EL FIND
 
-        $traficoItem = Trafico::find($id);
+        $traficoItem = Trafico::findOrFail($id);
         $titulo = $traficoItem->titulo;
 
         $ubicacion = $traficoItem->ubicacion;
