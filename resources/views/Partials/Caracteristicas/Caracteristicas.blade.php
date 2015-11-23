@@ -14,9 +14,9 @@
 
                 @if( isset($caracteristicasItem))
 
-                    {!!Form::text('Nombre' ,$caracteristicasItem->nombre,['class'=>'form-control','id'=>'Caracteristica','placeholder'=>('validation.attributes.caracteristicaPaquete')])!!}
+                    {!!Form::text('Nombre' ,$caracteristicasItem->nombre,['class'=>'form-control','id'=>'Caracteristica','placeholder'=>trans('validation.attributes.caracteristicaPaquete')])!!}
                 @else
-                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Caracteristica','placeholder'=>('validation.attributes.caracteristicaPaquete')])!!}
+                    {!!Form::text('Nombre' ,null,['class'=>'form-control','id'=>'Caracteristica','placeholder'=>trans('validation.attributes.caracteristicaPaquete')])!!}
                 @endif
             </div>
         </div>
