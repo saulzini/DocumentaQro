@@ -12,7 +12,7 @@
                 </a>
 
                 <ul class="sub">
-                    <li><a href="{{route('peliculas')}}" class="active">
+                    <li><a href="{{route('peliculas')}}">
                             <i class="fa fa-film"></i>
                             <span>{{ trans('validation.attributes.Pelicula')  }} </span>
                         </a></li>
@@ -22,7 +22,7 @@
                             <span>{{ trans('validation.attributes.Realizadores')  }} </span>
                         </a></li>
 
-                    <li><a href="{{route('traficos')}}" >
+                    <li><a href="{{route('traficos')}}" class="active" >
                             <i class="fa fa-envelope"></i>
                             <span>{{ trans('validation.attributes.Trafico')  }} </span>
                         </a></li>
