@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 /*
  *
+ *
  *  Rutas para las funciones
  *
  * */
@@ -134,7 +135,7 @@ Route::get('peliculas/modificar/item/{id}',[
 ]);
 
 
-Route::post('peliculas/modificar/peliculas','PeliculasController@modificarPeliculas',array('before' => 'csrf',function()
+Route::post('peliculas/modificar/peliculas','PeliculasController@modificarPeliculas',array('before' => 'csrf', function()
 {
     // dd("modificar");
 }));
@@ -252,7 +253,7 @@ Route::get('festivales/agregar',[
 ]);
 
 
-Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array( 'before' => 'csrf',function()
+Route::post('festivales/agregar/crear','FestivalesController@agregarFestivales',array('before' => 'csrf', function()
 {
 
 }));
@@ -719,7 +720,9 @@ Route::post('programas/eliminar','ProgramasController@eliminarProgramas',array('
  * */
 
 // Authentication routes...
+
 Route::get('login',[
+    'before'=>'forcehttps',
     'uses' => 'Auth\AuthController@getLogin',
     'as' => 'login'
 
@@ -896,5 +899,31 @@ Route::post('configuracion/actualizar','ContrasenaController@cambiarContrasena',
     //
 }));
 
+Route::filter('forcehttps', function()
+{
+    if(!Request::secure())
+    {
+       // dd(Request::getRequestUri());
+        return Redirect::secure(Request::url,301);
+    }
+});
 
 
+Route::filter('forcehttps', function()
+{
+    if(!Request::secure())
+    {
+        $url = Request::url();
+        $url = str_replace('http://','https://',$url);
+        return Redirect::secure($url ,301);
+    }
+});
+
+Route::filter('forcehttp', function()
+{
+    $url = Request::url();
+    if(Request::secure()){
+        $url = str_replace('https://','http://',$url);
+        return Redirect::to($url,301);
+    }
+});
