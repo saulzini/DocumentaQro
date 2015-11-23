@@ -74,58 +74,53 @@
 
 
                                     <div class="col-xs-6">
-                                        <div class="input-group col-lg-12">
+                                        <div class="form-group col-lg-12">
 
                                             {!! Form::open(['route' => 'traficosLista' ,'method'=>'GET']) !!}
-
-
-                                            <div class="col-lg-14">
-
                                                 <div class="input-group">
 
 
                                                         <span class="input-group-btn">
                                                                        {!! Form::submit(trans('validation.attributes.buscar') ,['class'=>'btn btn-default']) !!}
-                                                                </span>
+                                                          </span>
 
 
                                                     {!! Form::text('buscador', null, ['class' => 'form-control','placeholder'=>trans('validation.attributes.buscar')  ]) !!}
                                                 </div><!-- /input-group -->
-                                                
-                                                <div class="form-group">
-                                                    <label for="Status" class="col-lg-2 control-label">{{ trans('validation.attributes.status')  }}</label>
-                                                    <div class="col-lg-10">
-                                                        <select  class="form-control" id="Status" name="Status">
-                                                            <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
-                                                            @if( isset($traficosItem))
-
-                                                                @foreach($Status as $statu)
-                                                                    @if($traficosItem->status == $statu)
-                                                                        <option value="{{ $statu }}" selected > {{ $statu}}  </option>
-                                                                    @else
-                                                                        <option value="{{ $statu }}" > {{ $statu}}  </option>
-                                                                    @endif
-                                                                @endforeach
-                                                            @else
-                                                                @foreach($Status as $statu)
-                                                                    <option value="{{  $statu }}" > {{ $statu }}  </option>
-                                                                @endforeach
-                                                            @endif
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                            </div><!-- /.col-lg-6 -->
-
                                         </div>
                                     </div>
 
                                     <div id="defaultForm">
+                                      <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                            <label for="Status" class="col-lg-2 control-label">{{ trans('validation.attributes.status')  }}</label>
+                                            <div class="col-lg-10">
+                                                <select  class="form-control" id="Status" name="Status">
+                                                    <option value="">{{ trans('validation.attributes.Selecciona')  }}</option>
+                                                    @if( isset($traficosItem))
 
+                                                    @foreach($Status as $statu)
+                                                    @if($traficosItem->status == $statu)
+                                                    <option value="{{ $statu }}" selected > {{ $statu}}  </option>
+                                                    @else
+                                                    <option value="{{ $statu }}" > {{ $statu}}  </option>
+                                                    @endif
+                                                    @endforeach
+                                                    @else
+                                                    @foreach($Status as $statu)
+                                                    <option value="{{  $statu }}" > {{ $statu }}  </option>
+                                                    @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
+                                        </div>
+                                       </div>
+                                       </div>
 
                                                     {!! Form::close() !!}
 
-                                    </div>
+                                        </div>
                                     </div>
                             </div>
                             <hr>
