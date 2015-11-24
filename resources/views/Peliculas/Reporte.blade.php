@@ -1143,7 +1143,7 @@ dd {
                                         <br>
                                         <dt>Material</dt><dd>@if($peliculaItem->material!=""){{asset($peliculaItem->material)}}@else No tiene @endif</dd>
                                         <br>
-                                        <dt>Sinposis</dt><dd>@if($peliculaItem->sinopsis!=""){{$peliculaItem->sinopsis}}@else No tiene @endif</dd>
+                                        <dt>Sinopsis</dt><dd>@if($peliculaItem->sinopsis!=""){{$peliculaItem->sinopsis}}@else No tiene @endif</dd>
                                         <br>
                                         <dt>Notas</dt><dd>@if($peliculaItem->notas!=""){{$peliculaItem->notas}}@else No tiene @endif</dd>
 

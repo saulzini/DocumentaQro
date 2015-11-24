@@ -107,7 +107,7 @@ return [
     'attributes' => [
         'Peliculas' => 'Movies',
         'Pelicula' => 'Movie',
-        'Realizadores' => 'Makers',
+        'Realizadores' => 'Contacts',
         'Trafico' => 'Traffic',
 
         'Funcion' => 'Function',
@@ -124,7 +124,7 @@ return [
         'Reportes' => 'Reports',
         'ReportesFunciones' => 'Functions reports',
         'ReportesPaises' => 'Countries reports',
-        'ReportesProgramas' => 'Programs reportes',
+        'ReportesProgramas' => 'Programs reports',
         'ReportesFestivales' => 'Festivals reports',
         'ReportesSedes' => 'Places reports',
 
@@ -138,26 +138,26 @@ return [
 
 
         'buscar' => 'Search',
-        'realizadores' => 'Makers',
+        'realizadores' => 'Contacts',
         'nombre' => 'Name',
         'vinculo' => 'Linkage',
         'busqueda' => 'Search',
-        'agregarRealizador' => 'Add maker',
+        'agregarRealizador' => 'Add contact',
 
 
         'camposObligatorios' => 'Required Fields',
-        'nombredelRealizador' => 'Name of the maker',
+        'nombredelRealizador' => 'Name of the contact',
         'telefono' => 'Telephone',
         'agregar' => 'Add',
         'modificar' => 'Update',
-        'modificarRealizador' => 'Update maker',
+        'modificarRealizador' => 'Update contact',
         'exportar' => 'Export',
-        'consultarRealizador' => 'Consult Maker',
+        'consultarRealizador' => 'Consult contact',
 
          'eliminar' => 'Delete',
         'consultar' => 'Consult',
-        'mensajeEliminarRealizador' => 'Are you sure want to delete the maker?',
-        'mensajeModificarRealizador' => 'return confirm ("Are you sure want to modify the maker?")',
+        'mensajeEliminarRealizador' => 'Are you sure want to delete the contact?',
+        'mensajeModificarRealizador' => 'return confirm ("Are you sure want to modify the contact?")',
         'mensajeEliminarTrafico'=> 'Are you sure want to delete the traffic?',
 
         'validatorRealizadorNombre'=>'The name is required',
